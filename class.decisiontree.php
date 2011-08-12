@@ -75,7 +75,7 @@ class DecisionTree{
 	
 	function getBranch( $branchID ){
 		foreach( $this->branches as $branch ){
-			if( $branch->ID == $branchID ){
+			if( strval( $branch->ID ) === strval( $branchID ) ){
 				return $branch;
 			}
 		}
@@ -98,7 +98,7 @@ class DecisionTree{
 	function saveBranch( $branch ){
 		// look for existing branch to replace
 		foreach( $this->branches as $branchIndex => $treeBranch ){
-			if( $branch->ID == $treeBranch->ID ){
+			if( strval( $branch->ID ) === strval( $treeBranch->ID ) ){
 				$this->branches[$branchIndex] = $branch;
 				return true;
 			}
@@ -110,7 +110,7 @@ class DecisionTree{
 	function removeBranch( $branchID ){
 		// look for existing branch to replace
 		foreach( $this->branches as $branchIndex => $treeBranch ){
-			if( $branchID == $treeBranch->ID ){
+			if( strval( $branchID ) === strval( $treeBranch->ID ) ){
 				unset( $this->branches[$branchIndex] );
 				return true;
 			}
@@ -145,7 +145,7 @@ class DecisionTree{
 	
 	function getTargetBranches( $branchID, $forkLabel = '' ){
 		foreach( $this->branches as $branch ){
-			if( $branch->ID == $branchID ){
+			if( strval( $branch->ID ) === strval( $branchID ) ){
         $class = '';
 				if( empty( $branch->content ) ){
 					$class = 'class="missing-content"';
