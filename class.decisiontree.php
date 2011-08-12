@@ -124,7 +124,7 @@ class DecisionTree{
 		foreach( $this->branches as $branch ){
 			$branchXML = $xmlData->addChild( 'branch' );
 			$branchXML->addAttribute( 'id', $branch->ID );
-			$branchXML->addChild( 'content', $branch->content );
+			$branchXML->addChild( 'content', htmlspecialchars( $branch->content ) );
 			foreach( $branch->forks as $forkTarget => $forkLabel ){
 				$forkXML = $branchXML->addChild( 'fork', $forkLabel );
 				$forkXML->addAttribute( 'target', $forkTarget );
