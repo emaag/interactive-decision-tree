@@ -14,7 +14,7 @@ A functional demo can be viewed [http://www.hungry-media.com/code/interactive-de
 
 This section assumes you already have your web server up and running with PHP version 5 or greater.
 
-  # download the [http://interactive-decision-tree.googlecode.com/files/DecisionTree-1.2.zip source code] to a directory on your web server (_e.g. decision-tree_).
+  # clone this repo
   # Modify the permissions of the xml/ directory such that it is writable by your web server.
   # Navigate to the editor page in your web browser: 
 
