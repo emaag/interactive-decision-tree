@@ -29,7 +29,9 @@ a:hover{
 	background: #EEE;
 	color: #000;
 	padding: 1em;
+	/*
 	display: none;
+	*/
 }
 
 #tree-window{
