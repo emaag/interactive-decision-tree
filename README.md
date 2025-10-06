@@ -128,12 +128,3 @@ Inspired by the need for simple, accessible decision-making tools
 This project has been forked by organizations including legal service providers and educational institutions to help users navigate complex decision-making processes.
 
 ⭐ Star this repository if you find it useful!
-
-**To update your README:**
-1. Go to your repository
-2. Click on `README.md`
-3. Click the pencil icon to edit
-4. Replace all content with the above
-5. Commit changes
-
-Ready for Step 3? Let me know when you've added these first two files, or if you'd like me to continue with the next files!
