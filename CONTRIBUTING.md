@@ -55,7 +55,7 @@ Unsure where to begin? Look for issues labeled:
 ## Getting Started
 
 1. **Fork the repository** and clone your fork:
-```bash
+
    git clone https://github.com/YOUR-USERNAME/interactive-decision-tree.git
    cd interactive-decision-tree
 
