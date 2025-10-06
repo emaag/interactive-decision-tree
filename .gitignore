@@ -1,0 +1,26 @@
+# PHP files
+*.log
+
+# XML files (generated decision trees)
+xml/*.xml
+
+# Temporary files
+*.tmp
+*.bak
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Dependency directories
+vendor/
+node_modules/
+
+# IDE-specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment files
+.env
