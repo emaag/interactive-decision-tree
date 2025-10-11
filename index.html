@@ -5,6 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Eric Maag - Senior Full-Stack Developer</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Eric Maag - Senior Full-Stack Developer specializing in PHP, DevOps, and cloud solutions. 15+ years experience building scalable web applications in Las Palmas, Spain.">
+    <meta name="keywords" content="PHP developer, full-stack developer, DevOps, cloud solutions, web applications, Las Palmas, Spain, remote developer">
+    <meta name="author" content="Eric Maag">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.statichex.dev/">
+    <meta property="og:title" content="Eric Maag - Senior Full-Stack Developer">
+    <meta property="og:description" content="Senior Full-Stack Developer specializing in PHP, DevOps, and cloud solutions. 15+ years experience building scalable web applications.">
+    <meta property="og:site_name" content="StaticHex">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.statichex.dev/">
+    <meta name="twitter:title" content="Eric Maag - Senior Full-Stack Developer">
+    <meta name="twitter:description" content="Senior Full-Stack Developer specializing in PHP, DevOps, and cloud solutions. 15+ years experience building scalable web applications.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -696,16 +718,49 @@
             box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
         }
         
+        /* Tablet Landscape and Below */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.3rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+        }
+
+        /* Tablet Portrait and Below */
         @media (max-width: 768px) {
+            .hero {
+                padding: 6rem 1.5rem 4rem;
+            }
+
             .hero h1 {
                 font-size: 2.5rem;
             }
-            
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
             .hero .contact-info {
                 flex-direction: column;
                 gap: 1rem;
             }
-            
+
+            .hero-badges {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .badge {
+                justify-content: center;
+            }
+
             .section-title {
                 font-size: 2rem;
             }
@@ -714,12 +769,114 @@
                 display: none;
             }
 
+            .nav-cta {
+                padding: 0.4rem 1rem;
+                font-size: 0.9rem;
+            }
+
             .projects-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-cta .cta-buttons {
+                flex-direction: column;
+            }
+
+            .contact-cta .cta-buttons a {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Mobile Landscape and Below */
+        @media (max-width: 640px) {
+            .hero {
+                padding: 5rem 1rem 3rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero-cta a {
+                width: 100%;
+                text-align: center;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .nav-logo {
+                font-size: 1rem;
+            }
+
+            .lang-switcher a {
+                font-size: 1rem;
+            }
+        }
+
+        /* Small Mobile */
+        @media (max-width: 480px) {
+            .hero {
+                padding: 4rem 0.75rem 2.5rem;
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .hero .subtitle {
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
             }
 
             .stats-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .badge {
+                font-size: 0.85rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            .project-card,
+            .skill-category {
+                padding: 1.25rem;
+            }
+
+            .btn-primary,
+            .btn-secondary,
+            .btn-white,
+            .btn-outline {
+                padding: 0.75rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .nav-container {
+                padding: 0.75rem 1rem;
             }
         }
 
@@ -735,27 +892,27 @@
 </head>
 <body>
     <!-- Sticky Navigation -->
-    <nav class="nav" id="navbar">
+    <nav class="nav" id="navbar" aria-label="Main navigation">
         <div class="nav-container">
             <div class="nav-logo">Eric Maag</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <ul class="nav-links" role="menubar" aria-label="Main menu">
+                <li role="none"><a href="#home" role="menuitem">Home</a></li>
+                <li role="none"><a href="#projects" role="menuitem">Projects</a></li>
+                <li role="none"><a href="#skills" role="menuitem">Skills</a></li>
+                <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
             </ul>
-            <a href="#contact" class="nav-cta">Let's Talk</a>
+            <a href="#contact" class="nav-cta" aria-label="Contact me - Let's talk">Let's Talk</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <div class="hero" id="home">
         <div class="hero-content">
-            <div class="lang-switcher">
-                <a href="index.html" class="active">🇬🇧 English</a>
-                <a href="index-es.html">🇪🇸 Español</a>
-                <a href="index-de.html">🇩🇪 Deutsch</a>
-            </div>
+            <nav class="lang-switcher" aria-label="Language selector">
+                <a href="index.html" class="active" aria-current="page" lang="en">🇬🇧 English</a>
+                <a href="index-es.html" lang="es">🇪🇸 Español</a>
+                <a href="index-de.html" lang="de">🇩🇪 Deutsch</a>
+            </nav>
             <h1>Eric Maag</h1>
             <div class="subtitle">Senior Full-Stack Developer | PHP Expert | DevOps Specialist</div>
             
@@ -775,14 +932,14 @@
             </div>
             
             <div class="contact-info">
-                <a href="mailto:eric.maag@gmail.com">
-                    <i class="fas fa-envelope"></i> eric.maag@gmail.com
+                <a href="mailto:eric.maag@gmail.com" aria-label="Send email to eric.maag@gmail.com">
+                    <i class="fas fa-envelope" aria-hidden="true"></i> eric.maag@gmail.com
                 </a>
-                <a href="tel:+34675741692">
-                    <i class="fas fa-phone"></i> +34 675 741 692
+                <a href="tel:+34675741692" aria-label="Call +34 675 741 692">
+                    <i class="fas fa-phone" aria-hidden="true"></i> +34 675 741 692
                 </a>
-                <a href="https://github.com/emaag" target="_blank">
-                    <i class="fab fa-github"></i> GitHub
+                <a href="https://github.com/emaag" target="_blank" rel="noopener noreferrer" aria-label="Visit my GitHub profile (opens in new tab)">
+                    <i class="fab fa-github" aria-hidden="true"></i> GitHub
                 </a>
             </div>
 
@@ -1194,6 +1351,34 @@
         document.querySelectorAll('.project-card, .skill-category, .stat-card').forEach((el) => {
             observer.observe(el);
         });
+    </script>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Eric Maag",
+      "jobTitle": "Senior Full-Stack Developer",
+      "description": "Senior Full-Stack Developer specializing in PHP, DevOps, and cloud solutions with over 15 years of experience",
+      "url": "https://www.statichex.dev",
+      "email": "eric.maag@gmail.com",
+      "telephone": "+34675741692",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Las Palmas",
+        "addressRegion": "Canary Islands",
+        "addressCountry": "ES"
+      },
+      "sameAs": [
+        "https://github.com/emaag"
+      ],
+      "knowsAbout": ["PHP", "JavaScript", "DevOps", "Cloud Solutions", "AWS", "Docker", "Kubernetes", "Full-Stack Development"],
+      "workLocation": {
+        "@type": "Place",
+        "name": "Remote"
+      }
+    }
     </script>
 </body>
 </html>
