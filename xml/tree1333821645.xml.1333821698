@@ -1,2 +1,0 @@
-<?xml version="1.0"?>
-<tree><title>Search Engines</title><description>bla bla bla</description><branch id="1.1"><content></content></branch><branch id="1.2"><content></content></branch><branch id="1"><content>What type of search?</content><fork target="1.1">Google</fork><fork target="1.2">Bing</fork></branch><revision>xml/tree1333821645.xml.1333821672</revision></tree>

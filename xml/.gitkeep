@@ -1,0 +1,2 @@
+# This file ensures the xml/ directory is tracked by git
+# XML files themselves are ignored (see .gitignore)
