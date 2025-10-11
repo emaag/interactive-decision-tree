@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Eric Maag - Senior Full-Stack Entwickler</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #64748b;
+            --accent: #0ea5e9;
+            --bg: #ffffff;
+            --bg-alt: #f8fafc;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --border: #e2e8f0;
+            --success: #10b981;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Sticky Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .nav.visible {
+            transform: translateY(0);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 8rem 2rem 6rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .lang-switcher {
+            margin-bottom: 2rem;
+        }
+
+        .lang-switcher a {
+            color: white;
+            margin: 0 0.5rem;
+            text-decoration: none;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .lang-switcher a.active {
+            opacity: 1;
+            font-weight: bold;
+        }
+
+        .lang-switcher a:hover {
+            opacity: 1;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .hero .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+            margin-top: 2rem;
+            animation: fadeInUp 1s ease 0.8s both;
+        }
+        
+        .hero .contact-info a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.3s, transform 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .hero .contact-info a:hover {
+            opacity: 1;
+            transform: translateY(-2px);
+        }
+
+        .hero-cta {
+            margin-top: 2rem;
+            animation: fadeInUp 1s ease 1s both;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: white;
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin: 0 0.5rem;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: transparent;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: 2px solid white;
+            transition: all 0.3s;
+            margin: 0 0.5rem;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .stats-section {
+            background: var(--bg);
+            padding: 4rem 0;
+            margin-top: -3rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--primary);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .stat-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            margin-top: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .summary {
+            background: var(--bg-alt);
+            padding: 5rem 0;
+        }
+        
+        .summary p {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            color: var(--text);
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .clients-section {
+            padding: 4rem 0;
+            background: white;
+            text-align: center;
+        }
+
+        .clients-title {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .clients-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            opacity: 0.6;
+        }
+
+        .client-logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+        
+        .section {
+            padding: 6rem 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: var(--text);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.3)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+        
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-client {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .tag {
+            background: var(--bg-alt);
+            color: var(--text);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 1px solid var(--border);
+        }
+
+        .project-summary {
+            color: var(--text);
+            line-height: 1.6;
+            margin: 1rem 0;
+            font-size: 0.95rem;
+        }
+
+        .project-impact {
+            background: var(--bg-alt);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            border-left: 4px solid var(--success);
+        }
+
+        .project-impact strong {
+            color: var(--success);
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+        
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .skill-icon {
+            font-size: 1.5rem;
+        }
+        
+        .skill-category ul {
+            list-style: none;
+        }
+        
+        .skill-category li {
+            padding: 0.6rem 0;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: transform 0.2s;
+        }
+
+        .skill-category li:hover {
+            transform: translateX(5px);
+        }
+        
+        .skill-category li:before {
+            content: "▹";
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid2" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid2)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .contact-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .contact-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn-white {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: white;
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: transparent;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            border: 2px solid white;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        footer {
+            background: var(--bg-alt);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-light);
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.3s;
+            z-index: 999;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Eric Maag</div>
+            <ul class="nav-links">
+                <li><a href="#home">Start</a></li>
+                <li><a href="#projects">Projekte</a></li>
+                <li><a href="#skills">Fähigkeiten</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+            <a href="#contact" class="nav-cta">Lass uns sprechen</a>
+        </div>
+    </nav>
+
+    <div class="hero" id="home">
+        <div class="hero-content">
+            <div class="lang-switcher">
+                <a href="index.html">🇬🇧 English</a>
+                <a href="index-es.html">🇪🇸 Español</a>
+                <a href="index-de.html" class="active">🇩🇪 Deutsch</a>
+            </div>
+            <h1>Eric Maag</h1>
+            <div class="subtitle">Senior Full-Stack Entwickler | PHP-Experte | DevOps-Spezialist</div>
+            
+            <div class="hero-badges">
+                <div class="badge">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Las Palmas, Spanien
+                </div>
+                <div class="badge">
+                    <i class="fas fa-briefcase"></i>
+                    Remote Verfügbar
+                </div>
+                <div class="badge">
+                    <i class="fas fa-check-circle"></i>
+                    Jetzt Verfügbar
+                </div>
+            </div>
+            
+            <div class="contact-info">
+                <a href="mailto:eric.maag@gmail.com">
+                    <i class="fas fa-envelope"></i> eric.maag@gmail.com
+                </a>
+                <a href="tel:+34675741692">
+                    <i class="fas fa-phone"></i> +34 675 741 692
+                </a>
+                <a href="https://github.com/emaag" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+
+            <div class="hero-cta">
+                <a href="#contact" class="btn-primary">
+                    <i class="fas fa-calendar"></i> Termin vereinbaren
+                </a>
+                <a href="#projects" class="btn-secondary">
+                    <i class="fas fa-rocket"></i> Meine Arbeit ansehen
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-rocket"></i></div>
+                    <span class="stat-number">25+</span>
+                    <div class="stat-label">Jahre Erfahrung</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-project-diagram"></i></div>
+                    <span class="stat-number">11</span>
+                    <div class="stat-label">Hauptprojekte</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+                    <span class="stat-number">99.9%</span>
+                    <div class="stat-label">Betriebszeit Erreicht</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-dollar-sign"></i></div>
+                    <span class="stat-number">$150K+</span>
+                    <div class="stat-label">Jährliche Einsparungen</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="summary">
+        <div class="container">
+            <p>Aufbau skalierbarer, unternehmenskritischer Systeme für Regierungsbehörden und globale Unternehmen. Spezialisiert auf Hochverfügbarkeitsarchitektur, Cybersicherheit und Leitung verteilter Teams zur Bereitstellung von Lösungen für Millionen von Benutzern.</p>
+        </div>
+    </div>
+
+    <div class="clients-section">
+        <div class="container">
+            <div class="clients-title">Vertraut von Führenden Organisationen</div>
+            <div class="clients-grid">
+                <div class="client-logo">NOAA</div>
+                <div class="client-logo">US EPA</div>
+                <div class="client-logo">Signa Sports</div>
+                <div class="client-logo">Philippinische Botschaft</div>
+                <div class="client-logo">UPI</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="projects">
+        <div class="container">
+            <h2 class="section-title">Ausgewählte Projekte</h2>
+            <p class="section-subtitle">Komplexe Herausforderungen in elegante, skalierbare Lösungen verwandeln</p>
+            
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">Signa Sports United</div>
+                        <div class="project-client">
+                            <i class="fas fa-building"></i>
+                            Enterprise Microservices
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">Symfony</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag">Kubernetes</span>
+                            <span class="tag">MongoDB</span>
+                        </div>
+                        <div class="project-summary">
+                            Leitete Team beim Aufbau skalierbarer Microservices-Architektur für Multi-Marken-Sporthandelskonzern. Implementierte KI-gestützte Übersetzungsdienste und CI/CD-Pipelines.
+                        </div>
+                        <div class="project-impact">
+                            <strong>Auswirkung:</strong> 40% weniger Übersetzungsaufwand, 30% schnellere Ladezeiten, 50% schnellere Verarbeitung
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">NOAA Infrastruktur</div>
+                        <div class="project-client">
+                            <i class="fas fa-landmark"></i>
+                            US-Regierungsbehörde
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">Drupal</span>
+                            <span class="tag">MySQL</span>
+                            <span class="tag">Bash</span>
+                            <span class="tag">Multi-Region</span>
+                        </div>
+                        <div class="project-summary">
+                            Architektierte Hochverfügbarkeitssystem über 3 US-Colocation-Zentren. Entwickelte automatisierte Datenbankreplikationsskripte ohne Ausfallzeiten.
+                        </div>
+                        <div class="project-impact">
+                            <strong>Auswirkung:</strong> 99,9% Betriebszeit, $150K jährliche Einsparungen, Millionen Nutzer
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">OIDA Sicherheitswiederherstellung</div>
+                        <div class="project-client">
+                            <i class="fas fa-industry"></i>
+                            Industrieverband
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">Incident Response</span>
+                            <span class="tag">API-Integration</span>
+                            <span class="tag">Sicherheit</span>
+                        </div>
+                        <div class="project-summary">
+                            Wiederherstellung nach russischem Cyberangriff in 48 Stunden. Implementierte sicheres mehrstufiges Registrierungssystem mit Zahlungsabwicklung.
+                        </div>
+                        <div class="project-impact">
+                            <strong>Auswirkung:</strong> Kein Datenverlust, $100K+ jährliche Gebühren verarbeitet, 25 Std./Monat gespart
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">Philippinische Botschaft CMS</div>
+                        <div class="project-client">
+                            <i class="fas fa-flag"></i>
+                            Internationale Organisation
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">CMS Made Simple</span>
+                            <span class="tag">Multi-Tenant</span>
+                            <span class="tag">18 Sites</span>
+                        </div>
+                        <div class="project-summary">
+                            Baute ausgefeiltes Multi-Tenant-CMS für 18 Konsulats-Microsites mit zentralisierter Verwaltung und geerbtem Branding.
+                        </div>
+                        <div class="project-impact">
+                            <strong>Auswirkung:</strong> 60% Reduktion der Content-Management-Zeit, einheitliche Markenerfahrung
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image" style="background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">UPI News-Plattform</div>
+                        <div class="project-client">
+                            <i class="fas fa-newspaper"></i>
+                            Medienorganisation
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">PHP</span>
+                            <span class="tag">XML</span>
+                            <span class="tag">MySQL</span>
+                            <span class="tag">Custom CMS</span>
+                        </div>
+                        <div class="project-summary">
+                            Baute maßgeschneiderte Nachrichten-Aggregationsplattform zur Verarbeitung von Inhalten mehrerer internationaler Agenturen mit automatisierter Abrechnungsintegration.
+                        </div>
+                        <div class="project-impact">
+                            <strong>Auswirkung:</strong> 1.000+ tägliche Artikel automatisiert, 4 Agenturen integriert
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">Nuro Media Backend</div>
+                        <div class="project-client">
+                            <i class="fas fa-laptop-code"></i>
+                            Technologieunternehmen
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">PHP</span>
+                            <span class="tag">Symfony</span>
+                            <span class="tag">PHPUnit</span>
+                            <span class="tag">Doctrine ORM</span>
+                        </div>
+                        <div class="project-summary">
+                            Entwickelte skalierbare PHP-Backend-Anwendungen mit Fokus auf saubere Architektur, automatisierte Tests und Leistungsoptimierung.
+                        </div>
+                        <div class="project-impact">
+                            <strong>Auswirkung:</strong> 90%+ Fehler innerhalb SLA behoben, verbesserte Systemstabilität
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="section" style="background: var(--bg-alt);" id="skills">
+        <div class="container">
+            <h2 class="section-title">Technische Expertise</h2>
+            <p class="section-subtitle">Umfassendes Skillset aufgebaut über 25+ Jahre komplexer Problemlösungen</p>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>
+                        <span class="skill-icon"><i class="fas fa-code"></i></span>
+                        Backend-Entwicklung
+                    </h3>
+                    <ul>
+                        <li>PHP (Laravel, Symfony, Composer)</li>
+                        <li>Python</li>
+                        <li>MySQL & Datenbankdesign</li>
+                        <li>Apache-Konfiguration</li>
+                        <li>Linux/Unix-Administration</li>
+                        <li>Bash-Scripting</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>
+                        <span class="skill-icon"><i class="fas fa-window-restore"></i></span>
+                        CMS & Plattformen
+                    </h3>
+                    <ul>
+                        <li>Drupal (Experte - v6-10)</li>
+                        <li>WordPress</li>
+                        <li>Joomla</li>
+                        <li>CMS Made Simple</li>
+                        <li>Custom CMS-Entwicklung</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>
+                        <span class="skill-icon"><i class="fab fa-docker"></i></span>
+                        DevOps & Infrastruktur
+                    </h3>
+                    <ul>
+                        <li>Multi-Region-Architektur</li>
+                        <li>Datenbankreplikation</li>
+                        <li>Load Balancing & Caching</li>
+                        <li>Server-Migration</li>
+                        <li>Git/GitHub</li>
+                        <li>Automatisiertes Deployment</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>
+                        <span class="skill-icon"><i class="fas fa-shield-alt"></i></span>
+                        Sicherheit & Compliance
+                    </h3>
+                    <ul>
+                        <li>Incident Response</li>
+                        <li>Schwachstellenbewertung</li>
+                        <li>Sicherheitsaudit</li>
+                        <li>Patch-Management</li>
+                        <li>Regierungs-Compliance</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>
+                        <span class="skill-icon"><i class="fas fa-plug"></i></span>
+                        Integration & APIs
+                    </h3>
+                    <ul>
+                        <li>REST-API-Entwicklung</li>
+                        <li>Drittanbieter-Integration</li>
+                        <li>Zahlungsabwicklung</li>
+                        <li>XML/Datenverarbeitung</li>
+                        <li>E-Commerce-Systeme</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>
+                        <span class="skill-icon"><i class="fas fa-language"></i></span>
+                        Sprachen
+                    </h3>
+                    <ul>
+                        <li>Englisch (Fließend)</li>
+                        <li>Spanisch (Fließend)</li>
+                        <li>Deutsch (Fließend)</li>
+                        <li>Französisch (Mittel)</li>
+                        <li>Italienisch (Mittel)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-section" id="contact">
+        <div class="contact-content">
+            <h2>Bereit, Etwas Großartiges zu Bauen?</h2>
+            <p>Lassen Sie uns besprechen, wie ich Ihre Infrastruktur optimieren und skalierbare Lösungen liefern kann.</p>
+            <div class="contact-buttons">
+                <a href="mailto:eric.maag@gmail.com" class="btn-white">
+                    <i class="fas fa-envelope"></i>
+                    E-Mail Senden
+                </a>
+                <a href="https://github.com/emaag" target="_blank" class="btn-outline">
+                    <i class="fab fa-github"></i>
+                    GitHub Ansehen
+                </a>
+                <a href="tel:+34675741692" class="btn-outline">
+                    <i class="fas fa-phone"></i>
+                    Jetzt Anrufen
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Eric Maag. Alle Rechte vorbehalten. | Mit Leidenschaft und PHP gebaut</p>
+        </div>
+    </footer>
+
+    <div class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            const scrollToTop = document.getElementById('scrollToTop');
+            
+            if (window.scrollY > 100) {
+                navbar.classList.add('visible');
+                scrollToTop.classList.add('visible');
+            } else {
+                navbar.classList.remove('visible');
+                scrollToTop.classList.remove('visible');
+            }
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        document.getElementById('scrollToTop').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

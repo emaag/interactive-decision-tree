@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Eric Maag - Senior Full-Stack Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #64748b;
+            --accent: #0ea5e9;
+            --bg: #ffffff;
+            --bg-alt: #f8fafc;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --border: #e2e8f0;
+            --success: #10b981;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Sticky Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .nav.visible {
+            transform: translateY(0);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 8rem 2rem 6rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .lang-switcher {
+            margin-bottom: 2rem;
+        }
+
+        .lang-switcher a {
+            color: white;
+            margin: 0 0.5rem;
+            text-decoration: none;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .lang-switcher a.active {
+            opacity: 1;
+            font-weight: bold;
+        }
+
+        .lang-switcher a:hover {
+            opacity: 1;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .hero .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+            margin-top: 2rem;
+            animation: fadeInUp 1s ease 0.8s both;
+        }
+        
+        .hero .contact-info a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.3s, transform 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .hero .contact-info a:hover {
+            opacity: 1;
+            transform: translateY(-2px);
+        }
+
+        .hero-cta {
+            margin-top: 2rem;
+            animation: fadeInUp 1s ease 1s both;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: white;
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin: 0 0.5rem;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: transparent;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: 2px solid white;
+            transition: all 0.3s;
+            margin: 0 0.5rem;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .stats-section {
+            background: var(--bg);
+            padding: 4rem 0;
+            margin-top: -3rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--primary);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .stat-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            margin-top: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .summary {
+            background: var(--bg-alt);
+            padding: 5rem 0;
+        }
+        
+        .summary p {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            color: var(--text);
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .clients-section {
+            padding: 4rem 0;
+            background: white;
+            text-align: center;
+        }
+
+        .clients-title {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .clients-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            opacity: 0.6;
+        }
+
+        .client-logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+        
+        .section {
+            padding: 6rem 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: var(--text);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .filter-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-tab {
+            padding: 0.75rem 1.5rem;
+            background: var(--bg-alt);
+            border: 2px solid var(--border);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .filter-tab:hover, .filter-tab.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.3)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+        
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-client {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .tag {
+            background: var(--bg-alt);
+            color: var(--text);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 1px solid var(--border);
+        }
+
+        .project-summary {
+            color: var(--text);
+            line-height: 1.6;
+            margin: 1rem 0;
+            font-size: 0.95rem;
+        }
+
+        .project-impact {
+            background: var(--bg-alt);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            border-left: 4px solid var(--success);
+        }
+
+        .project-impact strong {
+            color: var(--success);
+        }
+
+        .read-more {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            transition: gap 0.3s;
+        }
+
+        .read-more:hover {
+            gap: 1rem;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+        
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .skill-icon {
+            font-size: 1.5rem;
+        }
+        
+        .skill-category ul {
+            list-style: none;
+        }
+        
+        .skill-category li {
+            padding: 0.6rem 0;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: transform 0.2s;
+        }
+
+        .skill-category li:hover {
+            transform: translateX(5px);
+        }
+        
+        .skill-category li:before {
+            content: "▹";
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid2" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid2)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .contact-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .contact-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn-white {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: white;
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: transparent;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            border: 2px solid white;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        footer {
+            background: var(--bg-alt);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-light);
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.3s;
+            z-index: 999;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sticky Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Eric Maag</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="nav-cta">Let's Talk</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero" id="home">
+        <div class="hero-content">
+            <div class="lang-switcher">
+                <a href="index.html" class="active">🇬🇧 English</a>
+                <a href="index-es.html">🇪🇸 Español</a>
+                <a href="index-de.html">🇩🇪 Deutsch</a>
+            </div>
+            <h1>Eric Maag</h1>
+            <div class="subtitle">Senior Full-Stack Developer | PHP Expert | DevOps Specialist</div>
+            
+            <div class="hero-badges">
+                <div class="badge">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Las Palmas, Spain
+                </div>
+                <div class="badge">
+                    <i class="fas fa-briefcase"></i>
+                    Remote Available
+                </div>
+                <div class="badge">
+                    <i class="fas fa-check-circle"></i>
+                    Available Now
+                </div>
+            </div>
+            
+            <div class="contact-info">
+                <a href="mailto:eric.maag@gmail.com">
+                    <i class="fas fa-envelope"></i> eric.maag@gmail.com
+                </a>
+                <a href="tel:+34675741692">
+                    <i class="fas fa-phone"></i> +34 675 741 692
+                </a>
+                <a href="https://github.com/emaag" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+
+            <div class="hero-cta">
+                <a href="#contact" class="btn-primary">
+                    <i class="fas fa-calendar"></i> Schedule a Call
+                </a>
+                <a href="#projects" class="btn-secondary">
+                    <i class="fas fa-rocket"></i> View My Work
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-rocket"></i></div>
+                    <span class="stat-number">25+</span>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-project-diagram"></i></div>
+                    <span class="stat-number">11</span>
+                    <div class="stat-label">Major Projects</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+                    <span class="stat-number">99.9%</span>
+                    <div class="stat-label">Uptime Achieved</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-dollar-sign"></i></div>
+                    <span class="stat-number">$150K+</span>
+                    <div class="stat-label">Annual Savings</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="summary">
+        <div class="container">
+            <p>Building scalable, mission-critical systems for government agencies and global enterprises. Specialized in high-availability architecture, cybersecurity, and leading distributed teams to deliver solutions that serve millions of users.</p>
+        </div>
+    </div>
+
+    <!-- Clients -->
+    <div class="clients-section">
+        <div class="container">
+            <div class="clients-title">Trusted by Leading Organizations</div>
+            <div class="clients-grid">
+                <div class="client-logo">NOAA</div>
+                <div class="client-logo">US EPA</div>
+                <div class="client-logo">Signa Sports</div>
+                <div class="client-logo">Philippine Embassy</div>
+                <div class="client-logo">UPI</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects Section -->
+    <div class="section" id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">Transforming complex challenges into elegant, scalable solutions</p>
+            
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">Signa Sports United</div>
+                        <div class="project-client">
+                            <i class="fas fa-building"></i>
+                            Enterprise Microservices
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">Symfony</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag">Kubernetes</span>
+                            <span class="tag">MongoDB</span>
+                        </div>
+                        <div class="project-summary">
+                            Led team building scalable microservices architecture for multi-brand sports retail conglomerate. Implemented AI-driven translation services and CI/CD pipelines.
+                        </div>
+                        <div class="project-impact">
+                            <strong>Impact:</strong> 40% reduction in translation efforts, 30% faster load times, 50% faster data processing
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">NOAA Infrastructure</div>
+                        <div class="project-client">
+                            <i class="fas fa-landmark"></i>
+                            US Government Agency
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">Drupal</span>
+                            <span class="tag">MySQL</span>
+                            <span class="tag">Bash</span>
+                            <span class="tag">Multi-Region</span>
+                        </div>
+                        <div class="project-summary">
+                            Architected high-availability system across 3 US colocation centers. Developed automated database replication scripts ensuring zero downtime.
+                        </div>
+                        <div class="project-impact">
+                            <strong>Impact:</strong> 99.9% uptime, $150K annual cost savings, serves millions of users
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">OIDA Security Recovery</div>
+                        <div class="project-client">
+                            <i class="fas fa-industry"></i>
+                            Industry Association
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">Incident Response</span>
+                            <span class="tag">API Integration</span>
+                            <span class="tag">Security</span>
+                        </div>
+                        <div class="project-summary">
+                            Recovered from Russian cyberattack within 48 hours. Implemented secure multi-tier registration system with payment processing.
+                        </div>
+                        <div class="project-impact">
+                            <strong>Impact:</strong> Zero data loss, processes $100K+ annual fees, 25 hours/month saved
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">Philippine Embassy CMS</div>
+                        <div class="project-client">
+                            <i class="fas fa-flag"></i>
+                            International Organization
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">CMS Made Simple</span>
+                            <span class="tag">Multi-Tenant</span>
+                            <span class="tag">18 Sites</span>
+                        </div>
+                        <div class="project-summary">
+                            Built sophisticated multi-tenant CMS managing 18 consulate microsites with centralized administration and inherited branding.
+                        </div>
+                        <div class="project-impact">
+                            <strong>Impact:</strong> 60% reduction in content management time, unified brand experience
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image" style="background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">UPI News Platform</div>
+                        <div class="project-client">
+                            <i class="fas fa-newspaper"></i>
+                            Media Organization
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">PHP</span>
+                            <span class="tag">XML</span>
+                            <span class="tag">MySQL</span>
+                            <span class="tag">Custom CMS</span>
+                        </div>
+                        <div class="project-summary">
+                            Built custom news aggregation platform processing content from multiple international agencies with automated billing integration.
+                        </div>
+                        <div class="project-impact">
+                            <strong>Impact:</strong> 1,000+ daily articles automated, 4 agencies integrated
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">Nuro Media Backend</div>
+                        <div class="project-client">
+                            <i class="fas fa-laptop-code"></i>
+                            Technology Company
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">PHP</span>
+                            <span class="tag">Symfony</span>
+                            <span class="tag">PHPUnit</span>
+                            <span class="tag">Doctrine ORM</span>
+                        </div>
+                        <div class="project-summary">
+                            Developed scalable PHP backend applications with emphasis on clean architecture, automated testing, and performance optimization.
+                        </div>
+                        <div class="project-impact">
+                            <strong>Impact:</strong> 90%+ bugs resolved within SLA, improved system stability
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Skills Section -->
+    <div class="section" style="background: var(--bg-alt);" id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Expertise</h2>
+            <p class="section-subtitle">Comprehensive skill set built over 25+ years of solving complex problems</p>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>
+                        <span class="skill-icon"><i class="fas fa-code"></i></span>
+                        Backend Development
+                    </h3>
+                    <ul>
+                        <li>PHP (Laravel, Symfony, Composer)</li>
+                        <li>Python</li>
+                        <li>MySQL & Database Design</li>
+                        <li>Apache Configuration</li>
+                        <li>Linux/Unix Administration</li>
+                        <li>Bash Scripting</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>
+                        <span class="skill-icon"><i class="fas fa-window-restore"></i></span>
+                        CMS & Platforms
+                    </h3>
+                    <ul>
+                        <li>Drupal (Expert - v6-10)</li>
+                        <li>WordPress</li>
+                        <li>Joomla</li>
+                        <li>CMS Made Simple</li>
+                        <li>Custom CMS Development</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>
+                        <span class="skill-icon"><i class="fab fa-docker"></i></span>
+                        DevOps & Infrastructure
+                    </h3>
+                    <ul>
+                        <li>Multi-Region Architecture</li>
+                        <li>Database Replication</li>
+                        <li>Load Balancing & Caching</li>
+                        <li>Server Migration</li>
+                        <li>Git/GitHub</li>
+                        <li>Automated Deployment</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>
+                        <span class="skill-icon"><i class="fas fa-shield-alt"></i></span>
+                        Security & Compliance
+                    </h3>
+                    <ul>
+                        <li>Incident Response</li>
+                        <li>Vulnerability Assessment</li>
+                        <li>Security Auditing</li>
+                        <li>Patch Management</li>
+                        <li>Government Compliance</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>
+                        <span class="skill-icon"><i class="fas fa-plug"></i></span>
+                        Integration & APIs
+                    </h3>
+                    <ul>
+                        <li>REST API Development</li>
+                        <li>Third-party Integration</li>
+                        <li>Payment Processing</li>
+                        <li>XML/Data Processing</li>
+                        <li>E-Commerce Systems</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>
+                        <span class="skill-icon"><i class="fas fa-language"></i></span>
+                        Languages
+                    </h3>
+                    <ul>
+                        <li>English (Fluent)</li>
+                        <li>Spanish (Fluent)</li>
+                        <li>German (Fluent)</li>
+                        <li>French (Intermediate)</li>
+                        <li>Italian (Intermediate)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact-section" id="contact">
+        <div class="contact-content">
+            <h2>Ready to Build Something Amazing?</h2>
+            <p>Let's discuss how I can help optimize your infrastructure and deliver solutions that scale.</p>
+            <div class="contact-buttons">
+                <a href="mailto:eric.maag@gmail.com" class="btn-white">
+                    <i class="fas fa-envelope"></i>
+                    Send Email
+                </a>
+                <a href="https://github.com/emaag" target="_blank" class="btn-outline">
+                    <i class="fab fa-github"></i>
+                    View GitHub
+                </a>
+                <a href="tel:+34675741692" class="btn-outline">
+                    <i class="fas fa-phone"></i>
+                    Call Now
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Eric Maag. All rights reserved. | Built with passion and PHP</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <div class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Sticky Navigation
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            const scrollToTop = document.getElementById('scrollToTop');
+            
+            if (window.scrollY > 100) {
+                navbar.classList.add('visible');
+                scrollToTop.classList.add('visible');
+            } else {
+                navbar.classList.remove('visible');
+                scrollToTop.classList.remove('visible');
+            }
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll to Top
+        document.getElementById('scrollToTop').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Animate stats on scroll
+        const animateValue = (element, start, end, duration) => {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const value = Math.floor(progress * (end - start) + start);
+                element.innerHTML = end > 100 ? value + '+' : (end < 100 && end > 1 ? value + '%' : value);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        };
+
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        });
+
+        document.querySelectorAll('.project-card, .skill-category, .stat-card').forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
