@@ -42,7 +42,7 @@ $(document).ready( function(){
 //		alert( forkID );
 	});
 	
-	$('.btnRemoveFork').live( 'click',function(){
+	$(document).on('click', '.btnRemoveFork', function(){
 		$(this).parent().remove();
 	});
 	
