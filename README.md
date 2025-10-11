@@ -45,38 +45,50 @@ A web-based tool that guides users through decision-making processes using an in
 ### Quick Start
 
 1. **Clone the repository**
-```bash
+   ```bash
    git clone https://github.com/emaag/interactive-decision-tree.git
    cd interactive-decision-tree
+   ```
 
-Set directory permissions
-
-bash   chmod 755 xml/
+2. **Set directory permissions**
+   ```bash
+   chmod 755 xml/
    # Or, if necessary:
    chmod 777 xml/
+   ```
 
-Configure your web server to point to the repository directory
-Access the editor in your web browser:
+3. **Configure your web server** to point to the repository directory
 
+4. **Access the editor** in your web browser:
+   ```
    http://your-domain.com/interactive-decision-tree/editTree.php
-Docker Installation (Optional)
-bash# Coming soon - Docker support planned
-🚀 Usage
-Creating a Decision Tree
+   ```
 
-Navigate to editTree.php in your browser
-Click "Create New Decision Tree"
-Add questions and decision paths using the visual editor
-Save your decision tree (stored as XML in the xml/ directory)
+### Docker Installation (Optional)
 
-Viewing a Decision Tree
+```bash
+# Coming soon - Docker support planned
+```
 
-Navigate to showTree.html in your browser
-Select your decision tree from the list
-Users can now interact with your decision tree by answering questions
+## 🚀 Usage
 
-Example XML Structure
-xml<?xml version="1.0" encoding="UTF-8"?>
+### Creating a Decision Tree
+
+1. Navigate to `editTree.php` in your browser
+2. Click "Create New Decision Tree"
+3. Add questions and decision paths using the visual editor
+4. Save your decision tree (stored as XML in the `xml/` directory)
+
+### Viewing a Decision Tree
+
+1. Navigate to `showTree.html` in your browser
+2. Select your decision tree from the list
+3. Users can now interact with your decision tree by answering questions
+
+### Example XML Structure
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
 <tree>
   <node id="1">
     <question>What is your question?</question>
@@ -85,7 +97,11 @@ xml<?xml version="1.0" encoding="UTF-8"?>
   </node>
   <!-- Additional nodes... -->
 </tree>
-📁 File Structure
+```
+
+## 📁 File Structure
+
+```
 interactive-decision-tree/
 ├── xml/                  # Decision tree XML files (needs write permission)
 ├── css/                  # Stylesheets
@@ -94,37 +110,48 @@ interactive-decision-tree/
 ├── showTree.html         # Viewer for displaying decision trees
 ├── LICENSE               # MIT License
 └── README.md             # This file
-🤝 Contributing
+```
+
+## 🤝 Contributing
+
 Contributions are welcome! Please see CONTRIBUTING.md for details.
-How to Contribute
 
-Fork the repository
-Create a feature branch (git checkout -b feature/AmazingFeature)
-Commit your changes (git commit -m 'Add some AmazingFeature')
-Push to the branch (git push origin feature/AmazingFeature)
-Open a Pull Request
+### How to Contribute
 
-🐛 Bug Reports
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+### 🐛 Bug Reports
+
 Found a bug? Please open an issue on GitHub with:
 
-Description of the problem
-Steps to reproduce
-Expected behavior
-Screenshots (if applicable)
+- Description of the problem
+- Steps to reproduce
+- Expected behavior
+- Screenshots (if applicable)
 
-📝 License
+## 📝 License
+
 This project is licensed under the MIT License - see the LICENSE file for details.
-👤 Author
-Eric Maag
 
-GitHub: @emaag
+## 👤 Author
 
-🙏 Acknowledgments
+**Eric Maag**
 
-Thanks to all contributors who have helped improve this project
-Inspired by the need for simple, accessible decision-making tools
+- GitHub: [@emaag](https://github.com/emaag)
 
-📊 Project Stats
+## 🙏 Acknowledgments
+
+- Thanks to all contributors who have helped improve this project
+- Inspired by the need for simple, accessible decision-making tools
+
+## 📊 Project Stats
+
 This project has been forked by organizations including legal service providers and educational institutions to help users navigate complex decision-making processes.
+
+---
 
 ⭐ Star this repository if you find it useful!

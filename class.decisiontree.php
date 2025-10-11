@@ -1,21 +1,21 @@
 <?php
 class DecisionTree{
 
-	var $treeID;
-	var $title;
-	var $description;
-	var $branches = array();
-	var $revisions = array();
-	var $xmlDirPath = XML_DIR_PATH;
-	
-	function __construct( $treeID = '' ){
+	public $treeID;
+	public $title;
+	public $description;
+	public $branches = array();
+	public $revisions = array();
+	public $xmlDirPath = XML_DIR_PATH;
+
+	public function __construct( $treeID = '' ){
 		if( !empty( $treeID ) ){
 			$this->treeID = $treeID;
 			$this->loadData();
 		}
 	}
 	
-	function createNewTree(){
+	public function createNewTree(){
 		$newFileName = 'tree' . time() . '.xml';
 		while( file_exists( XML_DIR_PATH . $newFileName ) ){
 			$newFileName = 'tree' . time() . '.xml';
@@ -25,7 +25,7 @@ class DecisionTree{
 		$this->treeID = str_replace( XML_DIR_PATH, '', $newFileName );
 	}
 	
-	function loadRevision( $revision ){
+	public function loadRevision( $revision ){
 		$revisionFile = $this->xmlDirPath . $this->treeID . '.' . $revision;
 		if( !file_exists( $revisionFile ) ){
 			die( "Cannot load XML data: " . $revision );
@@ -48,7 +48,7 @@ class DecisionTree{
 		}
 	}
 	
-	function loadData(){
+	public function loadData(){
 		if( !file_exists( $this->xmlDirPath . $this->treeID ) ){
 			die( "Cannot load XML data: " . $this->xmlDirPath . $this->treeID );
 		}
@@ -73,7 +73,7 @@ class DecisionTree{
 		}
 	}
 	
-	function getBranch( $branchID ){
+	public function getBranch( $branchID ){
 		foreach( $this->branches as $branch ){
 			if( strval( $branch->ID ) === strval( $branchID ) ){
 				return $branch;
@@ -82,7 +82,7 @@ class DecisionTree{
 		return false;
 	}
 	
-	function overview(){
+	public function overview(){
 		if( empty( $this->branches ) ){
 			?>
       Alas. This decision tree is currently void of any questions or decisions.<br />
@@ -95,7 +95,7 @@ class DecisionTree{
 		}
 	}
 	
-	function saveBranch( $branch ){
+	public function saveBranch( $branch ){
 		// look for existing branch to replace
 		foreach( $this->branches as $branchIndex => $treeBranch ){
 			if( strval( $branch->ID ) === strval( $treeBranch->ID ) ){
@@ -107,7 +107,7 @@ class DecisionTree{
 		array_push( $this->branches, $branch );
 	}
 	
-	function removeBranch( $branchID ){
+	public function removeBranch( $branchID ){
 		// look for existing branch to replace
 		foreach( $this->branches as $branchIndex => $treeBranch ){
 			if( strval( $branchID ) === strval( $treeBranch->ID ) ){
@@ -116,8 +116,8 @@ class DecisionTree{
 			}
 		}
 	}
-	
-	function saveData(){
+
+	public function saveData(){
 		$xmlData = new SimpleXMLElement("<tree></tree>");
 		$xmlData->addChild( 'title', $this->title );
 		$xmlData->addChild( 'description', $this->description );
@@ -143,7 +143,7 @@ class DecisionTree{
 		$xmlData->asXML( $this->xmlDirPath . $this->treeID );
 	}
 	
-	function getTargetBranches( $branchID, $forkLabel = '' ){
+	public function getTargetBranches( $branchID, $forkLabel = '' ){
 		foreach( $this->branches as $branch ){
 			if( strval( $branch->ID ) === strval( $branchID ) ){
         $class = '';
@@ -163,7 +163,7 @@ class DecisionTree{
 		}
 	}
 	
-	function listAll(){
+	public function listAll(){
 		if( !is_dir( $this->xmlDirPath ) ){
 			die("Cannot access XML directory: $xmlDirPath");
 		}
@@ -195,16 +195,16 @@ class DecisionTree{
 
 class Branch{
 
-	var $ID;
-	var $content;
-	var $forks = array();
-	
-	function __construct(){
-	
+	public $ID;
+	public $content;
+	public $forks = array();
+
+	public function __construct(){
+
 	}
-	
-	function saveData(){
-	
+
+	public function saveData(){
+
 	}
 	
 

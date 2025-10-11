@@ -21,7 +21,7 @@ if( !empty( $revision ) ){
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Interactive Decision Tree - Editor</title>
 <link href="css/editor.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="js/editor.js"></script>
 </head>
 
@@ -82,7 +82,7 @@ function showTreeForm( $tree, $selectedRevision ){
     <?php
 		foreach( $tree->revisions as $revision ){
 			$selectedHTML = '';
-			$revisionParts = split( '\.', $revision );
+			$revisionParts = explode( '.', $revision );
 			$revisionTS = array_pop( $revisionParts );
 			$revisionTime = date( 'D M jS, Y g:i a T', $revisionTS );
 			if( $revisionTS == $selectedRevision ){
@@ -166,7 +166,7 @@ function saveBranch( $tree ){
 	foreach( $_POST as $formField => $formValue ){
 		if( substr( $formField, 0, 5 ) == 'fork-' ){
 			// get forkID from field name
-			$fieldParts = split( '-', $formField );
+			$fieldParts = explode( '-', $formField );
 			$forkID = str_replace( '_', '.', $fieldParts[1]);
 			array_push( $passedForks, $forkID );
 			$branch->forks[$forkID] = $formValue;
