@@ -1,0 +1,10 @@
+{
+  "name": "interactive-decision-tree",
+  "version": "1.0.0",
+  "description": "Web-based interactive decision tree tool",
+  "dependencies": {
+    "jquery": "3.7.1",
+    "jquery.scrollto": "2.1.3",
+    "jquery.easing": "1.4.1"
+  }
+}
