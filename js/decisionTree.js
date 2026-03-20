@@ -150,6 +150,10 @@ function buildNodes( xmlData ){
 	}
 
 	showBranch( 1, null );
+	var hash = window.location.hash.slice(1);
+	if (hash && hash !== '1') {
+		replayToId(hash);
+	}
 }
 
 function updateBreadcrumb(){
@@ -185,6 +189,9 @@ function startOver(){
 	}
 	sliderWidth = 0;
 	showBranch( 1, null );
+	if (history.replaceState) {
+		history.replaceState(null, '', window.location.pathname + window.location.search);
+	}
 }
 
 function resetActionLinks(){
@@ -206,8 +213,10 @@ function resetActionLinks(){
 		path.pop();
 		updateBreadcrumb();
 		var $box = $(this).closest('.tree-content-box');
+		var $prev = $box.prevAll('.tree-content-box').first();
+		var prevId = $prev.length ? $prev.attr('id').replace('branch-', '') : '1';
+		updateHash(prevId);
 		if( isMobile ){
-			var $prev = $box.prevAll('.tree-content-box').first();
 			$box.slideUp( slideTime, function(){ $(this).remove(); } );
 			if( $prev.length ){
 				$('html, body').animate({
@@ -224,9 +233,75 @@ function resetActionLinks(){
 	});
 
 	$('.result-start-over').click( function(){ startOver(); } );
+
+	$('.copy-link-btn').off('click').click(function() {
+		var $btn = $(this);
+		var url = window.location.href;
+		function onCopied() {
+			$btn.text('Copied!').addClass('copied');
+			setTimeout(function() { $btn.text('Copy link').removeClass('copied'); }, 2000);
+		}
+		if (navigator.clipboard) {
+			navigator.clipboard.writeText(url).then(onCopied);
+		} else {
+			var $ta = $('<textarea>').val(url).css({position:'fixed',opacity:0}).appendTo('body');
+			$ta[0].select();
+			document.execCommand('copy');
+			$ta.remove();
+			onCopied();
+		}
+	});
 }
 
-function showBranch( id, chosenLabel ){
+function findBranch(id) {
+	for (var i = 0; i < branches.length; i++) {
+		if (branches[i].id == id) return branches[i];
+	}
+	return null;
+}
+
+function updateHash(id) {
+	if (!history.replaceState) return;
+	var base = window.location.pathname + window.location.search;
+	if (id == 1) {
+		history.replaceState(null, '', base);
+	} else {
+		history.replaceState(null, '', base + '#' + id);
+	}
+}
+
+function replayToId(targetId) {
+	if (!findBranch(targetId)) return;
+	var parts = targetId.split('.');
+	for (var depth = 2; depth <= parts.length; depth++) {
+		var branchId = parts.slice(0, depth).join('.');
+		var parentId = parts.slice(0, depth - 1).join('.');
+		var parent = findBranch(parentId);
+		var label = '';
+		if (parent) {
+			for (var f = 0; f < parent.forkIDs.length; f++) {
+				if (parent.forkIDs[f] === branchId) {
+					label = parent.forkLabels[f];
+					break;
+				}
+			}
+		}
+		path.push(label);
+		showBranch(branchId, label, true); // silent=true
+	}
+	updateBreadcrumb();
+	updateHash(targetId);
+	if (!isMobile) {
+		$('#tree-window').scrollLeft(windowWidth * (parts.length - 1));
+	} else {
+		var $panel = $('#branch-' + targetId);
+		if ($panel.length) {
+			$('html, body').scrollTop($panel.offset().top - 60);
+		}
+	}
+}
+
+function showBranch( id, chosenLabel, silent ){
 	var currentBranch;
 	for( var i = 0; i < branches.length; i++ ){
 		if( branches[i].id == id ){
@@ -273,7 +348,10 @@ function showBranch( id, chosenLabel ){
 	}
 
 	if( isLeaf ){
+		innerHTML += '<div class="result-actions">';
 		innerHTML += '<a class="result-start-over">Start over</a>';
+		innerHTML += '<button class="copy-link-btn">Copy link</button>';
+		innerHTML += '</div>';
 	}
 
 	if( currentBranch.id != 1 ){
@@ -289,7 +367,7 @@ function showBranch( id, chosenLabel ){
 	$('#tree-slider').append( branchHTML );
 	resetActionLinks();
 
-	if( currentBranch.id != 1 ){
+	if( !silent && currentBranch.id != 1 ){
 		if( isMobile ){
 			var $panel = $( '#branch-' + currentBranch.id );
 			$('html, body').animate({
@@ -301,5 +379,9 @@ function showBranch( id, chosenLabel ){
 				{ axis: 'x', duration: slideTime, easing: 'easeInOutExpo' }
 			);
 		}
+	}
+
+	if( !silent ){
+		updateHash( currentBranch.id );
 	}
 }

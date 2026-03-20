@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+<tree>
+  <title>What should I read?</title>
+  <description>A decision tree to help you find your next book.</description>
+
+  <branch id="1">
+    <content>Fiction or non-fiction?</content>
+    <fork target="1.1">Fiction</fork>
+    <fork target="1.2">Non-fiction</fork>
+  </branch>
+
+  <!-- ── FICTION branch ────────────────────────────────────────────── -->
+
+  <branch id="1.1">
+    <content>What kind of fiction?</content>
+    <fork target="1.1.1">Literary — character-driven, prose-focused</fork>
+    <fork target="1.1.2">Genre fiction</fork>
+    <fork target="1.1.3">Short stories</fork>
+  </branch>
+
+  <!-- Literary fiction -->
+  <branch id="1.1.1">
+    <content>Contemporary or classic?</content>
+    <fork target="1.1.1.1">Contemporary</fork>
+    <fork target="1.1.1.2">Classic</fork>
+  </branch>
+
+  <branch id="1.1.1.1">
+    <content>Do you want to be challenged or just absorbed?</content>
+    <fork target="1.1.1.1.1">Challenged</fork>
+    <fork target="1.1.1.1.2">Absorbed</fork>
+  </branch>
+
+  <branch id="1.1.1.1.1">
+    <content>Pick something that won a major prize in the last few years and has divided readers. The arguments around it are often half the experience.</content>
+  </branch>
+
+  <branch id="1.1.1.1.2">
+    <content>A contemporary novel with a propulsive story and real emotional depth. The kind you read in two days without noticing time passing.</content>
+  </branch>
+
+  <branch id="1.1.1.2">
+    <content>European or American tradition?</content>
+    <fork target="1.1.1.2.1">European</fork>
+    <fork target="1.1.1.2.2">American</fork>
+  </branch>
+
+  <branch id="1.1.1.2.1">
+    <content>Tolstoy, Flaubert, Kafka, Calvino, Pessoa. Pick the one you have been meaning to get to for years and just start it.</content>
+  </branch>
+
+  <branch id="1.1.1.2.2">
+    <content>Steinbeck, Fitzgerald, Morrison, Roth, McCarthy. The American novel has a distinct tradition worth exploring on its own terms.</content>
+  </branch>
+
+  <!-- Genre fiction -->
+  <branch id="1.1.2">
+    <content>Which genre?</content>
+    <fork target="1.1.2.1">Crime or thriller</fork>
+    <fork target="1.1.2.2">Fantasy or science fiction</fork>
+    <fork target="1.1.2.3">Horror</fork>
+  </branch>
+
+  <branch id="1.1.2.1">
+    <content>Cosy or dark?</content>
+    <fork target="1.1.2.1.1">Cosy</fork>
+    <fork target="1.1.2.1.2">Dark</fork>
+  </branch>
+
+  <branch id="1.1.2.1.1">
+    <content>Agatha Christie or a modern cosy mystery. Puzzle-forward, low stakes, satisfying resolution. Good for reading in small pieces.</content>
+  </branch>
+
+  <branch id="1.1.2.1.2">
+    <content>Scandinavian noir or American hard-boiled. Bleak, precise, and often unexpectedly moving. Nesbo, Indridason, Lehane.</content>
+  </branch>
+
+  <branch id="1.1.2.2">
+    <content>World-building or ideas first?</content>
+    <fork target="1.1.2.2.1">World-building</fork>
+    <fork target="1.1.2.2.2">Ideas first</fork>
+  </branch>
+
+  <branch id="1.1.2.2.1">
+    <content>Find a fantasy series where the first book stands alone and at least two more exist. Do not start something unfinished.</content>
+  </branch>
+
+  <branch id="1.1.2.2.2">
+    <content>Science fiction that uses its premise to examine something real. Le Guin, Dick, Gibson, Atwood, Butler.</content>
+  </branch>
+
+  <branch id="1.1.2.3">
+    <content>Psychological dread or visceral?</content>
+    <fork target="1.1.2.3.1">Psychological</fork>
+    <fork target="1.1.2.3.2">Visceral</fork>
+  </branch>
+
+  <branch id="1.1.2.3.1">
+    <content>Shirley Jackson, Paul Tremblay, Carmen Maria Machado. The dread is built from implication, not description. Often lingers for days.</content>
+  </branch>
+
+  <branch id="1.1.2.3.2">
+    <content>Stephen King at his most committed, or Joe Hill. The pacing is relentless and you will not put it down.</content>
+  </branch>
+
+  <!-- Short stories -->
+  <branch id="1.1.3">
+    <content>Linked collection or standalone anthology?</content>
+    <fork target="1.1.3.1">Linked collection</fork>
+    <fork target="1.1.3.2">Standalone anthology</fork>
+  </branch>
+
+  <branch id="1.1.3.1">
+    <content>Reads like a novel but lets you stop. Alice Munro, Denis Johnson, George Saunders. Works well if your reading time is fragmented.</content>
+  </branch>
+
+  <branch id="1.1.3.2">
+    <content>Pick a themed or genre anthology and read one story a night. Low commitment, consistently surprising.</content>
+  </branch>
+
+  <!-- ── NON-FICTION branch ─────────────────────────────────────────── -->
+
+  <branch id="1.2">
+    <content>What area?</content>
+    <fork target="1.2.1">History</fork>
+    <fork target="1.2.2">Science</fork>
+    <fork target="1.2.3">Biography or memoir</fork>
+    <fork target="1.2.4">Ideas and philosophy</fork>
+    <fork target="1.2.5">Practical or self-improvement</fork>
+  </branch>
+
+  <!-- History -->
+  <branch id="1.2.1">
+    <content>Broad sweep or one specific thing?</content>
+    <fork target="1.2.1.1">Broad</fork>
+    <fork target="1.2.1.2">Specific</fork>
+  </branch>
+
+  <branch id="1.2.1.1">
+    <content>A long-form history of a civilisation, idea, or century. Peter Frankopan, Simon Schama, Yuval Noah Harari. Good for long commutes or slow weekends.</content>
+  </branch>
+
+  <branch id="1.2.1.2">
+    <content>A deeply researched account of one event or crisis. When done well, it reads like a thriller. Erik Larson is the master of this format.</content>
+  </branch>
+
+  <!-- Science -->
+  <branch id="1.2.2">
+    <content>Accessible or technical?</content>
+    <fork target="1.2.2.1">Accessible</fork>
+    <fork target="1.2.2.2">Technical</fork>
+  </branch>
+
+  <branch id="1.2.2.1">
+    <content>Popular science at its best explains huge ideas through story. Pick something on a topic you think you are not interested in. It will change that.</content>
+  </branch>
+
+  <branch id="1.2.2.2">
+    <content>If you have the background, go to the source material. University press books or the original papers on the topic.</content>
+  </branch>
+
+  <!-- Biography or memoir -->
+  <branch id="1.2.3">
+    <content>Famous subject or personal narrative?</content>
+    <fork target="1.2.3.1">Famous subject</fork>
+    <fork target="1.2.3.2">Personal narrative</fork>
+  </branch>
+
+  <branch id="1.2.3.1">
+    <content>A biography of someone whose work you admire. Often reveals a significant gap between the public life and the private one.</content>
+  </branch>
+
+  <branch id="1.2.3.2">
+    <content>A memoir about an experience very different from yours. The best ones let you live inside another life entirely.</content>
+  </branch>
+
+  <!-- Ideas and philosophy -->
+  <branch id="1.2.4">
+    <content>Starting out or already familiar?</content>
+    <fork target="1.2.4.1">Starting out</fork>
+    <fork target="1.2.4.2">Already familiar</fork>
+  </branch>
+
+  <branch id="1.2.4.1">
+    <content>A book that introduces complex ideas through accessible writing. Pick the domain you are least confident in.</content>
+  </branch>
+
+  <branch id="1.2.4.2">
+    <content>Go to the primary texts. Plato, Nietzsche, Rawls, Wittgenstein. Hard going but more rewarding than any summary of them.</content>
+  </branch>
+
+  <!-- Practical or self-improvement -->
+  <branch id="1.2.5">
+    <content>Specific skill or general mindset?</content>
+    <fork target="1.2.5.1">Specific skill</fork>
+    <fork target="1.2.5.2">Mindset</fork>
+  </branch>
+
+  <branch id="1.2.5.1">
+    <content>Find the most technically rigorous book on the exact thing you want to improve. Not a bestseller — a textbook or practitioner guide.</content>
+  </branch>
+
+  <branch id="1.2.5.2">
+    <content>Be honest with yourself about whether you have read similar books and actually changed anything. If yes, proceed. If not, try the specific skill instead.</content>
+  </branch>
+
+</tree>

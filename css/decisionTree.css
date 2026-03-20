@@ -335,6 +335,31 @@ a { cursor: pointer; }
 	color: var(--card-bg);
 }
 
+/* ── Result actions row ──────────────────────────────────────────────── */
+.result-actions {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	flex-wrap: wrap;
+	margin-top: 22px;
+}
+.result-actions .result-start-over { margin-top: 0; }
+
+.copy-link-btn {
+	background: none;
+	border: 1.5px solid var(--fork-border);
+	color: var(--text-muted);
+	padding: 10px 18px;
+	border-radius: 6px;
+	font-size: 0.88rem;
+	font-weight: 500;
+	cursor: pointer;
+	font-family: inherit;
+	transition: border-color 0.12s, color 0.12s;
+}
+.copy-link-btn:hover { border-color: var(--text); color: var(--text); }
+.copy-link-btn.copied { border-color: var(--result-border); color: var(--result-label); }
+
 /* ── Back link ───────────────────────────────────────────────────────── */
 .back-link {
 	display: inline-flex;

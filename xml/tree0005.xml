@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<tree>
+  <title>What should I do this weekend?</title>
+  <description>A decision tree to help you make the most of your weekend.</description>
+
+  <branch id="1">
+    <content>Solo or with people?</content>
+    <fork target="1.1">Solo</fork>
+    <fork target="1.2">With people</fork>
+  </branch>
+
+  <!-- ── SOLO branch ───────────────────────────────────────────────── -->
+
+  <branch id="1.1">
+    <content>Indoors or outdoors?</content>
+    <fork target="1.1.1">Outdoors</fork>
+    <fork target="1.1.2">Indoors</fork>
+  </branch>
+
+  <!-- Solo outdoors -->
+  <branch id="1.1.1">
+    <content>High energy or leisurely?</content>
+    <fork target="1.1.1.1">High energy</fork>
+    <fork target="1.1.1.2">Leisurely</fork>
+  </branch>
+
+  <branch id="1.1.1.1">
+    <content>Structured or just physical?</content>
+    <fork target="1.1.1.1.1">Structured</fork>
+    <fork target="1.1.1.1.2">Just physical</fork>
+  </branch>
+
+  <branch id="1.1.1.1.1">
+    <content>Find a local 5K, amateur sports league, or climbing wall session. Sign up for something that forces you out of the house.</content>
+  </branch>
+
+  <branch id="1.1.1.1.2">
+    <content>A long run or bike ride with a specific destination rather than a loop. Pick somewhere to end up and figure out the way there.</content>
+  </branch>
+
+  <branch id="1.1.1.2">
+    <content>Nature or urban exploring?</content>
+    <fork target="1.1.1.2.1">Nature</fork>
+    <fork target="1.1.1.2.2">Urban</fork>
+  </branch>
+
+  <branch id="1.1.1.2.1">
+    <content>A long walk somewhere genuinely green. Leave your phone in your pocket for at least the first hour. Let your mind wander.</content>
+  </branch>
+
+  <branch id="1.1.1.2.2">
+    <content>Walk a part of your city you rarely go to. No agenda. Stop whenever something looks interesting. Take your time.</content>
+  </branch>
+
+  <!-- Solo indoors -->
+  <branch id="1.1.2">
+    <content>Creative or absorbing?</content>
+    <fork target="1.1.2.1">Creative</fork>
+    <fork target="1.1.2.2">Absorbing</fork>
+  </branch>
+
+  <branch id="1.1.2.1">
+    <content>Something you already do or something new?</content>
+    <fork target="1.1.2.1.1">Already do</fork>
+    <fork target="1.1.2.1.2">New</fork>
+  </branch>
+
+  <branch id="1.1.2.1.1">
+    <content>Block out the whole morning, put on a long playlist, and make something without a deadline or audience. That is the whole plan.</content>
+  </branch>
+
+  <branch id="1.1.2.1.2">
+    <content>Pick one thing you have been curious about and spend the day doing the beginner version of it badly. Not learning it. Doing it. That is the difference.</content>
+  </branch>
+
+  <branch id="1.1.2.2">
+    <content>What kind?</content>
+    <fork target="1.1.2.2.1">Reading</fork>
+    <fork target="1.1.2.2.2">Gaming</fork>
+    <fork target="1.1.2.2.3">Watching</fork>
+  </branch>
+
+  <branch id="1.1.2.2.1">
+    <content>Clear the afternoon, have snacks ready, and read a whole book in a day. Turn notifications off. This is harder than it sounds and better than it should be.</content>
+  </branch>
+
+  <branch id="1.1.2.2.2">
+    <content>Set up properly — comfortable seat, good snacks — and play something you have been meaning to finish without interruption.</content>
+  </branch>
+
+  <branch id="1.1.2.2.3">
+    <content>Pick a film or series you have been putting off and watch it without checking your phone. Commit to the thing you chose.</content>
+  </branch>
+
+  <!-- ── WITH PEOPLE branch ─────────────────────────────────────────── -->
+
+  <branch id="1.2">
+    <content>Close friends or meeting new people?</content>
+    <fork target="1.2.1">Close friends</fork>
+    <fork target="1.2.2">Meet new people</fork>
+  </branch>
+
+  <!-- Close friends -->
+  <branch id="1.2.1">
+    <content>How many people?</content>
+    <fork target="1.2.1.1">Just one or two</fork>
+    <fork target="1.2.1.2">Group of four or more</fork>
+  </branch>
+
+  <branch id="1.2.1.1">
+    <content>Low-key or go somewhere?</content>
+    <fork target="1.2.1.1.1">Low-key</fork>
+    <fork target="1.2.1.1.2">Go somewhere</fork>
+  </branch>
+
+  <branch id="1.2.1.1.1">
+    <content>Cook together or find a market and make up what to do as you go. Those kinds of days tend to figure themselves out.</content>
+  </branch>
+
+  <branch id="1.2.1.1.2">
+    <content>A gallery, a long walk, a film, a good meal. Pick one thing and commit to it instead of planning six options.</content>
+  </branch>
+
+  <branch id="1.2.1.2">
+    <content>Structured activity or open afternoon?</content>
+    <fork target="1.2.1.2.1">Structured</fork>
+    <fork target="1.2.1.2.2">Open</fork>
+  </branch>
+
+  <branch id="1.2.1.2.1">
+    <content>Book something in advance. Escape room, bowling, mini golf. Takes the planning paralysis away and gives the day a shape.</content>
+  </branch>
+
+  <branch id="1.2.1.2.2">
+    <content>Someone hosts, someone brings food, someone brings drinks. A long afternoon that turns into an evening without anyone planning for that to happen.</content>
+  </branch>
+
+  <!-- Meet new people -->
+  <branch id="1.2.2">
+    <content>Organised event or more casual?</content>
+    <fork target="1.2.2.1">Organised</fork>
+    <fork target="1.2.2.2">Casual</fork>
+  </branch>
+
+  <branch id="1.2.2.1">
+    <content>Find a local class, club, or meetup around something you already care about. Shared interest removes the pressure of small talk.</content>
+  </branch>
+
+  <branch id="1.2.2.2">
+    <content>Say yes to something you would normally decline. The awkwardness is brief. The missed experience is permanent.</content>
+  </branch>
+
+</tree>

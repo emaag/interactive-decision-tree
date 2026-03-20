@@ -2,6 +2,7 @@
 <tree>
   <title>What should I watch tonight?</title>
   <description>A decision tree to help you pick something to watch.</description>
+
   <branch id="1">
     <content>How are you feeling right now?</content>
     <fork target="1.1">Need a laugh</fork>
@@ -10,119 +11,328 @@
     <fork target="1.4">Want something to think about</fork>
   </branch>
 
+  <!-- ── COMEDY branch ──────────────────────────────────────────────── -->
+
   <branch id="1.1">
     <content>Solo or watching with someone?</content>
     <fork target="1.1.1">Solo</fork>
     <fork target="1.1.2">With someone else</fork>
   </branch>
+
   <branch id="1.1.1">
-    <content>How committed are you?</content>
-    <fork target="1.1.1.1">A full movie, I am settled in</fork>
-    <fork target="1.1.1.2">Something I can half-watch</fork>
+    <content>Full commitment or half-watching?</content>
+    <fork target="1.1.1.1">Fully committed</fork>
+    <fork target="1.1.1.2">Half-watching</fork>
   </branch>
+
   <branch id="1.1.1.1">
-    <content>Put on a classic comedy. Something you have seen before is often the best choice when you just want to laugh.</content>
+    <content>Seen it before or something new?</content>
+    <fork target="1.1.1.1.1">Comfort rewatch</fork>
+    <fork target="1.1.1.1.2">Something new</fork>
   </branch>
+
+  <branch id="1.1.1.1.1">
+    <content>Pick something you know makes you laugh. Familiarity is half the appeal. Let yourself sink into it.</content>
+  </branch>
+
+  <branch id="1.1.1.1.2">
+    <content>A well-reviewed comedy from the last few years that you have been meaning to watch. Check Letterboxd rather than Rotten Tomatoes for the real consensus.</content>
+  </branch>
+
   <branch id="1.1.1.2">
-    <content>A sitcom you know well. The Office, Seinfeld, Parks and Rec. Familiar and funny, no concentration required.</content>
+    <content>Dialogue-driven or visual comedy?</content>
+    <fork target="1.1.1.2.1">Dialogue</fork>
+    <fork target="1.1.1.2.2">Visual</fork>
   </branch>
+
+  <branch id="1.1.1.2.1">
+    <content>A sitcom you know well. The Office, Seinfeld, Arrested Development. Familiar and funny, no concentration required.</content>
+  </branch>
+
+  <branch id="1.1.1.2.2">
+    <content>A sketch show or stand-up you have already seen. Easy to dip in and out of without missing anything important.</content>
+  </branch>
+
   <branch id="1.1.2">
-    <content>Do you both have the same sense of humour?</content>
+    <content>Same sense of humour?</content>
     <fork target="1.1.2.1">Mostly yes</fork>
     <fork target="1.1.2.2">Not really</fork>
   </branch>
+
   <branch id="1.1.2.1">
-    <content>Pick a well-reviewed comedy from the last few years. Something neither of you has seen keeps it fresh.</content>
-  </branch>
-  <branch id="1.1.2.2">
-    <content>Go for a broad crowd-pleaser. A Pixar film or a classic family comedy tends to land for everyone.</content>
+    <content>Discover something together or a trusted favourite?</content>
+    <fork target="1.1.2.1.1">Discover</fork>
+    <fork target="1.1.2.1.2">Trusted favourite</fork>
   </branch>
 
+  <branch id="1.1.2.1.1">
+    <content>Pick something neither of you has seen. Shared discovery of a film you both end up loving is one of the better evenings there is.</content>
+  </branch>
+
+  <branch id="1.1.2.1.2">
+    <content>Rewatch something you both know is funny. Anticipating the best moments together is its own pleasure.</content>
+  </branch>
+
+  <branch id="1.1.2.2">
+    <content>Mixed ages or similar?</content>
+    <fork target="1.1.2.2.1">Mixed ages</fork>
+    <fork target="1.1.2.2.2">Similar ages, different tastes</fork>
+  </branch>
+
+  <branch id="1.1.2.2.1">
+    <content>A Pixar or Studio Ghibli film. Works at every level of sophistication. Nobody feels excluded.</content>
+  </branch>
+
+  <branch id="1.1.2.2.2">
+    <content>A broad crowd-pleaser with physical comedy and a clear story. Accessible without being childish.</content>
+  </branch>
+
+  <!-- ── THRILLER / ACTION branch ──────────────────────────────────── -->
+
   <branch id="1.2">
-    <content>What kind of tension do you want?</content>
+    <content>What kind of tension?</content>
     <fork target="1.2.1">Action and spectacle</fork>
     <fork target="1.2.2">Psychological, slow-burn</fork>
-    <fork target="1.2.3">Horror, genuinely scared</fork>
+    <fork target="1.2.3">Horror — I want to be genuinely scared</fork>
   </branch>
+
   <branch id="1.2.1">
     <content>How big is your screen?</content>
     <fork target="1.2.1.1">Big TV or projector</fork>
     <fork target="1.2.1.2">Laptop or small screen</fork>
   </branch>
+
   <branch id="1.2.1.1">
-    <content>A big action blockbuster was made for exactly this. Pick something with great visuals and turn the volume up.</content>
+    <content>Brains or pure spectacle?</content>
+    <fork target="1.2.1.1.1">Pure spectacle</fork>
+    <fork target="1.2.1.1.2">Action with a brain</fork>
   </branch>
+
+  <branch id="1.2.1.1.1">
+    <content>A blockbuster built for exactly this. Turn the volume up. Lean in. This is what the screen is for.</content>
+  </branch>
+
+  <branch id="1.2.1.1.2">
+    <content>A big-budget action film where the set pieces are earned. Mad Max: Fury Road territory. Rare but it exists.</content>
+  </branch>
+
   <branch id="1.2.1.2">
-    <content>A tighter action film with strong characters works better on a small screen than pure spectacle. Look for something story-driven.</content>
+    <content>Pure action or story with it?</content>
+    <fork target="1.2.1.2.1">Pure action</fork>
+    <fork target="1.2.1.2.2">Story with action</fork>
   </branch>
+
+  <branch id="1.2.1.2.1">
+    <content>Tight, kinetic action with clean choreography. John Wick-style works well on a small screen. The action is precise enough not to need scale.</content>
+  </branch>
+
+  <branch id="1.2.1.2.2">
+    <content>A slower action-thriller where characters earn the set pieces. Much better on a small screen than spectacle-first films.</content>
+  </branch>
+
   <branch id="1.2.2">
-    <content>Do you mind a slow start?</content>
-    <fork target="1.2.2.1">No, I am patient</fork>
-    <fork target="1.2.2.2">I need it to hook me quickly</fork>
+    <content>Patient or need a fast hook?</content>
+    <fork target="1.2.2.1">Patient — give it time</fork>
+    <fork target="1.2.2.2">Needs to hook me fast</fork>
   </branch>
+
   <branch id="1.2.2.1">
-    <content>A slow-burn thriller or psychological drama. Give it 20 minutes to breathe. The payoff is worth it.</content>
+    <content>European or American?</content>
+    <fork target="1.2.2.1.1">European</fork>
+    <fork target="1.2.2.1.2">American</fork>
   </branch>
+
+  <branch id="1.2.2.1.1">
+    <content>Scandinavian noir or a French thriller. Slow, precise, often very dark. Give it 20 minutes before you judge it.</content>
+  </branch>
+
+  <branch id="1.2.2.1.2">
+    <content>A deliberate American slow-burner. Fincher territory. Meticulous, cold, and worth the patience.</content>
+  </branch>
+
   <branch id="1.2.2.2">
-    <content>A tightly edited thriller that opens in the middle of the action. Look for something with a 90-minute runtime.</content>
+    <content>Feature film or series?</content>
+    <fork target="1.2.2.2.1">Feature film</fork>
+    <fork target="1.2.2.2.2">Series</fork>
   </branch>
+
+  <branch id="1.2.2.2.1">
+    <content>Something under 100 minutes that opens in the middle of the action. Look for a tight runtime and strong first act.</content>
+  </branch>
+
+  <branch id="1.2.2.2.2">
+    <content>A limited series where the first episode does a lot of work quickly. Better than a film when you want to be hooked and have more time.</content>
+  </branch>
+
   <branch id="1.2.3">
     <content>What scares you more?</content>
-    <fork target="1.2.3.1">The unknown, atmospheric dread</fork>
+    <fork target="1.2.3.1">Atmosphere and dread</fork>
     <fork target="1.2.3.2">Gore and shock</fork>
   </branch>
+
   <branch id="1.2.3.1">
-    <content>Atmospheric horror with a slow build. Watch it with the lights off and the sound up. The quiet moments are the scariest.</content>
+    <content>Slow build or tightly paced?</content>
+    <fork target="1.2.3.1.1">Slow build</fork>
+    <fork target="1.2.3.1.2">Tightly paced</fork>
   </branch>
+
+  <branch id="1.2.3.1.1">
+    <content>Watch with the lights off and the sound up. The quiet moments are the scariest. Let it breathe. Do not look up anything about it beforehand.</content>
+  </branch>
+
+  <branch id="1.2.3.1.2">
+    <content>A horror under 90 minutes with a clear setup and a gut-punch ending. Less room for the atmosphere to sag.</content>
+  </branch>
+
   <branch id="1.2.3.2">
-    <content>A well-crafted horror with real stakes. Avoid anything with a six-film franchise — the first one is almost always the best.</content>
+    <content>Standalone or franchise?</content>
+    <fork target="1.2.3.2.1">Standalone</fork>
+    <fork target="1.2.3.2.2">Do not mind a franchise</fork>
   </branch>
+
+  <branch id="1.2.3.2.1">
+    <content>The first film in a horror franchise is almost always the best. Pick the original and stop there.</content>
+  </branch>
+
+  <branch id="1.2.3.2.2">
+    <content>Watch the first two films back to back and stop before the third. That is usually where the law of diminishing returns kicks in.</content>
+  </branch>
+
+  <!-- ── EMOTIONAL branch ───────────────────────────────────────────── -->
 
   <branch id="1.3">
     <content>Do you want to cry or just feel moved?</content>
     <fork target="1.3.1">I want to properly cry</fork>
     <fork target="1.3.2">Moved, but not destroyed</fork>
   </branch>
+
   <branch id="1.3.1">
-    <content>Is this a healing cry or a wallow?</content>
-    <fork target="1.3.1.1">Healing, I want to feel better after</fork>
-    <fork target="1.3.1.2">Full wallow, bring it on</fork>
+    <content>Healing cry or a full wallow?</content>
+    <fork target="1.3.1.1">Healing — I want to feel better after</fork>
+    <fork target="1.3.1.2">Full wallow — bring it on</fork>
   </branch>
+
   <branch id="1.3.1.1">
-    <content>A film with a bittersweet ending. Something that makes you feel the weight of life but ends with hope.</content>
+    <content>Recent loss or just generally low?</content>
+    <fork target="1.3.1.1.1">Recent loss</fork>
+    <fork target="1.3.1.1.2">Generally low</fork>
   </branch>
+
+  <branch id="1.3.1.1.1">
+    <content>A film about grief that ends somewhere like acceptance. Watch it in the dark, alone, with something warm to drink.</content>
+  </branch>
+
+  <branch id="1.3.1.1.2">
+    <content>A bittersweet film that acknowledges sadness without drowning in it. Should leave you feeling soft and a little more human.</content>
+  </branch>
+
   <branch id="1.3.1.2">
-    <content>Pick the saddest film you know of and commit to it. Have tissues ready. You will feel oddly better by the end.</content>
+    <content>Company or solitude?</content>
+    <fork target="1.3.1.2.1">Company</fork>
+    <fork target="1.3.1.2.2">Solitude</fork>
   </branch>
+
+  <branch id="1.3.1.2.1">
+    <content>Warn your companion in advance. Pick the saddest film you both agree on. Tissues and snacks.</content>
+  </branch>
+
+  <branch id="1.3.1.2.2">
+    <content>Pick the saddest film you know and commit to it alone. Have tissues ready. You will feel oddly better by the end.</content>
+  </branch>
+
   <branch id="1.3.2">
-    <content>Drama or something more uplifting?</content>
+    <content>Drama or something uplifting?</content>
     <fork target="1.3.2.1">A proper drama</fork>
     <fork target="1.3.2.2">Something uplifting</fork>
   </branch>
+
   <branch id="1.3.2.1">
-    <content>A character study with great performances. Look for something acclaimed that you have been meaning to watch.</content>
-  </branch>
-  <branch id="1.3.2.2">
-    <content>An underdog story or a film about human connection. The kind that leaves you smiling and a little teary at the end.</content>
+    <content>Period or contemporary?</content>
+    <fork target="1.3.2.1.1">Period</fork>
+    <fork target="1.3.2.1.2">Contemporary</fork>
   </branch>
 
+  <branch id="1.3.2.1.1">
+    <content>A historical drama with great performances and production. Something that transports you out of your current moment completely.</content>
+  </branch>
+
+  <branch id="1.3.2.1.2">
+    <content>A character study set now. Something that shows you a life you would never otherwise see. The best ones make you feel less alone.</content>
+  </branch>
+
+  <branch id="1.3.2.2">
+    <content>Underdog story or human connection?</content>
+    <fork target="1.3.2.2.1">Underdog</fork>
+    <fork target="1.3.2.2.2">Human connection</fork>
+  </branch>
+
+  <branch id="1.3.2.2.1">
+    <content>You already know they will make it. Watching the journey is the whole point. The ending should feel earned, not cheap.</content>
+  </branch>
+
+  <branch id="1.3.2.2.2">
+    <content>A quiet film about people finding each other. The kind that leaves you smiling and a little teary in the best possible way.</content>
+  </branch>
+
+  <!-- ── INTELLECTUAL branch ────────────────────────────────────────── -->
+
   <branch id="1.4">
-    <content>How much mental energy do you have?</content>
-    <fork target="1.4.1">A lot, I want a challenge</fork>
+    <content>How much mental energy do you actually have?</content>
+    <fork target="1.4.1">A lot — I want a real challenge</fork>
     <fork target="1.4.2">Some, but nothing too demanding</fork>
   </branch>
+
   <branch id="1.4.1">
-    <content>Do you prefer your ideas through story or documentary?</content>
+    <content>Fiction or documentary?</content>
     <fork target="1.4.1.1">Story and fiction</fork>
-    <fork target="1.4.1.2">Documentary, real world</fork>
+    <fork target="1.4.1.2">Documentary</fork>
   </branch>
+
   <branch id="1.4.1.1">
-    <content>A film that plays with structure, time, or reality. Something you will want to discuss or look up after watching.</content>
+    <content>Narrative complexity or philosophical ideas?</content>
+    <fork target="1.4.1.1.1">Narrative complexity</fork>
+    <fork target="1.4.1.1.2">Philosophical</fork>
   </branch>
+
+  <branch id="1.4.1.1.1">
+    <content>A film that plays with time, structure, or reality. Something you will want to look up and discuss immediately after watching.</content>
+  </branch>
+
+  <branch id="1.4.1.1.2">
+    <content>A film that asks large questions through character and story. The kind that quietly changes how you think about something.</content>
+  </branch>
+
   <branch id="1.4.1.2">
-    <content>A well-made documentary on a subject you know nothing about. The best ones completely change how you see something.</content>
+    <content>Topic?</content>
+    <fork target="1.4.1.2.1">Society and power</fork>
+    <fork target="1.4.1.2.2">Nature or science</fork>
+    <fork target="1.4.1.2.3">Art or culture</fork>
   </branch>
+
+  <branch id="1.4.1.2.1">
+    <content>A documentary that reveals how something works that you had never thought about. The best ones reframe the obvious.</content>
+  </branch>
+
+  <branch id="1.4.1.2.2">
+    <content>A beautifully made film about the world. The kind that makes you feel small and grateful in equal measure.</content>
+  </branch>
+
+  <branch id="1.4.1.2.3">
+    <content>A portrait of a creative or a movement. Usually leaves you wanting to make something yourself.</content>
+  </branch>
+
   <branch id="1.4.2">
-    <content>An intelligent film that does not demand total focus. A great script with sharp dialogue — something where the ideas come through the characters.</content>
+    <content>Feature or series?</content>
+    <fork target="1.4.2.1">Feature</fork>
+    <fork target="1.4.2.2">Series</fork>
   </branch>
+
+  <branch id="1.4.2.1">
+    <content>An intelligent film with a sharp script that does not demand total focus. Good dialogue, clear story, ideas carried through character.</content>
+  </branch>
+
+  <branch id="1.4.2.2">
+    <content>A critically acclaimed series with a self-contained first season. Something you can start without committing to years of viewing.</content>
+  </branch>
+
 </tree>
