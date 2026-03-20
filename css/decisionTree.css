@@ -1,70 +1,211 @@
-body{
-	background: #FFF;
-	color: #333;
-	font-family: Geneva, Arial, Helvetica, sans-serif;
-	font-size: medium;
+*, *::before, *::after {
+	box-sizing: border-box;
 }
 
-a{
- cursor: pointer;
- color: #666;
-}
-a:hover{
-	text-decoration: underline;
-}
-.decision-links a{
- margin-right: 1em;
- padding-right: 1em;
- border-right: 1px solid #666;
-}
-.decision-links a.last-child{
-	border: none;
-}
-
-#debug{
-	position: absolute;
-	right: 0;
-	width: 300px;
-	font-size: small;
-	background: #EEE;
-	color: #000;
-	padding: 1em;
-	/*
-	display: none;
-	*/
-}
-
-#tree-window{
+body {
 	margin: 0;
 	padding: 0;
-	background: #FFA;
-	width: 750px;
-	height: 500px;
+	background: #f0f0f0;
+	color: #222;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	min-height: 100vh;
+}
+
+/* ── Header ─────────────────────────────────────────────────────────── */
+
+#header {
+	background: #111;
+	color: #fff;
+	padding: 14px 24px;
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	min-height: 56px;
+}
+
+#tree-title {
+	font-size: 0.95rem;
+	font-weight: 600;
+	color: #fff;
+	white-space: nowrap;
+	flex-shrink: 0;
+}
+
+#breadcrumb {
+	flex: 1;
+	font-size: 0.82rem;
+	color: #aaa;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+#breadcrumb .bc-sep {
+	margin: 0 5px;
+	color: #555;
+}
+
+#breadcrumb .bc-item {
+	color: #ccc;
+}
+
+#start-over {
+	background: none;
+	border: 1px solid #444;
+	color: #aaa;
+	padding: 5px 12px;
+	border-radius: 4px;
+	font-size: 0.8rem;
+	cursor: pointer;
+	white-space: nowrap;
+	flex-shrink: 0;
+	transition: border-color 0.15s, color 0.15s;
+}
+
+#start-over:hover {
+	border-color: #aaa;
+	color: #fff;
+}
+
+#start-over.hidden {
+	display: none;
+}
+
+/* ── Viewport / Slider ───────────────────────────────────────────────── */
+
+#tree-window {
+	width: 100%;
+	max-width: 780px;
+	margin: 48px auto 0;
 	overflow: hidden;
 }
-#tree-slider{
-	margin: 0;
-	padding: 0;
-	height: 600px;
-	width: 2000px;
+
+#tree-slider {
+	display: flex;
+	height: auto;
 }
-.tree-content-box{
-	margin: 0;
-	padding: 15px;
-	float: left;
-	width: 720px;
-	font-size: 2em;
+
+/* ── Branch panels ───────────────────────────────────────────────────── */
+
+.tree-content-box {
+	flex: 0 0 auto;
+	padding: 36px 40px 32px;
+	background: #fff;
+	border-radius: 10px;
+	box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
-.decision-links{
-	margin-top: 1em;
-	padding-top: 1em;
-	border-top: 1px solid #666;
-	text-align: left;
-	font-size: 0.5em;
+
+.content {
+	font-size: 1.45rem;
+	font-weight: 600;
+	line-height: 1.35;
+	color: #111;
+	margin-bottom: 28px;
 }
-.back-link{
+
+/* ── Fork buttons ────────────────────────────────────────────────────── */
+
+.decision-links {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-top: 4px;
+}
+
+.decision-links a {
 	display: block;
-	margin-top: 2em;
-	font-size: 0.4em;
+	padding: 13px 18px;
+	border: 1.5px solid #ddd;
+	border-radius: 7px;
+	color: #222;
+	text-decoration: none;
+	font-size: 1rem;
+	font-weight: 500;
+	cursor: pointer;
+	transition: border-color 0.15s, background 0.15s, color 0.15s;
+	line-height: 1.3;
+}
+
+.decision-links a:hover {
+	border-color: #111;
+	background: #111;
+	color: #fff;
+	text-decoration: none;
+}
+
+/* ── Result / leaf node ──────────────────────────────────────────────── */
+
+.tree-content-box.result-node {
+	background: #f8fff8;
+	border: 2px solid #4caf50;
+}
+
+.tree-content-box.result-node .content {
+	font-size: 1.2rem;
+	font-weight: 400;
+	line-height: 1.6;
+	color: #1a1a1a;
+}
+
+.result-label {
+	display: inline-block;
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: #4caf50;
+	margin-bottom: 14px;
+}
+
+.result-start-over {
+	display: inline-block;
+	margin-top: 24px;
+	padding: 11px 22px;
+	background: #111;
+	color: #fff;
+	border-radius: 6px;
+	font-size: 0.9rem;
+	font-weight: 600;
+	cursor: pointer;
+	text-decoration: none;
 	border: none;
+	transition: background 0.15s;
+}
+
+.result-start-over:hover {
+	background: #333;
+	color: #fff;
+	text-decoration: none;
+}
+
+/* ── Back link ───────────────────────────────────────────────────────── */
+
+.back-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+	margin-top: 24px;
+	font-size: 0.85rem;
+	color: #888;
+	cursor: pointer;
+	text-decoration: none;
+	border: none;
+	background: none;
+	padding: 0;
+	transition: color 0.15s;
+}
+
+.back-link:hover {
+	color: #222;
+	text-decoration: none;
+}
+
+/* ── Debug (hidden by default) ───────────────────────────────────────── */
+
+#debug {
+	display: none;
 }

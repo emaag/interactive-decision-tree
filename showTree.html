@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Interactive Decision Tree</title>
 <link href="css/decisionTree.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
@@ -11,6 +12,11 @@
 </head>
 
 <body>
+<div id="header">
+	<div id="tree-title"></div>
+	<div id="breadcrumb"></div>
+	<button id="start-over" class="hidden">Start over</button>
+</div>
 <div id="debug"></div>
 <div id="tree-window">
 	<div id="tree-slider"></div>
