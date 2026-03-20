@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<tree>
+  <title>What should I listen to right now?</title>
+  <description>A decision tree to help you find the right music for the moment.</description>
+
+  <branch id="1">
+    <content>What is your energy level right now?</content>
+    <fork target="1.1">High — ready to move</fork>
+    <fork target="1.2">Medium — just vibing</fork>
+    <fork target="1.3">Low — need focus or calm</fork>
+  </branch>
+
+  <!-- HIGH ENERGY -->
+  <branch id="1.1">
+    <content>Do you want something with vocals or mostly instrumental?</content>
+    <fork target="1.1.1">Vocals, give me something with a voice</fork>
+    <fork target="1.1.2">Mostly instrumental, let the beats talk</fork>
+  </branch>
+
+  <branch id="1.1.1">
+    <content>Hip hop or electronic?</content>
+    <fork target="1.1.1.1">Hip hop</fork>
+    <fork target="1.1.1.2">Electronic with vocals</fork>
+  </branch>
+  <branch id="1.1.1.1">
+    <content>Rowdy or sharp and lyrical?</content>
+    <fork target="1.1.1.1.1">Rowdy, get the party going</fork>
+    <fork target="1.1.1.1.2">Sharp, clever, something to actually listen to</fork>
+  </branch>
+  <branch id="1.1.1.1.1">
+    <content>Beastie Boys. Licensed to Ill or Paul's Boutique depending on how chaotic you want it. Both are essential.</content>
+  </branch>
+  <branch id="1.1.1.1.2">
+    <content>De La Soul. Stakes Is High or 3 Feet High and Rising. Witty, layered, aged brilliantly.</content>
+  </branch>
+  <branch id="1.1.1.2">
+    <content>Breaks with attitude. The Freestylers or Stanton Warriors — big sound, heavy swing, UK rave energy.</content>
+  </branch>
+
+  <branch id="1.1.2">
+    <content>Fast and percussive, or heavy and bass-driven?</content>
+    <fork target="1.1.2.1">Fast and percussive</fork>
+    <fork target="1.1.2.2">Heavy bass up front</fork>
+  </branch>
+  <branch id="1.1.2.1">
+    <content>What flavour of fast?</content>
+    <fork target="1.1.2.1.1">Dark and technical</fork>
+    <fork target="1.1.2.1.2">Dancefloor, crowd energy</fork>
+  </branch>
+  <branch id="1.1.2.1.1">
+    <content>Ed Rush and Optical. Virus Vaults or Wormhole. Neurofunk at its most surgical — cold, precise, menacing.</content>
+  </branch>
+  <branch id="1.1.2.1.2">
+    <content>DJ Hype. FabricLive 03. Jump-up DnB built for a room full of people. Relentless energy from start to finish.</content>
+  </branch>
+  <branch id="1.1.2.2">
+    <content>Turntablism or broken beat?</content>
+    <fork target="1.1.2.2.1">Turntablism, show me technique</fork>
+    <fork target="1.1.2.2.2">Broken beat, pure groove</fork>
+  </branch>
+  <branch id="1.1.2.2.1">
+    <content>DJ Craze. Girls On The Floor or any of his DMC sets. Scratch technique as performance — nobody sounds like him.</content>
+  </branch>
+  <branch id="1.1.2.2.2">
+    <content>Deekline and Ed Solo. High energy breaks with a cheeky edge. Booty Breaks Volume 1 is the place to start.</content>
+  </branch>
+
+  <!-- MEDIUM ENERGY -->
+  <branch id="1.2">
+    <content>Do you want something electronic or something with more organic texture?</content>
+    <fork target="1.2.1">Pure electronic</fork>
+    <fork target="1.2.2">More texture and warmth</fork>
+  </branch>
+
+  <branch id="1.2.1">
+    <content>Liquid and melodic, or rolling and steady?</content>
+    <fork target="1.2.1.1">Liquid and melodic</fork>
+    <fork target="1.2.1.2">Rolling, hypnotic, steady</fork>
+  </branch>
+  <branch id="1.2.1.1">
+    <content>What mood within liquid?</content>
+    <fork target="1.2.1.1.1">Emotional, almost cinematic</fork>
+    <fork target="1.2.1.1.2">Warm and late-night smooth</fork>
+  </branch>
+  <branch id="1.2.1.1.1">
+    <content>Calibre or Commix. Both sit in that space where DnB becomes something closer to jazz. FabricLive 68 is a masterclass.</content>
+  </branch>
+  <branch id="1.2.1.1.2">
+    <content>Marcus Intalex. FabricLive 35. Sophisticated, restrained liquid DnB — the kind that sounds best at 2am.</content>
+  </branch>
+  <branch id="1.2.1.2">
+    <content>Forward momentum or floating?</content>
+    <fork target="1.2.1.2.1">Forward momentum, keep it moving</fork>
+    <fork target="1.2.1.2.2">Floating, almost ambient</fork>
+  </branch>
+  <branch id="1.2.1.2.1">
+    <content>DJ Marky or Aphrodite. FabricLive 55 for Marky. Brazilian funk influences baked into liquid DnB — irresistibly groovy.</content>
+  </branch>
+  <branch id="1.2.1.2.2">
+    <content>LTJ Bukem. FabricLive 46 or Logical Progression. The blueprint for atmospheric DnB. Close your eyes and let it carry you.</content>
+  </branch>
+
+  <branch id="1.2.2">
+    <content>UK Garage and Bassline, or hip hop-influenced breaks?</content>
+    <fork target="1.2.2.1">UK Garage or Bassline</fork>
+    <fork target="1.2.2.2">Hip hop influenced breaks</fork>
+  </branch>
+  <branch id="1.2.2.1">
+    <content>Classic UKG or modern Bassline?</content>
+    <fork target="1.2.2.1.1">Classic speed garage and UKG</fork>
+    <fork target="1.2.2.1.2">Modern bassline and jackin house</fork>
+  </branch>
+  <branch id="1.2.2.1.1">
+    <content>DJ Q on FabricLive 99 covers the whole arc. Or dig into the Nkogliaz Speed Garage mix for a pure early 2000s feel.</content>
+  </branch>
+  <branch id="1.2.2.1.2">
+    <content>Dj St!cky Freeparty Filth series. Raw, functional, no-frills bassline and jackin house built for warehouses.</content>
+  </branch>
+  <branch id="1.2.2.2">
+    <content>Tittsworth or Y4K DJ Icey. American breaks with a hip hop sensibility — choppy edits, thick bass, lots of swagger.</content>
+  </branch>
+
+  <!-- LOW ENERGY -->
+  <branch id="1.3">
+    <content>Abstract and textured, or minimal and repetitive?</content>
+    <fork target="1.3.1">Abstract, I want something to get lost in</fork>
+    <fork target="1.3.2">Minimal, something that fades into the background</fork>
+  </branch>
+
+  <branch id="1.3.1">
+    <content>Cinematic or fragmented and strange?</content>
+    <fork target="1.3.1.1">Cinematic, soundtrack-like</fork>
+    <fork target="1.3.1.2">Fragmented, collage-like</fork>
+  </branch>
+  <branch id="1.3.1.1">
+    <content>Amon Tobin. Out From Out Where or Supermodified. Dense layered compositions that sound like film scores from a parallel universe.</content>
+  </branch>
+  <branch id="1.3.1.2">
+    <content>Clams Casino. His instrumentals mixtapes are beat music at its most atmospheric — woozy, hazy, hypnotic.</content>
+  </branch>
+
+  <branch id="1.3.2">
+    <content>Electronic or more beat-driven?</content>
+    <fork target="1.3.2.1">Electronic, almost ambient</fork>
+    <fork target="1.3.2.2">Still beat-driven but stripped back</fork>
+  </branch>
+  <branch id="1.3.2.1">
+    <content>Luomo. Vocalcity. Finnish minimal house with a distinctly human quality — warm, understated, endlessly listenable.</content>
+  </branch>
+  <branch id="1.3.2.2">
+    <content>Autonomic era DnB. FabricLive 50 or Seba mixes. Half-step DnB stripped to its skeleton — meditative and forward at the same time.</content>
+  </branch>
+</tree>
