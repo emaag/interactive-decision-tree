@@ -7,7 +7,7 @@
 
 A web-based tool that guides users through decision-making processes using an interactive, user-friendly flow chart interface. Think of it as a choose-your-own-adventure for decisions.
 
-## 🌟 Features
+## Features
 
 - **XML-Based Data Storage** - Decision tree data stored as standard XML for easy editing and portability
 - **Client-Side Viewer** - Built with HTML, CSS, and JavaScript for universal compatibility
@@ -16,7 +16,7 @@ A web-based tool that guides users through decision-making processes using an in
 - **No Database Required** - Simple file-based system
 - **Responsive Design** - Works on desktop and mobile devices
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Demo](#demo)
 - [Requirements](#requirements)
@@ -27,20 +27,20 @@ A web-based tool that guides users through decision-making processes using an in
 - [License](#license)
 - [Support](#support)
 
-## 🎬 Demo
+## Demo
 
 <!-- Add your demo link or animated GIF here -->
 <!-- ![Decision Tree Demo](path/to/demo.gif) -->
 
 [Watch Video Tutorial](https://www.youtube.com/watch?v=ngcjYuJHZ4Q)
 
-## 🔧 Requirements
+## Requirements
 
 - **Web Server** (Apache, Nginx, or any HTTP server)
 - **PHP 7.4+** (PHP 8.x recommended)
 - **Write permissions** on the `xml/` directory
 
-## 📦 Installation
+## Installation
 
 ### Quick Start
 
@@ -72,7 +72,7 @@ docker compose up --build
 
 Then open `http://localhost:8080` in your browser.
 
-## 🚀 Usage
+## Usage
 
 ### Creating a Decision Tree
 
@@ -121,7 +121,7 @@ define( 'EDITOR_PASSWORD_HASH', '$2y$10$...' );
 </tree>
 ```
 
-## 📁 File Structure
+## File Structure
 
 ```
 interactive-decision-tree/
@@ -142,7 +142,7 @@ interactive-decision-tree/
 └── README.md             # This file
 ```
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please see CONTRIBUTING.md for details.
 
@@ -154,7 +154,7 @@ Contributions are welcome! Please see CONTRIBUTING.md for details.
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-### 🐛 Bug Reports
+### Bug Reports
 
 Found a bug? Please open an issue on GitHub with:
 
@@ -163,22 +163,26 @@ Found a bug? Please open an issue on GitHub with:
 - Expected behavior
 - Screenshots (if applicable)
 
-## 📝 License
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 👤 Author
+## Support
+
+Found a bug or have a question? [Open an issue](https://github.com/emaag/interactive-decision-tree/issues) on GitHub.
+
+## Author
 
 **Eric Maag**
 
 - GitHub: [@emaag](https://github.com/emaag)
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Thanks to all contributors who have helped improve this project
 - Inspired by the need for simple, accessible decision-making tools
 
-## 📊 Project Stats
+## Project Stats
 
 This project has been forked by organizations including legal service providers and educational institutions to help users navigate complex decision-making processes.
 
