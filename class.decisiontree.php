@@ -21,8 +21,8 @@ class DecisionTree{
 			$newFileName = 'tree' . time() . '.xml';
 		}
 		$xmlData = new SimpleXMLElement("<tree></tree>");
-		$xmlData->asXML( $newFileName );
-		$this->treeID = str_replace( XML_DIR_PATH, '', $newFileName );
+		$xmlData->asXML( XML_DIR_PATH . $newFileName );
+		$this->treeID = $newFileName;
 	}
 	
 	public function loadRevision( $revision ){
@@ -44,10 +44,10 @@ class DecisionTree{
 				array_push( $this->branches, $thisBranch );
 			}
 		}else{
-			die( "Cannot parse XML data: " . $this->xmlDirPath . $treeID );
+			die( "Cannot parse XML data." );
 		}
 	}
-	
+
 	public function loadData(){
 		if( !file_exists( $this->xmlDirPath . $this->treeID ) ){
 			die( "Cannot load XML data: " . $this->xmlDirPath . $this->treeID );
@@ -69,10 +69,10 @@ class DecisionTree{
 			}
 
 		}else{
-			die( "Cannot parse XML data: " . $this->xmlDirPath . $treeID );
+			die( "Cannot parse XML data." );
 		}
 	}
-	
+
 	public function getBranch( $branchID ){
 		foreach( $this->branches as $branch ){
 			if( strval( $branch->ID ) === strval( $branchID ) ){
@@ -86,7 +86,7 @@ class DecisionTree{
 		if( empty( $this->branches ) ){
 			?>
       Alas. This decision tree is currently void of any questions or decisions.<br />
-      <a href="<?php echo EDITOR_URL; ?>?cmd=new-branch&treeID=<?php echo $this->treeID; ?>&branchID=1">Add the first question/decision</a>
+      <a href="<?php echo EDITOR_URL; ?>?cmd=new-branch&treeID=<?php echo urlencode($this->treeID); ?>&branchID=1">Add the first question/decision</a>
       <?php
 		}else{
 			echo '<ul class="tree-overview">';
@@ -150,11 +150,11 @@ class DecisionTree{
 				if( empty( $branch->content ) ){
 					$class = 'class="missing-content"';
 				}
-				echo '<li ' . $class . '>' . $forkLabel . $branch->content . '<br /><a href="' . EDITOR_URL . '?cmd=edit-branch&treeID=' . $this->treeID . '&branchID=' . $branchID . '">Edit</a>';
+				echo '<li ' . $class . '>' . $forkLabel . htmlspecialchars($branch->content) . '<br /><a href="' . EDITOR_URL . '?cmd=edit-branch&treeID=' . urlencode($this->treeID) . '&branchID=' . urlencode($branchID) . '">Edit</a>';
 				if( !empty( $branch->forks ) ){
 					echo '<ul>';
 					foreach( $branch->forks as $forkID => $forkLabel ){
-						$this->getTargetBranches( $forkID, '<em>' . $forkLabel . '</em>: <br />' );
+						$this->getTargetBranches( $forkID, '<em>' . htmlspecialchars($forkLabel) . '</em>: <br />' );
 					}
 					echo '</ul>';
 				}
@@ -165,7 +165,7 @@ class DecisionTree{
 	
 	public function listAll(){
 		if( !is_dir( $this->xmlDirPath ) ){
-			die("Cannot access XML directory: $xmlDirPath");
+			die("Cannot access XML directory.");
 		}
 		?>
     <dl>
@@ -176,10 +176,10 @@ class DecisionTree{
 					if( $xmlData = simplexml_load_file( $this->xmlDirPath . $file ) ){
 						$treeID = str_replace( '.xml', '', substr( $file, 4 ) );
 						?>
-						<dt><?php echo $xmlData->title; ?> 
-            	<span class="action-links"><a target="_blank" href="<?php echo VIEWER_URL; ?>?<?php echo $treeID ; ?>">View</a> | 
-              	<a href="<?php echo EDITOR_URL . '?cmd=edit-tree&treeID=' . $file; ?>">Edit</a></span></dt>
-						<dd><?php echo $xmlData->description; ?></dd>
+						<dt><?php echo htmlspecialchars((string)$xmlData->title); ?>
+            	<span class="action-links"><a target="_blank" href="<?php echo VIEWER_URL; ?>?<?php echo urlencode($treeID); ?>">View</a> |
+              	<a href="<?php echo EDITOR_URL . '?cmd=edit-tree&treeID=' . urlencode($file); ?>">Edit</a></span></dt>
+						<dd><?php echo htmlspecialchars((string)$xmlData->description); ?></dd>
 						<?php
 					}
 				}

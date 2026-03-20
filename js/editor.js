@@ -17,7 +17,7 @@ $(document).ready( function(){
 	
 	$('#btnViewTree').click( function(){
 		var treeID = $('#treeID').attr( 'value' );
-		viewer = window.open( 'showTree.html?' + treeID, 'viewerWindow' );
+		var viewer = window.open( 'showTree.html?' + treeID, 'viewerWindow' );
 	});
 	
 	$('#revisions').change( function(){
@@ -39,7 +39,6 @@ $(document).ready( function(){
 		var forkID = branchID + '.' + nextFork;
 		var newForkHTML = '<span><input class="fork" type="text" id="fork-' + forkID + '" name="fork-' + forkID + '" /> <a href="#" class="btnRemoveFork">&laquo; Remove</a><br /></span>';
 		$('p#forks').append( newForkHTML );
-//		alert( forkID );
 	});
 	
 	$(document).on('click', '.btnRemoveFork', function(){

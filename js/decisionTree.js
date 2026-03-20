@@ -1,25 +1,33 @@
 var treeData;
+var windowWidth;
+var sliderWidth;
+var slideTime;
+var branches;
 $(document).ready( function(){
-	
+
 	windowWidth = $('#tree-window').outerWidth( false );
 	sliderWidth = 0;
 	slideTime = 300;
-	branches = new Array();
-	var thisURL = new String(document.location);
+	branches = [];
+	var thisURL = document.location.href;
 	var urlParts = thisURL.split('?');
 	loadData( urlParts[1] );
-		
+
 });
 
+function escapeHTML( str ){
+	return $('<div>').text( str ).html();
+}
+
 function debug( str ){
-	$('#debug').append( str + '<br />' );
+	$('#debug').append( escapeHTML(str) + '<br />' );
 }
 
 function loadData( id ){
 	$.ajax({
-		type: "GET", 
-		url: "xml/tree" + id + ".xml", 
-		dataType: "xml", 
+		type: "GET",
+		url: "xml/tree" + id + ".xml",
+		dataType: "xml",
 		success: function( xml ){
 			buildNodes( xml );
 		}
@@ -29,8 +37,8 @@ function loadData( id ){
 function TreeBranch(){
 	this.id = '';
 	this.content = '';
-	this.forkIDs = new Array();
-	this.forkLabels = new Array();
+	this.forkIDs = [];
+	this.forkLabels = [];
 }
 
 function buildNodes( xmlData ){
@@ -59,9 +67,9 @@ function buildNodes( xmlData ){
 }
 
 function resetActionLinks(){
-	$('.decision-links a').unbind( 'click' );
-	$('a.back-link').unbind( 'click' );
-	
+	$('.decision-links a').off( 'click' );
+	$('a.back-link').off( 'click' );
+
 	$('.decision-links a').click( function(e){
 		if( !$(this).attr('href') ){
 			showBranch( $(this).attr('id') );
@@ -76,23 +84,23 @@ function resetActionLinks(){
 }
 
 function showBranch( id ){
-	for(i = 0; i < branches.length; i++ ){
+	for( var i = 0; i < branches.length; i++ ){
 		if( branches[i].id == id ){
 			var currentBranch = branches[i];
 			break;
 		}
 	}
 	var decisionLinksHTML = '<div class="decision-links">';
-	for( d = 0; d < currentBranch.forkIDs.length; d++ ){
+	for( var d = 0; d < currentBranch.forkIDs.length; d++ ){
 		var link = '';
 		var forkContent = $(treeData).find('branch[id="' + currentBranch.forkIDs[d] + '"]').find('content').text();
 		if( forkContent.indexOf('http://') == 0 || forkContent.indexOf('https://') == 0 ){
-			link = 'href="' + forkContent + '"'
+			link = 'href="' + escapeHTML( forkContent ) + '"';
 		}
-		decisionLinksHTML += '<a ' + link + ' id="' + currentBranch.forkIDs[d] + '">' + currentBranch.forkLabels[d] + '</a>';
+		decisionLinksHTML += '<a ' + link + ' id="' + escapeHTML( currentBranch.forkIDs[d] ) + '">' + escapeHTML( currentBranch.forkLabels[d] ) + '</a>';
 	}
 	decisionLinksHTML += '</div>';
-	var branchHTML = '<div id="branch-' + currentBranch.id + '" class="tree-content-box"><div class="content">' + currentBranch.content + '</div>' + decisionLinksHTML;
+	var branchHTML = '<div id="branch-' + escapeHTML( currentBranch.id ) + '" class="tree-content-box"><div class="content">' + escapeHTML( currentBranch.content ) + '</div>' + decisionLinksHTML;
 	if( currentBranch.id != 1 ){
 		branchHTML += '<a class="back-link">&laquo; Back</a>';
 	}

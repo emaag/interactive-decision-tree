@@ -32,7 +32,7 @@ A web-based tool that guides users through decision-making processes using an in
 <!-- Add your demo link or animated GIF here -->
 <!-- ![Decision Tree Demo](path/to/demo.gif) -->
 
-[View Live Demo](#) | [Watch Video Tutorial](http://www.youtube.com/embed/ngcjYuJHZ4Q)
+[Watch Video Tutorial](https://www.youtube.com/watch?v=ngcjYuJHZ4Q)
 
 ## 🔧 Requirements
 
@@ -81,21 +81,27 @@ A web-based tool that guides users through decision-making processes using an in
 
 ### Viewing a Decision Tree
 
-1. Navigate to `showTree.html` in your browser
-2. Select your decision tree from the list
-3. Users can now interact with your decision tree by answering questions
+1. Navigate to `showTree.html?<treeID>` in your browser, where `<treeID>` is the numeric ID of the tree (e.g. `showTree.html?0001`)
+2. Users can now interact with your decision tree by answering questions
 
 ### Example XML Structure
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0"?>
 <tree>
-  <node id="1">
-    <question>What is your question?</question>
-    <option next="2">Answer A</option>
-    <option next="3">Answer B</option>
-  </node>
-  <!-- Additional nodes... -->
+  <title>My Decision Tree</title>
+  <description>A short description</description>
+  <branch id="1">
+    <content>What is your question?</content>
+    <fork target="1.1">Answer A</fork>
+    <fork target="1.2">Answer B</fork>
+  </branch>
+  <branch id="1.1">
+    <content>You chose A. Another question?</content>
+    <fork target="1.1.1">Yes</fork>
+    <fork target="1.1.2">No</fork>
+  </branch>
+  <!-- Branch id="1.2" etc. -->
 </tree>
 ```
 

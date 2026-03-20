@@ -15,10 +15,10 @@ if( !empty( $revision ) ){
 
 
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset="utf-8" />
 <title>Interactive Decision Tree - Editor</title>
 <link href="css/editor.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
@@ -73,7 +73,7 @@ function showTreeForm( $tree, $selectedRevision ){
 	?>
   <p><a href="<?php echo EDITOR_URL; ?>">&laquo; Return to list</a>&nbsp;&nbsp;&nbsp;
   	<a target="_blank" href="<?php echo VIEWER_URL; ?>?<?php echo $treeViewerID; ?>">View tree in new window &raquo;</a></p>
-  <form id="tree-editor" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+  <form id="tree-editor" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
   <?php
 	if( !empty( $tree->revisions ) ){
 	?>
@@ -96,11 +96,11 @@ function showTreeForm( $tree, $selectedRevision ){
 	}
 	?>
   <p><label for="title">Title:</label><br />
-  	<input type="text" id="title" name="treeTitle" value="<?php echo $tree->title; ?>" /></p>
+  	<input type="text" id="title" name="treeTitle" value="<?php echo htmlspecialchars($tree->title); ?>" /></p>
   <p><label for="description">Description:</label><br />
-  	<textarea id="description" name="treeDescription"><?php echo $tree->description; ?></textarea></p>
+  	<textarea id="description" name="treeDescription"><?php echo htmlspecialchars($tree->description); ?></textarea></p>
   <p><input type="submit" value="Save" />
-		<input type="hidden" id="treeID" name="treeID" value="<?php echo $tree->treeID; ?>" />
+		<input type="hidden" id="treeID" name="treeID" value="<?php echo htmlspecialchars($tree->treeID); ?>" />
     <input type="hidden" name="cmd" id="cmd" value="save-tree" /></p>
   </form>
   <?php
@@ -128,15 +128,15 @@ function showBranchForm( $tree, $branchID ){
 		$branch->forks[$branchID . '.2'] = 'No';
 	}
 	?>
-	<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" id="branch-editor">
+	<form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="branch-editor">
   <p><label for="content">Question/Decision Text:</label><br />
-  	<textarea id="content" name="branchContent"><?php echo $branch->content; ?></textarea>
+  	<textarea id="content" name="branchContent"><?php echo htmlspecialchars($branch->content); ?></textarea>
 		<div class="note">Enter a URL above to route users there instead of displaying text (e.g. http://hungry-media.com)</div></p>
   <p id="forks"><label for="fork">Options:</label><br />
   <?php
 	foreach( $branch->forks as $forkID => $forkLabel ){
 	?>
-    <span><input class="fork" type="text" id="fork-<?php echo $forkID; ?>" name="fork-<?php echo $forkID; ?>" value="<?php echo $forkLabel; ?>" /> <a href="#" class="btnRemoveFork">&laquo; Remove</a><br /></span>
+    <span><input class="fork" type="text" id="fork-<?php echo htmlspecialchars($forkID); ?>" name="fork-<?php echo htmlspecialchars($forkID); ?>" value="<?php echo htmlspecialchars($forkLabel); ?>" /> <a href="#" class="btnRemoveFork">&laquo; Remove</a><br /></span>
   <?php
 	}
 	?></p>
@@ -144,8 +144,8 @@ function showBranchForm( $tree, $branchID ){
   <p><input type="submit" value="Save" /> 
   	<input type="hidden" name="cmd" id="cmd" value="save-branch" />
   	<input class="btnCancel" type="button" value="cancel" />
-    <input type="hidden" id="branchID" name="branchID" value="<?php echo $branchID; ?>" />
-    <input type="hidden" id="treeID" name="treeID" value="<?php echo $tree->treeID; ?>" />
+    <input type="hidden" id="branchID" name="branchID" value="<?php echo htmlspecialchars($branchID); ?>" />
+    <input type="hidden" id="treeID" name="treeID" value="<?php echo htmlspecialchars($tree->treeID); ?>" />
     </p>
   </form>
 	<?php
@@ -190,10 +190,5 @@ function saveBranch( $tree ){
 	$tree->saveBranch( $branch );	
 }
 
-function validateForm( $tree ){
-
-}
-
-
-
 ?>
+
