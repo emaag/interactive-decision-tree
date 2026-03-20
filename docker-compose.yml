@@ -2,6 +2,7 @@ services:
   web:
     build: .
     ports:
-      - "8080:80"
+      - "127.0.0.1:8080:80"
     volumes:
       - ./xml:/var/www/html/xml
+    restart: unless-stopped

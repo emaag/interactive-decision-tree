@@ -93,9 +93,11 @@ function loadData( id ){
 		url: "xml/tree" + id + ".xml",
 		dataType: "xml",
 		success: function( xml ){
+			$('#loader').addClass('hidden');
 			buildNodes( xml );
 		},
 		error: function( xhr ){
+			$('#loader').addClass('hidden');
 			var msg = xhr.status === 404
 				? 'Tree <strong>' + $('<div>').text(id).html() + '</strong> not found.'
 				: 'Could not load tree (HTTP ' + xhr.status + ').';

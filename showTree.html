@@ -4,6 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Interactive Decision Tree</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link href="css/decisionTree.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
 <script type="text/javascript" src="js/jquery.easing.1.4.1.min.js"></script>
@@ -19,8 +20,18 @@
 	<button id="dark-toggle" title="Toggle dark mode">◑</button>
 	<button id="start-over" class="hidden">Start over</button>
 </div>
+<noscript>
+<div style="padding:40px;font-family:sans-serif;color:#555;max-width:500px;margin:60px auto;text-align:center">
+	<strong>JavaScript is required</strong><br /><br />
+	This decision tree viewer needs JavaScript enabled to work.
+	Please enable it in your browser settings and reload the page.
+</div>
+</noscript>
 <div id="debug"></div>
 <div id="tree-window">
+	<div id="loader">
+		<div class="spinner"></div>
+	</div>
 	<div id="tree-slider"></div>
 </div>
 </body>

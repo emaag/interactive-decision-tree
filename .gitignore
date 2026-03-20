@@ -28,3 +28,7 @@ node_modules/
 
 # Local config (may contain password hash)
 config.local.php
+
+# PHP session files
+sess_*
+/tmp/

@@ -353,6 +353,30 @@ a { cursor: pointer; }
 	text-decoration: none;
 }
 
+/* ── Loading spinner ─────────────────────────────────────────────────── */
+#loader {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 80px 0;
+	width: 100%;
+}
+
+#loader.hidden { display: none; }
+
+.spinner {
+	width: 36px;
+	height: 36px;
+	border: 3px solid var(--fork-border);
+	border-top-color: var(--text);
+	border-radius: 50%;
+	animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+	to { transform: rotate(360deg); }
+}
+
 /* ── Debug ───────────────────────────────────────────────────────────── */
 #debug { display: none; }
 
