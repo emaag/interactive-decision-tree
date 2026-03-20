@@ -29,10 +29,7 @@ A web-based tool that guides users through decision-making processes using an in
 
 ## Demo
 
-<!-- Add your demo link or animated GIF here -->
-<!-- ![Decision Tree Demo](path/to/demo.gif) -->
-
-[Watch Video Tutorial](https://www.youtube.com/watch?v=ngcjYuJHZ4Q)
+[View Live Demo](https://emaag.github.io/interactive-decision-tree/showTree.html?0001)
 
 ## Requirements
 
