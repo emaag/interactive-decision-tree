@@ -1,60 +1,128 @@
 <?xml version="1.0"?>
 <tree>
-  <title>Test Tree 002</title>
-  <description>A second, equally simple (and likely identical) test decision tree involving cuisine choices.</description>
+  <title>What should I watch tonight?</title>
+  <description>A decision tree to help you pick something to watch.</description>
   <branch id="1">
-    <content>Do you eat meat?</content>
-    <fork target="1.1">Yes</fork>
-    <fork target="1.2">No</fork>
+    <content>How are you feeling right now?</content>
+    <fork target="1.1">Need a laugh</fork>
+    <fork target="1.2">Want to be on the edge of my seat</fork>
+    <fork target="1.3">Feeling emotional, want a good story</fork>
+    <fork target="1.4">Want something to think about</fork>
   </branch>
+
   <branch id="1.1">
-    <content>Do you like red meat?</content>
-    <fork target="1.1.1">Affirmative</fork>
-    <fork target="1.1.2">Negative</fork>
-  </branch>
-  <branch id="1.2">
-    <content>Do you like faux-meat?</content>
-    <fork target="1.2.1">Yes</fork>
-    <fork target="1.2.2">No</fork>
-    <fork target="1.2.3">What is that?</fork>
+    <content>Solo or watching with someone?</content>
+    <fork target="1.1.1">Solo</fork>
+    <fork target="1.1.2">With someone else</fork>
   </branch>
   <branch id="1.1.1">
-    <content>How about a burger?</content>
-    <fork target="1.1.1.1">Yes</fork>
-    <fork target="1.1.1.2">No</fork>
-  </branch>
-  <branch id="1.1.2">
-    <content>How about some fish?</content>
-    <fork target="1.1.2.1">Google it</fork>
-    <fork target="1.1.2.2">Hungry Media</fork>
-  </branch>
-  <branch id="1.2.1">
-    <content>How about a veggie burger?</content>
-  </branch>
-  <branch id="1.2.2">
-    <content>How about a salad?</content>
-    <fork target="1.2.2.1">Yes</fork>
-    <fork target="1.2.2.2">No</fork>
+    <content>How committed are you?</content>
+    <fork target="1.1.1.1">A full movie, I am settled in</fork>
+    <fork target="1.1.1.2">Something I can half-watch</fork>
   </branch>
   <branch id="1.1.1.1">
-    <content>Enjoy</content>
+    <content>Put on a classic comedy. Something you have seen before is often the best choice when you just want to laugh.</content>
   </branch>
   <branch id="1.1.1.2">
-    <content>Eat a steak then.</content>
+    <content>A sitcom you know well. The Office, Seinfeld, Parks and Rec. Familiar and funny, no concentration required.</content>
   </branch>
-  <branch id="1.2.2.1">
-    <content>Enjoy</content>
-  </branch>
-  <branch id="1.2.2.2">
-    <content>There's no pleasing you!</content>
-  </branch>
-  <branch id="1.2.3">
-    <content>Perhaps &lt;a href="http://en.wikipedia.org/wiki/Tofu"&gt;Tofu&lt;/a&gt;</content>
+  <branch id="1.1.2">
+    <content>Do you both have the same sense of humour?</content>
+    <fork target="1.1.2.1">Mostly yes</fork>
+    <fork target="1.1.2.2">Not really</fork>
   </branch>
   <branch id="1.1.2.1">
-    <content>https://google.com</content>
+    <content>Pick a well-reviewed comedy from the last few years. Something neither of you has seen keeps it fresh.</content>
   </branch>
   <branch id="1.1.2.2">
-    <content>http://hungry-media.com</content>
+    <content>Go for a broad crowd-pleaser. A Pixar film or a classic family comedy tends to land for everyone.</content>
+  </branch>
+
+  <branch id="1.2">
+    <content>What kind of tension do you want?</content>
+    <fork target="1.2.1">Action and spectacle</fork>
+    <fork target="1.2.2">Psychological, slow-burn</fork>
+    <fork target="1.2.3">Horror, genuinely scared</fork>
+  </branch>
+  <branch id="1.2.1">
+    <content>How big is your screen?</content>
+    <fork target="1.2.1.1">Big TV or projector</fork>
+    <fork target="1.2.1.2">Laptop or small screen</fork>
+  </branch>
+  <branch id="1.2.1.1">
+    <content>A big action blockbuster was made for exactly this. Pick something with great visuals and turn the volume up.</content>
+  </branch>
+  <branch id="1.2.1.2">
+    <content>A tighter action film with strong characters works better on a small screen than pure spectacle. Look for something story-driven.</content>
+  </branch>
+  <branch id="1.2.2">
+    <content>Do you mind a slow start?</content>
+    <fork target="1.2.2.1">No, I am patient</fork>
+    <fork target="1.2.2.2">I need it to hook me quickly</fork>
+  </branch>
+  <branch id="1.2.2.1">
+    <content>A slow-burn thriller or psychological drama. Give it 20 minutes to breathe. The payoff is worth it.</content>
+  </branch>
+  <branch id="1.2.2.2">
+    <content>A tightly edited thriller that opens in the middle of the action. Look for something with a 90-minute runtime.</content>
+  </branch>
+  <branch id="1.2.3">
+    <content>What scares you more?</content>
+    <fork target="1.2.3.1">The unknown, atmospheric dread</fork>
+    <fork target="1.2.3.2">Gore and shock</fork>
+  </branch>
+  <branch id="1.2.3.1">
+    <content>Atmospheric horror with a slow build. Watch it with the lights off and the sound up. The quiet moments are the scariest.</content>
+  </branch>
+  <branch id="1.2.3.2">
+    <content>A well-crafted horror with real stakes. Avoid anything with a six-film franchise — the first one is almost always the best.</content>
+  </branch>
+
+  <branch id="1.3">
+    <content>Do you want to cry or just feel moved?</content>
+    <fork target="1.3.1">I want to properly cry</fork>
+    <fork target="1.3.2">Moved, but not destroyed</fork>
+  </branch>
+  <branch id="1.3.1">
+    <content>Is this a healing cry or a wallow?</content>
+    <fork target="1.3.1.1">Healing, I want to feel better after</fork>
+    <fork target="1.3.1.2">Full wallow, bring it on</fork>
+  </branch>
+  <branch id="1.3.1.1">
+    <content>A film with a bittersweet ending. Something that makes you feel the weight of life but ends with hope.</content>
+  </branch>
+  <branch id="1.3.1.2">
+    <content>Pick the saddest film you know of and commit to it. Have tissues ready. You will feel oddly better by the end.</content>
+  </branch>
+  <branch id="1.3.2">
+    <content>Drama or something more uplifting?</content>
+    <fork target="1.3.2.1">A proper drama</fork>
+    <fork target="1.3.2.2">Something uplifting</fork>
+  </branch>
+  <branch id="1.3.2.1">
+    <content>A character study with great performances. Look for something acclaimed that you have been meaning to watch.</content>
+  </branch>
+  <branch id="1.3.2.2">
+    <content>An underdog story or a film about human connection. The kind that leaves you smiling and a little teary at the end.</content>
+  </branch>
+
+  <branch id="1.4">
+    <content>How much mental energy do you have?</content>
+    <fork target="1.4.1">A lot, I want a challenge</fork>
+    <fork target="1.4.2">Some, but nothing too demanding</fork>
+  </branch>
+  <branch id="1.4.1">
+    <content>Do you prefer your ideas through story or documentary?</content>
+    <fork target="1.4.1.1">Story and fiction</fork>
+    <fork target="1.4.1.2">Documentary, real world</fork>
+  </branch>
+  <branch id="1.4.1.1">
+    <content>A film that plays with structure, time, or reality. Something you will want to discuss or look up after watching.</content>
+  </branch>
+  <branch id="1.4.1.2">
+    <content>A well-made documentary on a subject you know nothing about. The best ones completely change how you see something.</content>
+  </branch>
+  <branch id="1.4.2">
+    <content>An intelligent film that does not demand total focus. A great script with sharp dialogue — something where the ideas come through the characters.</content>
   </branch>
 </tree>

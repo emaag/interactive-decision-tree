@@ -1,40 +1,113 @@
 <?xml version="1.0"?>
 <tree>
-  <title>Test Tree 001a</title>
-  <description>A simple test decision tree to help choose grub.</description>
+  <title>What should I eat tonight?</title>
+  <description>A decision tree to help you figure out dinner.</description>
   <branch id="1">
-    <content>Do you eat meat?</content>
-    <fork target="1.1">Yes</fork>
-    <fork target="1.2">No</fork>
+    <content>Are you cooking or ordering in?</content>
+    <fork target="1.1">Cooking</fork>
+    <fork target="1.2">Ordering in</fork>
   </branch>
+
   <branch id="1.1">
-    <content>Do you like red meat??</content>
-    <fork target="1.1.1">Yes</fork>
-    <fork target="1.1.2">No</fork>
+    <content>How much time do you have?</content>
+    <fork target="1.1.1">Under 30 minutes</fork>
+    <fork target="1.1.2">30 to 60 minutes</fork>
+    <fork target="1.1.3">Over an hour</fork>
   </branch>
-  <branch id="1.2">
-    <content>Do you like faux-meat?</content>
-    <fork target="1.2.1">Yes</fork>
-    <fork target="1.2.2">No</fork>
-  </branch>
+
   <branch id="1.1.1">
-    <content>How about a steak?</content>
-    <fork target="1.1.1.1">Yes</fork>
-    <fork target="1.1.1.2">No</fork>
-  </branch>
-  <branch id="1.1.2">
-    <content>How about some chicken?</content>
-  </branch>
-  <branch id="1.2.1">
-    <content>How about a veggie burger?</content>
-  </branch>
-  <branch id="1.2.2">
-    <content>How about a salad?</content>
+    <content>Cooking solo or feeding others?</content>
+    <fork target="1.1.1.1">Just me</fork>
+    <fork target="1.1.1.2">Feeding others</fork>
   </branch>
   <branch id="1.1.1.1">
-    <content>http://google.com</content>
+    <content>Scrambled eggs with toast, or pasta with jarred sauce. Both are fast, filling, and barely any washing up.</content>
   </branch>
   <branch id="1.1.1.2">
-    <content>http://bing.com</content>
+    <content>Tacos. Everyone builds their own, you can use pre-cooked protein, and it is on the table in 15 minutes.</content>
+  </branch>
+
+  <branch id="1.1.2">
+    <content>Do you eat meat?</content>
+    <fork target="1.1.2.1">Yes</fork>
+    <fork target="1.1.2.2">No</fork>
+  </branch>
+  <branch id="1.1.2.1">
+    <content>Pan-seared chicken thighs with roasted vegetables. Season well, high heat, done in 40 minutes with minimal effort.</content>
+  </branch>
+  <branch id="1.1.2.2">
+    <content>Stir-fried tofu with vegetables over rice. Press the tofu first for crispiness. Ready in 35 minutes and genuinely satisfying.</content>
+  </branch>
+
+  <branch id="1.1.3">
+    <content>Feeling adventurous?</content>
+    <fork target="1.1.3.1">Yes, let us go all out</fork>
+    <fork target="1.1.3.2">No, something reliable</fork>
+  </branch>
+  <branch id="1.1.3.1">
+    <content>Make a curry from scratch. Toast whole spices, build a proper base, let it simmer low and slow. The smell alone is worth it.</content>
+  </branch>
+  <branch id="1.1.3.2">
+    <content>Slow-roasted chicken with potatoes and garlic. Put it in the oven and forget about it for 90 minutes. Classic for a reason.</content>
+  </branch>
+
+  <branch id="1.2">
+    <content>What are you in the mood for?</content>
+    <fork target="1.2.1">Pizza</fork>
+    <fork target="1.2.2">Asian</fork>
+    <fork target="1.2.3">Mexican</fork>
+    <fork target="1.2.4">Burgers</fork>
+  </branch>
+
+  <branch id="1.2.1">
+    <content>Are you going for comfort or quality?</content>
+    <fork target="1.2.1.1">Comfort, fast, reliable</fork>
+    <fork target="1.2.1.2">Best pizza I can get</fork>
+  </branch>
+  <branch id="1.2.1.1">
+    <content>A big chain is fine for this. Order extra and have leftovers for tomorrow. No shame in it.</content>
+  </branch>
+  <branch id="1.2.1.2">
+    <content>Find the highest-rated independent pizzeria near you and go for their signature pie. Worth the wait.</content>
+  </branch>
+
+  <branch id="1.2.2">
+    <content>Which kind?</content>
+    <fork target="1.2.2.1">Sushi</fork>
+    <fork target="1.2.2.2">Chinese takeout</fork>
+    <fork target="1.2.2.3">Thai food</fork>
+  </branch>
+  <branch id="1.2.2.1">
+    <content>Check reviews carefully and go for a place that is busy. Fresh fish matters. Splurge a little if you can.</content>
+  </branch>
+  <branch id="1.2.2.2">
+    <content>Dumplings, fried rice, and General Tso. Order more than you think you need. The classics are classics for a reason.</content>
+  </branch>
+  <branch id="1.2.2.3">
+    <content>Pad Thai or green curry. Ask for the real spice level, not the tourist version. Have jasmine rice on the side.</content>
+  </branch>
+
+  <branch id="1.2.3">
+    <content>Do you want a sit-down place or delivery?</content>
+    <fork target="1.2.3.1">Delivery</fork>
+    <fork target="1.2.3.2">I will go pick it up or eat out</fork>
+  </branch>
+  <branch id="1.2.3.1">
+    <content>Burritos travel better than tacos. Order guacamole even if it costs extra. You know you want it.</content>
+  </branch>
+  <branch id="1.2.3.2">
+    <content>A proper taqueria beats delivery every time. Find one with handmade tortillas if you can.</content>
+  </branch>
+
+  <branch id="1.2.4">
+    <content>Fast food or a proper burger joint?</content>
+    <fork target="1.2.4.1">Fast food, I am not fussy</fork>
+    <fork target="1.2.4.2">A real burger from a real place</fork>
+  </branch>
+  <branch id="1.2.4.1">
+    <content>Go for it. No judgment. Get the fries and a milkshake while you are at it.</content>
+  </branch>
+  <branch id="1.2.4.2">
+    <content>Find a local burger spot with good reviews. A smash burger with proper cheese and a brioche bun beats everything.</content>
   </branch>
 </tree>
