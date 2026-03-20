@@ -24,3 +24,7 @@ node_modules/
 
 # Environment files
 .env
+.env.*
+
+# Local config (may contain password hash)
+config.local.php

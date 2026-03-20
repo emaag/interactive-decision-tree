@@ -6,6 +6,10 @@ define( 'VIEWER_URL', 'showTree.html' );
 define( 'INDEX_URL', 'index.php' );
 
 require_once 'config.php';
+// config.local.php (gitignored) overrides config.php — put your password hash there
+if( file_exists( __DIR__ . '/config.local.php' ) ){
+	require_once 'config.local.php';
+}
 
 if( session_status() === PHP_SESSION_NONE ){
 	session_start();
