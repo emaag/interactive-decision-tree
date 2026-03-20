@@ -84,14 +84,32 @@ function debug( str ){
 }
 
 function loadData( id ){
+	if( !id ){
+		showError( 'No tree specified. Add a tree ID to the URL, e.g. <code>showTree.html?0001</code>' );
+		return;
+	}
 	$.ajax({
 		type: "GET",
 		url: "xml/tree" + id + ".xml",
 		dataType: "xml",
 		success: function( xml ){
 			buildNodes( xml );
+		},
+		error: function( xhr ){
+			var msg = xhr.status === 404
+				? 'Tree <strong>' + $('<div>').text(id).html() + '</strong> not found.'
+				: 'Could not load tree (HTTP ' + xhr.status + ').';
+			showError( msg );
 		}
 	});
+}
+
+function showError( msg ){
+	$('#tree-window').html(
+		'<div style="padding:40px;color:var(--text-muted);font-size:1rem;line-height:1.6">'
+		+ msg
+		+ '</div>'
+	);
 }
 
 function TreeBranch(){

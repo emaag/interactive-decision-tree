@@ -736,7 +736,8 @@ function xmlEscape(s){
 		.replace(/&/g,'&amp;')
 		.replace(/</g,'&lt;')
 		.replace(/>/g,'&gt;')
-		.replace(/"/g,'&quot;');
+		.replace(/"/g,'&quot;')
+		.replace(/'/g,'&apos;');
 }
 
 // ── XML import ───────────────────────────────────────────────────────────
@@ -785,6 +786,10 @@ function notify(msg){
 $(function(){
 	$('#tree-title').on('input', function(){ markDirty(); });
 	$('#tree-desc').on('input', function(){ markDirty(); });
+
+	$(window).on('beforeunload', function(){
+		if( dirty ){ return 'You have unsaved changes.'; }
+	});
 
 	$('#btn-new, #welcome-new').click(function(){ newTree(); });
 
