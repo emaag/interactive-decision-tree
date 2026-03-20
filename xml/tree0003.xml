@@ -1,196 +1,474 @@
 <?xml version="1.0"?>
 <tree>
   <title>What should I listen to right now?</title>
-  <description>A decision tree to help you find the right music for the moment.</description>
+  <description>A deeply personal music recommendation tree.</description>
 
   <branch id="1">
     <content>What are you doing right now?</content>
-    <fork target="1.1">Moving — working out or driving</fork>
-    <fork target="1.2">Socialising — with people</fork>
-    <fork target="1.3">At home with headphones</fork>
-    <fork target="1.4">Working or focusing</fork>
+    <fork target="1.1">Moving — workout or on the road</fork>
+    <fork target="1.2">With people — social situation</fork>
+    <fork target="1.3">Alone with headphones</fork>
+    <fork target="1.4">Working or concentrating</fork>
+    <fork target="1.5">I want to explore and discover something</fork>
   </branch>
 
   <!-- ============================================================ -->
   <!-- 1.1 MOVING -->
   <!-- ============================================================ -->
   <branch id="1.1">
-    <content>Working out or driving?</content>
-    <fork target="1.1.1">Working out</fork>
+    <content>Workout or driving?</content>
+    <fork target="1.1.1">Workout</fork>
     <fork target="1.1.2">Driving</fork>
   </branch>
 
   <branch id="1.1.1">
-    <content>Do you want music to push you, or something to zone out to?</content>
-    <fork target="1.1.1.1">Push me, I need the aggression</fork>
-    <fork target="1.1.1.2">Zone out, lock in and disappear</fork>
+    <content>What do you need from the music?</content>
+    <fork target="1.1.1.1">Aggression — push me harder</fork>
+    <fork target="1.1.1.2">Focus — lock me in, zone everything out</fork>
+    <fork target="1.1.1.3">Groove — keep me moving without forcing it</fork>
   </branch>
 
   <branch id="1.1.1.1">
-    <content>Raw and heavy, or fast and precise?</content>
-    <fork target="1.1.1.1.1">Raw and heavy — I want to feel it</fork>
-    <fork target="1.1.1.1.2">Fast and technical — surgical</fork>
+    <content>Short intense session or a long grind?</content>
+    <fork target="1.1.1.1.1">Short — under 40 minutes</fork>
+    <fork target="1.1.1.1.2">Long — over an hour</fork>
   </branch>
+
   <branch id="1.1.1.1.1">
-    <content>Noisia on FabricLive 40. Relentless neurofunk with a physical weight to it. Or the Dj St!cky Freeparty Filth series if you want something more stripped and industrial.</content>
+    <content>Hit hard immediately or build into it?</content>
+    <fork target="1.1.1.1.1.1">Hit hard straight away — no warm-up</fork>
+    <fork target="1.1.1.1.1.2">Build alongside me</fork>
   </branch>
+  <branch id="1.1.1.1.1.1">
+    <content>Noisia FabricLive 40. Opens without ceremony — immediate forward pressure, physically heavy in headphones. No easing in. If you need a room to disappear and a reason to keep going, this is it.</content>
+  </branch>
+  <branch id="1.1.1.1.1.2">
+    <content>Dj St!cky Freeparty Filth 5.0. Starts rough and escalates with you. Bassline and jackin house that gets harder as the session does. Calibrated for sessions that build intensity over time.</content>
+  </branch>
+
   <branch id="1.1.1.1.2">
-    <content>Ed Rush and Optical. Virus Vaults or the Wormhole album. Neurofunk as precision engineering — cold, clinical, unforgiving. Perfect for when you want your head somewhere else entirely.</content>
+    <content>Do you need variety to stay engaged, or does consistency help you lock in?</content>
+    <fork target="1.1.1.1.2.1">Variety — I lose focus if nothing changes</fork>
+    <fork target="1.1.1.1.2.2">Consistency — the same energy is an anchor</fork>
+  </branch>
+  <branch id="1.1.1.1.2.1">
+    <content>Dj St!cky Freeparty Filth 9.0. The most varied in the series — bassline, jackin, house, and garage. Enough shifts in tone to keep you from checking out across a long session without ever losing the thread of aggression.</content>
+  </branch>
+  <branch id="1.1.1.1.2.2">
+    <content>Ed Rush and Optical — Virus Vaults Mix. Consistent neurofunk pressure across the full runtime. Nothing invites your attention to drift. Exactly the same weight from start to finish — an anchor you can set your pace against.</content>
   </branch>
 
   <branch id="1.1.1.2">
-    <content>Rolling DnB or hypnotic groove?</content>
-    <fork target="1.1.1.2.1">Rolling DnB, steady forward momentum</fork>
-    <fork target="1.1.1.2.2">Hypnotic groove, something more minimal</fork>
-  </branch>
-  <branch id="1.1.1.2.1">
-    <content>Seba. His mixes have that half-step roll that keeps you moving without demanding your attention. The 70-minute mix is a good starting point. Autonomic era DnB at its most effortless.</content>
-  </branch>
-  <branch id="1.1.1.2.2">
-    <content>Luomo. Vocalcity. Finnish minimal house — warm, understated, locks you into a rhythm without you noticing. Odd choice for a workout but it genuinely works if you just want to be in your own world.</content>
+    <content>Do you know the scene well, or do you want something you can trust without thinking about it?</content>
+    <fork target="1.1.1.2.1">I know it — give me something precise</fork>
+    <fork target="1.1.1.2.2">Just give me something reliable I can put on and forget</fork>
   </branch>
 
+  <branch id="1.1.1.2.1">
+    <content>Which end of DnB's technical spectrum?</content>
+    <fork target="1.1.1.2.1.1">Older techstep — harsh, mechanical, clinical</fork>
+    <fork target="1.1.1.2.1.2">Modern neurofunk — refined, surgical, intricate</fork>
+  </branch>
+  <branch id="1.1.1.2.1.1">
+    <content>Ed Rush and Optical — Wormhole. Late 90s techstep at its harshest. The production sounds deliberately cold and industrial. This is the root system of everything that followed in neurofunk — and in some ways it has never been bettered.</content>
+  </branch>
+  <branch id="1.1.1.2.1.2">
+    <content>Noisia — FabricLive 40. The apex of modern neurofunk craft. Technically flawless, physically demanding. Put it loud enough to feel the bass and it is hard to be mentally anywhere else. The production alone is worth the listen.</content>
+  </branch>
+
+  <branch id="1.1.1.2.2">
+    <content>Heavy or atmospheric?</content>
+    <fork target="1.1.1.2.2.1">Heavy — I want weight behind it</fork>
+    <fork target="1.1.1.2.2.2">Atmospheric — I want to disappear into it</fork>
+  </branch>
+  <branch id="1.1.1.2.2.1">
+    <content>Virus Vaults Mix. Heavy DnB in mix format — you do not need to know the tracks. Flows as one piece, consistent weight throughout. Set it going and let the session happen inside it.</content>
+  </branch>
+  <branch id="1.1.1.2.2.2">
+    <content>FabricLive 46 LTJ Bukem. Atmospheric DnB designed to absorb you. The BPM keeps you moving but your mind can float completely free. Unusual for a workout but very effective for a long zone-out session where the body does the work and the mind goes elsewhere.</content>
+  </branch>
+
+  <branch id="1.1.1.3">
+    <content>Electronic groove or hip hop groove?</content>
+    <fork target="1.1.1.3.1">Electronic — DnB or breaks</fork>
+    <fork target="1.1.1.3.2">Hip hop swing</fork>
+  </branch>
+
+  <branch id="1.1.1.3.1">
+    <content>Rolling and half-step, or more jump and bounce?</content>
+    <fork target="1.1.1.3.1.1">Rolling half-step — meditative but moving</fork>
+    <fork target="1.1.1.3.1.2">Jump and bounce — physical energy</fork>
+  </branch>
+  <branch id="1.1.1.3.1.1">
+    <content>Have you heard the Seba mixes before?</content>
+    <fork target="1.1.1.3.1.1.1">Yes, I know them well</fork>
+    <fork target="1.1.1.3.1.1.2">No, or only vaguely</fork>
+  </branch>
+  <branch id="1.1.1.3.1.1.1">
+    <content>Try the OPTIK mix for something slightly more minimal, or FabricLive 50 Autonomic for the broader half-step sound. Both sustain the pace without demanding effort — the rhythm does the work so you do not have to.</content>
+  </branch>
+  <branch id="1.1.1.3.1.1.2">
+    <content>Seba 70 minute mix is the best entry point. Autonomic-era DnB at its most effortless — locks you into a pace without aggression. Good for workout sessions where you need to find your rhythm before you find your effort.</content>
+  </branch>
+  <branch id="1.1.1.3.1.2">
+    <content>DJ Marky FabricLive 55 or DJ Aphrodite melodic. Brazilian funk in the DnB groove with genuine bounce — hard to stay still, harder to slow down. The kind of music that makes the workout feel shorter than it is.</content>
+  </branch>
+
+  <branch id="1.1.1.3.2">
+    <content>Familiar tracks you can ride, or something to discover?</content>
+    <fork target="1.1.1.3.2.1">Familiar — energy I already know and trust</fork>
+    <fork target="1.1.1.3.2.2">Something to discover while I work out</fork>
+  </branch>
+  <branch id="1.1.1.3.2.1">
+    <content>Which era of your hip hop knowledge?</content>
+    <fork target="1.1.1.3.2.1.1">Beastie Boys energy — chaotic and physical</fork>
+    <fork target="1.1.1.3.2.1.2">De La Soul groove — playful and rhythmic</fork>
+  </branch>
+  <branch id="1.1.1.3.2.1.1">
+    <content>Licensed to Ill for pure momentum, Paul's Boutique if you want density to lose yourself in. Licensed to Ill has the more immediate physical energy — Paul's Boutique rewards the parts of a workout where your mind starts to wander.</content>
+  </branch>
+  <branch id="1.1.1.3.2.1.2">
+    <content>3 Feet High and Rising. Playful, groove-heavy, and dense with detail. You will hear something new every listen. The perfect balance of energy and interest for sessions long enough that your mind needs company.</content>
+  </branch>
+  <branch id="1.1.1.3.2.2">
+    <content>De La Soul — Stakes Is High. If you know 3 Feet High but not this one, the shift in tone will surprise you — more serious, more considered, still groovy. Good for a workout discovery listen when you want something with a bit more weight behind it.</content>
+  </branch>
+
+  <!-- DRIVING -->
   <branch id="1.1.2">
-    <content>Long journey or short hop?</content>
-    <fork target="1.1.2.1">Long journey, need something that sustains</fork>
-    <fork target="1.1.2.2">Short hop, just need something for now</fork>
+    <content>How long is the journey?</content>
+    <fork target="1.1.2.1">Long — more than 45 minutes</fork>
+    <fork target="1.1.2.2">Short — under 20 minutes</fork>
+    <fork target="1.1.2.3">Very long — multiple hours, needs to sustain</fork>
   </branch>
 
   <branch id="1.1.2.1">
-    <content>Do you want a mix to run unattended, or something familiar you already know well?</content>
-    <fork target="1.1.2.1.1">A good mix, set it and forget it</fork>
-    <fork target="1.1.2.1.2">Something familiar I can half-focus on</fork>
+    <content>A mix that runs unattended, or something you already know?</content>
+    <fork target="1.1.2.1.1">A mix — set it and forget it</fork>
+    <fork target="1.1.2.1.2">Something familiar</fork>
   </branch>
 
   <branch id="1.1.2.1.1">
     <content>What mood for the road?</content>
-    <fork target="1.1.2.1.1.1">Energised — keep me alert and moving</fork>
-    <fork target="1.1.2.1.1.2">Mellow — smooth and sustained</fork>
+    <fork target="1.1.2.1.1.1">Alert and energised</fork>
+    <fork target="1.1.2.1.1.2">Smooth and flowing</fork>
   </branch>
+
   <branch id="1.1.2.1.1.1">
-    <content>FabricLive 03 with DJ Hype for jump-up energy, or FabricLive 40 with Noisia if you want something darker and more technical. Both will keep you focused across a long drive.</content>
+    <content>DnB or breaks?</content>
+    <fork target="1.1.2.1.1.1.1">DnB — fast and percussive</fork>
+    <fork target="1.1.2.1.1.1.2">Breaks — more rhythmically varied</fork>
   </branch>
+  <branch id="1.1.2.1.1.1.1">
+    <content>Dancefloor energy or dark and technical?</content>
+    <fork target="1.1.2.1.1.1.1.1">Dancefloor — crowd energy in the car</fork>
+    <fork target="1.1.2.1.1.1.1.2">Dark and technical — focused and serious</fork>
+  </branch>
+  <branch id="1.1.2.1.1.1.1.1">
+    <content>DJ Hype FabricLive 03. Jump-up DnB built for rooms full of people. That crowd energy carries into a car — it is hard to feel tired or disengaged with this on. Relentlessly fun without being mindless.</content>
+  </branch>
+  <branch id="1.1.2.1.1.1.1.2">
+    <content>Noisia FabricLive 40 or Ed Rush and Optical Virus Vaults. Both are serious enough to keep full attention engaged across a long drive without tipping into something oppressive. Pick Noisia if you want more variety, Virus Vaults for pure consistency.</content>
+  </branch>
+  <branch id="1.1.2.1.1.1.2">
+    <content>UK sound or American breaks?</content>
+    <fork target="1.1.2.1.1.1.2.1">UK — big, physical, forward</fork>
+    <fork target="1.1.2.1.1.1.2.2">Turntablist precision — technique as rhythm</fork>
+  </branch>
+  <branch id="1.1.2.1.1.1.2.1">
+    <content>Freestylers or Stanton Warriors. Wide stereo image, punchy bass, enough variation to hold attention across a journey. UK breaks physicality works well at car volume — you feel the low end and the rhythm keeps you alert.</content>
+  </branch>
+  <branch id="1.1.2.1.1.1.2.2">
+    <content>DJ Craze — Girls on the Floor remaster. Scratch technique and breaks in mix format. The precision is its own kind of alertness. Nothing else asks for your attention quite the same way — your brain follows the timing involuntarily.</content>
+  </branch>
+
   <branch id="1.1.2.1.1.2">
-    <content>FabricLive 46 with LTJ Bukem. Atmospheric DnB that flows across an entire journey without interrupting your thoughts. Or FabricLive 68 Calibre if you want something a shade warmer.</content>
+    <content>Melodic and emotional or smooth and rhythmic?</content>
+    <fork target="1.1.2.1.1.2.1">Melodic and emotional</fork>
+    <fork target="1.1.2.1.1.2.2">Smooth and rhythmic — groove without feeling</fork>
+  </branch>
+  <branch id="1.1.2.1.1.2.1">
+    <content>Have you heard LTJ Bukem and Calibre before?</content>
+    <fork target="1.1.2.1.1.2.1.1">Yes, I know them</fork>
+    <fork target="1.1.2.1.1.2.1.2">No — this is new territory</fork>
+  </branch>
+  <branch id="1.1.2.1.1.2.1.1">
+    <content>Do you need to think, or do you need to stop thinking?</content>
+    <fork target="1.1.2.1.1.2.1.1.1">I need space to think</fork>
+    <fork target="1.1.2.1.1.2.1.1.2">I need to stop thinking — occupy my mind</fork>
+  </branch>
+  <branch id="1.1.2.1.1.2.1.1.1">
+    <content>LTJ Bukem FabricLive 46. Atmospheric DnB that opens space rather than filling it. Good for drives where you need your mind free to work on something else. The music creates a container for thought rather than competing with it.</content>
+  </branch>
+  <branch id="1.1.2.1.1.2.1.1.2">
+    <content>Calibre FabricLive 68. Warm, musicianly liquid DnB that gives your mind enough to follow without demanding concentration. The emotional intelligence in his mixes is satisfying enough to occupy you completely without effort.</content>
+  </branch>
+  <branch id="1.1.2.1.1.2.1.2">
+    <content>Start with Calibre FabricLive 68 — the most immediately accessible of the liquid mixes. Melodic enough to connect with on a first listen, deep enough to keep rewarding across a long drive. If it lands, go to Marcus Intalex FabricLive 35 next time.</content>
+  </branch>
+  <branch id="1.1.2.1.1.2.2">
+    <content>DJ Marky FabricLive 55 or Aphrodite melodic mix. Brazilian DnB influence gives Marky's mix an irresistible forward groove — rhythmic without emotional weight. Aphrodite if you want something slightly warmer and more melodic.</content>
   </branch>
 
   <branch id="1.1.2.1.2">
     <content>Electronic or hip hop?</content>
-    <fork target="1.1.2.1.2.1">Electronic, something I know well</fork>
-    <fork target="1.1.2.1.2.2">Hip hop, familiar and comfortable</fork>
+    <fork target="1.1.2.1.2.1">Electronic</fork>
+    <fork target="1.1.2.1.2.2">Hip hop</fork>
   </branch>
   <branch id="1.1.2.1.2.1">
-    <content>Amon Tobin on a long drive is genuinely special. Out From Out Where or Supermodified. Music that shifts and evolves exactly as a journey does — you arrive somewhere different to where you started.</content>
+    <content>Cinematic and abstract or more structured?</content>
+    <fork target="1.1.2.1.2.1.1">Cinematic — I want it to score the journey</fork>
+    <fork target="1.1.2.1.2.1.2">More structured — rhythm-driven but interesting</fork>
+  </branch>
+  <branch id="1.1.2.1.2.1.1">
+    <content>Amon Tobin — Out From Out Where. Abstract, textural, shifts like a journey does. You will arrive somewhere mentally different to where you started. Makes a familiar road feel like new terrain.</content>
+  </branch>
+  <branch id="1.1.2.1.2.1.2">
+    <content>Amon Tobin — Supermodified. More rhythm-driven than his later work — intricate but grounded. Good if you want his sonic world without the full abstraction. Also works for drives where you need to stay alert as well as interested.</content>
   </branch>
   <branch id="1.1.2.1.2.2">
-    <content>Beastie Boys — Paul's Boutique. An album that rewards familiarity. You catch something new every time, and it is dense enough to carry a long drive without getting stale.</content>
+    <content>Energy or comfort?</content>
+    <fork target="1.1.2.1.2.2.1">Energy — keep me sharp</fork>
+    <fork target="1.1.2.1.2.2.2">Comfort — warm, familiar, no surprises</fork>
+  </branch>
+  <branch id="1.1.2.1.2.2.1">
+    <content>Beastie Boys — Paul's Boutique. Relentless sample density and energy. An album that rewards familiarity — you catch something new every time. Hard to feel tired behind the wheel with this on.</content>
+  </branch>
+  <branch id="1.1.2.1.2.2.2">
+    <content>De La Soul — Stakes Is High or 3 Feet High. Warm, witty, no rough edges. Good company for a road you know well. Nothing demands your attention but everything rewards it if you offer it.</content>
   </branch>
 
   <branch id="1.1.2.2">
-    <content>Want something to pump you up, or just fill the time?</content>
-    <fork target="1.1.2.2.1">Pump me up for what I am about to do</fork>
-    <fork target="1.1.2.2.2">Just fill the journey, nothing specific</fork>
+    <content>Does the music need to do something, or just fill the time?</content>
+    <fork target="1.1.2.2.1">Set a mood — I need to arrive in a specific state</fork>
+    <fork target="1.1.2.2.2">Just fill it pleasantly</fork>
   </branch>
   <branch id="1.1.2.2.1">
-    <content>Deekline and Ed Solo or DJ Craze. Short, punchy, high energy. Breaks with attitude — you will arrive already in the right headspace.</content>
+    <content>Pump up or bring down?</content>
+    <fork target="1.1.2.2.1.1">Pump me up — I need to arrive ready</fork>
+    <fork target="1.1.2.2.1.2">Calm me down — I need to arrive composed</fork>
+  </branch>
+  <branch id="1.1.2.2.1.1">
+    <content>DJ Craze or Deekline and Ed Solo. Short, punchy, full of attitude. The Deekline Booty Breaks Vol 1 intro is one of the best arriving-ready moments in breaks. You will get out of the car already where you need to be.</content>
+  </branch>
+  <branch id="1.1.2.2.1.2">
+    <content>Something from the Seba or Calibre end of things. Rhythmic enough to give you structure, calm enough to bring your temperature down. The half-step roll is almost meditative at low-medium volume in a car.</content>
   </branch>
   <branch id="1.1.2.2.2">
-    <content>Pick a single De La Soul or Beastie Boys track and let it shuffle. Nothing better than a good song you know well filling a ten-minute drive.</content>
+    <content>Something you know or something random?</content>
+    <fork target="1.1.2.2.2.1">Something I know well</fork>
+    <fork target="1.1.2.2.2.2">Surprise me</fork>
+  </branch>
+  <branch id="1.1.2.2.2.1">
+    <content>Pick a single track you love and let it carry the drive. One great song beats three average ones. Short drives with the right track are often better than long drives with the wrong album.</content>
+  </branch>
+  <branch id="1.1.2.2.2.2">
+    <content>Put a FabricLive mix on and listen to whatever track comes up. Twenty minutes is enough to find at least one thing you want to hear again. Treat it as a discovery exercise on a route you already know.</content>
+  </branch>
+
+  <branch id="1.1.2.3">
+    <content>Does the music need to sustain across everything, or will you change it in phases?</content>
+    <fork target="1.1.2.3.1">One thing that lasts the whole drive</fork>
+    <fork target="1.1.2.3.2">I will manage it in phases</fork>
+  </branch>
+  <branch id="1.1.2.3.1">
+    <content>Narrative and evolving, or consistent and reliable?</content>
+    <fork target="1.1.2.3.1.1">Narrative — I want it to shift as the drive does</fork>
+    <fork target="1.1.2.3.1.2">Consistent — same energy start to finish</fork>
+  </branch>
+  <branch id="1.1.2.3.1.1">
+    <content>Amon Tobin — Out From Out Where into Supermodified back to back. Three-plus hours that shift in texture and intensity across the journey. Treat it as a scored drive rather than background. You will arrive feeling like you went somewhere.</content>
+  </branch>
+  <branch id="1.1.2.3.1.2">
+    <content>Stack FabricLive 35, 44, and 68 together — Marcus Intalex, Commix, and Calibre. About three hours of consistent, warm, musicianly DnB. Reliable across any long drive, similar enough in energy to feel unbroken.</content>
+  </branch>
+  <branch id="1.1.2.3.2">
+    <content>Plan it in stages. Something mellow to settle in — LTJ Bukem or Calibre. More energy as you hit your stride — DJ Hype or Noisia. Something to arrive with — DJ Craze or Deekline for the final stretch. The music marks the journey's progress.</content>
   </branch>
 
   <!-- ============================================================ -->
   <!-- 1.2 SOCIALISING -->
   <!-- ============================================================ -->
   <branch id="1.2">
-    <content>A few people or a bigger group?</content>
-    <fork target="1.2.1">Small group — a few people</fork>
-    <fork target="1.2.2">Bigger group — proper gathering</fork>
+    <content>What kind of social situation?</content>
+    <fork target="1.2.1">Two or three people — intimate, everyone knows each other</fork>
+    <fork target="1.2.2">Small group — five to ten, varied familiarity</fork>
+    <fork target="1.2.3">Bigger gathering — proper party or event</fork>
   </branch>
 
   <branch id="1.2.1">
-    <content>Do you know their taste, or is it mixed company?</content>
-    <fork target="1.2.1.1">I know what they are into</fork>
-    <fork target="1.2.1.2">Mixed company, different tastes</fork>
+    <content>Are you all into the same music, or is it a mix?</content>
+    <fork target="1.2.1.1">All on the same page — scene people</fork>
+    <fork target="1.2.1.2">Not all into electronic — need common ground</fork>
   </branch>
 
   <branch id="1.2.1.1">
-    <content>Are they into electronic music or broader?</content>
-    <fork target="1.2.1.1.1">They know the scene, we are all on the same page</fork>
-    <fork target="1.2.1.1.2">Broader taste — not a scene crowd</fork>
+    <content>What is the music doing in the room?</content>
+    <fork target="1.2.1.1.1">Actively listening and discussing it</fork>
+    <fork target="1.2.1.1.2">Background while doing something else</fork>
+    <fork target="1.2.1.1.3">Dancing, even in a small space</fork>
   </branch>
 
   <branch id="1.2.1.1.1">
-    <content>Are people likely to dance, or are you listening and talking?</content>
-    <fork target="1.2.1.1.1.1">Dancing is likely</fork>
-    <fork target="1.2.1.1.1.2">Listening, appreciating, talking about it</fork>
+    <content>Show them something new or enjoy something you all know?</content>
+    <fork target="1.2.1.1.1.1">Show them something — shared discovery</fork>
+    <fork target="1.2.1.1.1.2">Something we all know — enjoy it together</fork>
   </branch>
   <branch id="1.2.1.1.1.1">
-    <content>Stanton Warriors, Freestylers, or Deekline and Ed Solo. High energy breaks that get a room moving without being overwhelming. Credible but accessible for a small space.</content>
+    <content>How adventurous is the group?</content>
+    <fork target="1.2.1.1.1.1.1">Very — take us somewhere genuinely unfamiliar</fork>
+    <fork target="1.2.1.1.1.1.2">Adventurous but still within the scene</fork>
+  </branch>
+  <branch id="1.2.1.1.1.1.1">
+    <content>The Bug — Fire or London Zoo. Even for scene people, this is probably outside the comfort zone — the dancehall and industrial crossover is genuinely unlike anything in DnB or breaks. Worth a group listen precisely because it will start an argument.</content>
+  </branch>
+  <branch id="1.2.1.1.1.1.2">
+    <content>Cujo — Adventures in Foam. Shadow Records-era DnB that sounds nothing like what you expect from the label. Experimental, atmospheric, ahead of its time. Great for a small group that knows the scene but has not heard everything in it.</content>
   </branch>
   <branch id="1.2.1.1.1.2">
-    <content>Amon Tobin, Four Tet FabricLive 59, or Clams Casino instrumentals. Music that rewards close attention and gives people something to actually talk about. Put it on and let the conversation follow.</content>
+    <content>Amon Tobin — Supermodified or Out From Out Where. If you all know his work it becomes a conversation about which album is better. If one person does not know it yet, watching them hear it for the first time is worth the evening.</content>
   </branch>
 
   <branch id="1.2.1.1.2">
-    <content>Is there a common ground genre, or do you want to try something new on them?</content>
-    <fork target="1.2.1.1.2.1">Use hip hop as common ground</fork>
-    <fork target="1.2.1.1.2.2">We are adventurous, try something different</fork>
+    <content>High energy or low and comfortable?</content>
+    <fork target="1.2.1.1.2.1">High — keep the energy up</fork>
+    <fork target="1.2.1.1.2.2">Low — relaxed evening background</fork>
   </branch>
   <branch id="1.2.1.1.2.1">
-    <content>De La Soul or Beastie Boys. Both are accessible enough for people who do not know the scene but interesting enough that they will want to know more. Stakes Is High or Paul's Boutique.</content>
+    <content>Deekline and Ed Solo or DJ Craze. High-energy breaks in a small space — not so demanding it takes over the evening, punchy enough to keep the energy right. Both have enough character that they reward scene knowledge without requiring it.</content>
   </branch>
   <branch id="1.2.1.1.2.2">
-    <content>DJ Aphrodite melodic mix. It is the best gateway drug for DnB sceptics — smooth enough to not alienate anyone, interesting enough to hook people who have never heard the genre. Works every time.</content>
+    <content>Seba or Marcus Intalex FabricLive 35. Warm, rolling DnB that sounds good at low volume without losing its quality. The kind of choice that makes an evening feel well-curated rather than well-planned.</content>
+  </branch>
+
+  <branch id="1.2.1.1.3">
+    <content>Proper sound system or small setup?</content>
+    <fork target="1.2.1.1.3.1">Proper speakers — room to move and feel it</fork>
+    <fork target="1.2.1.1.3.2">Small setup — kitchen or living room dancing</fork>
+  </branch>
+  <branch id="1.2.1.1.3.1">
+    <content>Build it like a proper set. Open groove-heavy — DJ Marky or Aphrodite. Build toward the heavier material — Noisia or Ed Rush when the room is ready. Close with DJ Craze for pure technique or Calibre for emotional landing. Earn the heavy stuff first.</content>
+  </branch>
+  <branch id="1.2.1.1.3.2">
+    <content>UK Garage or Bassline. DJ Q FabricLive 99 or the Speed Garage mix. The tempo is exactly right for a small space — enough to move to, not so demanding people feel self-conscious. The groove is infectious without being confrontational.</content>
   </branch>
 
   <branch id="1.2.1.2">
-    <content>Do you want something that works as background but rewards attention, or do you want to get people moving?</content>
-    <fork target="1.2.1.2.1">Background that rewards attention</fork>
-    <fork target="1.2.1.2.2">Get people moving</fork>
+    <content>Is there a shared genre to anchor on, or truly mixed?</content>
+    <fork target="1.2.1.2.1">Hip hop as common ground — most people have some connection</fork>
+    <fork target="1.2.1.2.2">Genuinely mixed — no clear shared reference</fork>
   </branch>
   <branch id="1.2.1.2.1">
-    <content>Clams Casino instrumentals or Luomo. Interesting enough to notice, unobtrusive enough to talk over. The kind of music that people ask about halfway through the evening.</content>
+    <content>Accessible immediately or intelligent and rewarding?</content>
+    <fork target="1.2.1.2.1.1">Accessible — I want everyone to enjoy it straight away</fork>
+    <fork target="1.2.1.2.1.2">Intelligent — something that rewards attention</fork>
+  </branch>
+  <branch id="1.2.1.2.1.1">
+    <content>Beastie Boys Licensed to Ill or De La Soul 3 Feet High and Rising. Licensed to Ill if you want immediate physical energy — it hits everyone the same way. 3 Feet High if you want something with more warmth and wit. Both are safe bets in mixed company.</content>
+  </branch>
+  <branch id="1.2.1.2.1.2">
+    <content>De La Soul Stakes Is High or Beastie Boys Paul's Boutique. Both reward close listening without demanding it. Stakes Is High ages better the more hip hop you know. Paul's Boutique is the more immediately surprising — the sample density catches people who are not looking for it.</content>
   </branch>
   <branch id="1.2.1.2.2">
-    <content>Breaks or UK Garage?</content>
-    <fork target="1.2.1.2.2.1">Breaks — big and energetic</fork>
-    <fork target="1.2.1.2.2.2">UK Garage or Bassline — groovy and rhythmic</fork>
+    <content>Introduce them to your world or stay neutral?</content>
+    <fork target="1.2.1.2.2.1">Introduce them — use the opportunity</fork>
+    <fork target="1.2.1.2.2.2">Stay neutral — keep everyone comfortable</fork>
   </branch>
   <branch id="1.2.1.2.2.1">
-    <content>Freestylers or Stanton Warriors. Punchy UK breaks with enough swagger to get anyone moving, whatever their background. Hard to resist.</content>
+    <content>DJ Aphrodite melodic mix. The best gateway into DnB for people who do not know the scene — melodic, non-aggressive, immediately enjoyable. If this does not land with someone, nothing in the genre will. Have the story of the music ready to tell alongside it.</content>
   </branch>
   <branch id="1.2.1.2.2.2">
-    <content>DJ Q on FabricLive 99, or the Nkogliaz Speed Garage mix. That UK Garage groove is infectious in a small space. The tempo is just right for a room that is warming up.</content>
+    <content>Clams Casino instrumentals. The most universally palatable thing in this collection — beat music that sounds contemporary, interesting without being challenging, and sits under conversation without dominating it. Works every time with every kind of person.</content>
   </branch>
 
   <branch id="1.2.2">
-    <content>Party with dancing, or a gathering where music is in the background?</content>
-    <fork target="1.2.2.1">Party — people are there to dance</fork>
-    <fork target="1.2.2.2">Gathering — music in the background</fork>
+    <content>Is the group there for the music, or is it background to conversation?</content>
+    <fork target="1.2.2.1">There for the music — it matters</fork>
+    <fork target="1.2.2.2">Background — conversation is the point</fork>
   </branch>
 
   <branch id="1.2.2.1">
-    <content>Does the crowd know the scene, or is it mixed?</content>
-    <fork target="1.2.2.1.1">They know — play what you actually like</fork>
-    <fork target="1.2.2.1.2">Mixed crowd — needs to work for everyone</fork>
+    <content>How much does the group know?</content>
+    <fork target="1.2.2.1.1">Mostly scene — they will recognise a lot</fork>
+    <fork target="1.2.2.1.2">Mixed — some know it, some do not</fork>
   </branch>
   <branch id="1.2.2.1.1">
-    <content>Build it properly. Start with Aphrodite or DJ Marky to warm the room up, move into DJ Hype or Noisia when it is going, then close with DJ Craze for the set you actually want to play. Earn the heavy stuff.</content>
+    <content>Play the acknowledged classics or take some risks?</content>
+    <fork target="1.2.2.1.1.1">The classics — give them what they came for</fork>
+    <fork target="1.2.2.1.1.2">Take risks — things they probably have not heard</fork>
+  </branch>
+  <branch id="1.2.2.1.1.1">
+    <content>FabricLive 03, 40, and 46 rotating. Covers the main energy zones — jump-up, neurofunk, and atmospheric. Everyone will know at least one and feel the recognition. The contrast between them becomes the conversation.</content>
+  </branch>
+  <branch id="1.2.2.1.1.2">
+    <content>Blunted on Shadow Records or kyo006 Futurism. Records from credible corners of the scene that rarely get played. Rewarding for people who know the reference points but have not heard everything. Invites conversation rather than closing it.</content>
   </branch>
   <branch id="1.2.2.1.2">
-    <content>Aphrodite melodic, Freestylers, or Stanton Warriors. Accessible but credible — electronic music that a mixed crowd will respond to without you having to compromise your taste too badly.</content>
+    <content>Lean toward the knowledgeable listeners or bring the others in?</content>
+    <fork target="1.2.2.1.2.1">Reward the people who know the scene</fork>
+    <fork target="1.2.2.1.2.2">Bring the others in first</fork>
+  </branch>
+  <branch id="1.2.2.1.2.1">
+    <content>Open with Aphrodite or DJ Marky to establish the context and warm the room. Then move to the material the scene people will respond to. The newcomers will follow if the energy builds naturally rather than arriving fully formed.</content>
+  </branch>
+  <branch id="1.2.2.1.2.2">
+    <content>Aphrodite melodic or DJ Marky FabricLive 55. Genuine about the genre while being immediately accessible. Scene people will respect the choice even while finding it familiar. Gets everyone in the same room before you go further.</content>
   </branch>
 
   <branch id="1.2.2.2">
-    <content>Electronic or hip hop as the background?</content>
-    <fork target="1.2.2.2.1">Electronic — textural and interesting</fork>
-    <fork target="1.2.2.2.2">Hip hop — familiar and easy</fork>
+    <content>What energy level suits the gathering?</content>
+    <fork target="1.2.2.2.1">High — keep the room lively</fork>
+    <fork target="1.2.2.2.2">Medium — relaxed but present</fork>
+    <fork target="1.2.2.2.3">Low — evening winding down</fork>
   </branch>
   <branch id="1.2.2.2.1">
-    <content>Amon Tobin or Four Tet FabricLive 59. Complex enough to be interesting if anyone tunes in, unobtrusive enough to disappear into the room. Sounds like you put thought into the playlist, which you did.</content>
+    <content>Freestylers, Stanton Warriors, or Deekline and Ed Solo in rotation. UK breaks at gathering volume — engaging without being imposing. Lively enough to keep energy up, familiar enough that nobody feels excluded.</content>
   </branch>
   <branch id="1.2.2.2.2">
-    <content>De La Soul and Beastie Boys back to back. Warm, familiar, no rough edges. Everyone has a loose connection to it even if they cannot name the tracks. Safe choice in the best possible sense.</content>
+    <content>Clams Casino instrumentals or Luomo. Both hold up at conversation volume without losing their character. Interesting enough to mention if someone asks, easy enough to talk over if they do not.</content>
+  </branch>
+  <branch id="1.2.2.2.3">
+    <content>Four Tet FabricLive 59 or Amon Tobin at low volume. The room is settling, conversations are getting smaller and more personal. Music that fits that shift — present, not demanding, changes the texture of the space without taking it over.</content>
+  </branch>
+
+  <branch id="1.2.3">
+    <content>Are you playing the music or listening to someone else?</content>
+    <fork target="1.2.3.1">I am playing it</fork>
+    <fork target="1.2.3.2">Someone else is — I am just there</fork>
+  </branch>
+  <branch id="1.2.3.1">
+    <content>What does the crowd know and expect?</content>
+    <fork target="1.2.3.1.1">Scene people — they came for this specifically</fork>
+    <fork target="1.2.3.1.2">Mixed — you need to read the room</fork>
+  </branch>
+  <branch id="1.2.3.1.1">
+    <content>What stage of the night is it?</content>
+    <fork target="1.2.3.1.1.1">Early — warming up</fork>
+    <fork target="1.2.3.1.1.2">Peak — the room is going</fork>
+    <fork target="1.2.3.1.1.3">Winding down — close it properly</fork>
+  </branch>
+  <branch id="1.2.3.1.1.1">
+    <content>Aphrodite or DJ Marky. Melodic DnB that invites people in without demanding they commit. The right choice for a room still finding its feet — builds trust before it builds energy.</content>
+  </branch>
+  <branch id="1.2.3.1.1.2">
+    <content>DJ Hype for jump-up energy, Noisia or Ed Rush and Optical for the technical end. Read which way the room is leaning — both work but they reward different things in a crowd. If you are unsure, Hype is safer at peak.</content>
+  </branch>
+  <branch id="1.2.3.1.1.3">
+    <content>Calibre or LTJ Bukem. Bring the energy down gracefully — atmospheric DnB that keeps the rhythm but releases the physical intensity. The room will follow the music down if you do it gradually rather than suddenly.</content>
+  </branch>
+  <branch id="1.2.3.1.2">
+    <content>Aphrodite melodic or Freestylers. The safest credible choices for a mixed crowd at a big gathering. Accessible but not embarrassing — you will not regret either, and most people will respond without needing to be told why.</content>
+  </branch>
+  <branch id="1.2.3.2">
+    <content>Music you know or something you are discovering in a crowd?</content>
+    <fork target="1.2.3.2.1">I know it — I am in familiar territory</fork>
+    <fork target="1.2.3.2.2">I do not know it — discovering it live</fork>
+  </branch>
+  <branch id="1.2.3.2.1">
+    <content>Let yourself respond to the room rather than the record. Familiar music in a good crowd hits differently — the collective experience adds something that listening alone cannot. Trust what you know about the track and let the room give it new meaning.</content>
+  </branch>
+  <branch id="1.2.3.2.2">
+    <content>One of the best ways to encounter music — hearing it for the first time while it is working on a room. Pay attention to what the crowd responds to. Ask someone what the track is. The memory of the moment becomes part of the record permanently.</content>
   </branch>
 
   <!-- ============================================================ -->
@@ -198,194 +476,506 @@
   <!-- ============================================================ -->
   <branch id="1.3">
     <content>What time of day is it?</content>
-    <fork target="1.3.1">Morning or afternoon</fork>
-    <fork target="1.3.2">Evening</fork>
-    <fork target="1.3.3">Late night</fork>
+    <fork target="1.3.1">Morning — starting the day</fork>
+    <fork target="1.3.2">Afternoon — middle of the day</fork>
+    <fork target="1.3.3">Evening</fork>
+    <fork target="1.3.4">Late night — the small hours</fork>
   </branch>
 
   <branch id="1.3.1">
-    <content>Are you actively listening or is it background for something else?</content>
-    <fork target="1.3.1.1">Actively listening — this is the activity</fork>
-    <fork target="1.3.1.2">Background for something else</fork>
+    <content>How awake are you?</content>
+    <fork target="1.3.1.1">Not quite — ease me in</fork>
+    <fork target="1.3.1.2">Ready — I want energy straight away</fork>
   </branch>
-
   <branch id="1.3.1.1">
-    <content>What do you want from it?</content>
-    <fork target="1.3.1.1.1">Complexity — something with layers to unpick</fork>
-    <fork target="1.3.1.1.2">Emotion — something that actually moves me</fork>
-    <fork target="1.3.1.1.3">Discovery — hear something I have not heard before</fork>
+    <content>Rhythm or near-ambient?</content>
+    <fork target="1.3.1.1.1">Some rhythm — a gentle beat to wake into</fork>
+    <fork target="1.3.1.1.2">Near-ambient — I am not ready for beats yet</fork>
   </branch>
-
   <branch id="1.3.1.1.1">
-    <content>Structural complexity or sonic complexity?</content>
-    <fork target="1.3.1.1.1.1">Structural — I want intricate construction</fork>
-    <fork target="1.3.1.1.1.2">Sonic — I want incredible production craft</fork>
+    <content>Luomo at low volume or early LTJ Bukem. Both have enough rhythm to keep you present without demanding anything. Good company for a slow morning without being intrusive or energetic enough to feel wrong for the hour.</content>
   </branch>
-  <branch id="1.3.1.1.1.1">
-    <content>Amon Tobin — Out From Out Where. Every track is a puzzle built from unlikely samples. Put headphones on, close your eyes, and try to work out where the sounds are coming from. You probably cannot.</content>
-  </branch>
-  <branch id="1.3.1.1.1.2">
-    <content>Noisia — FabricLive 40. Production technique as art form. The way they layer, compress, and sculpt sound is unlike anything else in DnB. Worth headphone listening purely to study the craft.</content>
-  </branch>
-
   <branch id="1.3.1.1.2">
-    <content>What kind of emotion?</content>
-    <fork target="1.3.1.1.2.1">Nostalgic — that warm familiar feeling</fork>
-    <fork target="1.3.1.1.2.2">Searching — something more open and melancholic</fork>
+    <content>Clams Casino instrumentals played quietly. The hazy, cloud-rap texture is genuinely ambient at low volume. Something to wake up into gradually rather than wake up to abruptly. Let the room fill with it before you decide what you actually want.</content>
   </branch>
-  <branch id="1.3.1.1.2.1">
-    <content>De La Soul — 3 Feet High and Rising, or Beastie Boys — Paul's Boutique. Both are dense with detail that rewards the kind of close listening you only do with headphones on. Golden era hip hop at its most generous.</content>
-  </branch>
-  <branch id="1.3.1.1.2.2">
-    <content>Calibre or LTJ Bukem. FabricLive 68 or Logical Progression. The kind of liquid DnB that sounds like it is asking a question it cannot quite answer. Put it on when you have something on your mind and let it do the work.</content>
-  </branch>
-
-  <branch id="1.3.1.1.3">
-    <content>Somewhere familiar but deeper, or something genuinely different?</content>
-    <fork target="1.3.1.1.3.1">Familiar territory but deeper — artist I know, album I have not heard</fork>
-    <fork target="1.3.1.1.3.2">Something genuinely different — take me somewhere new</fork>
-  </branch>
-  <branch id="1.3.1.1.3.1">
-    <content>Pick an artist you already respect and go to their earliest or most obscure record. Cujo — Adventures In Foam is a good example: Shadow Records-era DnB that sounds nothing like what you expect. The gaps in a discography are usually where the interesting stuff hides.</content>
-  </branch>
-  <branch id="1.3.1.1.3.2">
-    <content>The Bug — Fire or London Zoo. It connects DnB, dancehall, grime, and industrial in a way that sounds like nothing else. Abrasive at first, then completely absorbing. Give it two full listens before deciding.</content>
-  </branch>
-
   <branch id="1.3.1.2">
-    <content>Do you want energy in the background or something neutral?</content>
-    <fork target="1.3.1.2.1">Energy — keep the morning moving</fork>
-    <fork target="1.3.1.2.2">Neutral — just fill the space without intruding</fork>
+    <content>Physical energy or mental sharpness?</content>
+    <fork target="1.3.1.2.1">Physical — get the body going before the mind</fork>
+    <fork target="1.3.1.2.2">Mental — sharpen up, start thinking</fork>
   </branch>
   <branch id="1.3.1.2.1">
-    <content>DJ Aphrodite melodic mix or DJ Marky FabricLive 55. Melodic DnB and liquid breaks that feel upbeat without demanding your attention. The kind of music that improves whatever you are doing without you noticing.</content>
+    <content>DJ Aphrodite or Freestylers. Upbeat and immediate — the kind of music that makes you move before you have decided to. Good for mornings when you need momentum before motivation arrives.</content>
   </branch>
   <branch id="1.3.1.2.2">
-    <content>Luomo or Clams Casino instrumentals. Both sit at low volume without losing their quality. Interesting enough to pay attention to if you choose, quiet enough to completely ignore if you do not.</content>
+    <content>De La Soul — Stakes Is High. Sharp, considered, lyrically intelligent. Hip hop that makes you think without demanding you sit down and concentrate. Good for mornings when your head needs to engage rather than your body.</content>
   </branch>
 
   <branch id="1.3.2">
-    <content>Winding down or still in the middle of the evening?</content>
-    <fork target="1.3.2.1">Winding down — the evening is ending</fork>
-    <fork target="1.3.2.2">Still going — plenty of evening left</fork>
+    <content>Actively listening or background for something else?</content>
+    <fork target="1.3.2.1">Actively listening — this is the activity</fork>
+    <fork target="1.3.2.2">Background — doing something else alongside it</fork>
   </branch>
 
   <branch id="1.3.2.1">
-    <content>Liquid DnB or something softer?</content>
-    <fork target="1.3.2.1.1">Liquid DnB — I still want rhythm, just calmer</fork>
-    <fork target="1.3.2.1.2">Softer — I am genuinely winding down</fork>
+    <content>What are you looking for from the listen?</content>
+    <fork target="1.3.2.1.1">Technical appreciation — study the craft</fork>
+    <fork target="1.3.2.1.2">Emotion — I want to feel something</fork>
+    <fork target="1.3.2.1.3">Discovery — something I have not heard</fork>
+    <fork target="1.3.2.1.4">Nostalgia — something I know and love</fork>
   </branch>
+
   <branch id="1.3.2.1.1">
-    <content>Calibre, Marcus Intalex FabricLive 35, or Commix. All three sit in that space between energy and calm — still rhythmic, still moving, but nothing that will keep you up. Commix if you want the most reflective of the three.</content>
+    <content>Production craft or compositional structure?</content>
+    <fork target="1.3.2.1.1.1">Production — how sounds are made and shaped</fork>
+    <fork target="1.3.2.1.1.2">Composition — how a piece is built and developed</fork>
   </branch>
+  <branch id="1.3.2.1.1.1">
+    <content>Noisia FabricLive 40 in good headphones. The compression, layering, bass design — a production masterclass. Listen to how each element sits in the mix. There is nothing wasted, nothing accidental. Takes multiple listens to hear how much work went into it.</content>
+  </branch>
+  <branch id="1.3.2.1.1.2">
+    <content>Amon Tobin — Out From Out Where. Every track is a structural puzzle. Sample sources unrecognisable, architecture deliberate and intricate. Try to map what you hear to the choices being made. You will not fully succeed, which is the point.</content>
+  </branch>
+
   <branch id="1.3.2.1.2">
-    <content>Luomo or Four Tet FabricLive 59. Both have enough rhythm to feel alive but enough space to let your mind slow down. Four Tet if you want something with a bit more melodic warmth.</content>
+    <content>What kind of emotion?</content>
+    <fork target="1.3.2.1.2.1">Melancholy — searching, open</fork>
+    <fork target="1.3.2.1.2.2">Euphoric — I want to feel the highs</fork>
+    <fork target="1.3.2.1.2.3">Introspective — quiet and inward</fork>
+  </branch>
+  <branch id="1.3.2.1.2.1">
+    <content>Calibre. His music sits permanently in the space between sadness and resolution — never fully dark, never falsely hopeful. FabricLive 68 is the best entry point. Play it with your eyes closed. There is real intelligence in how it manages feeling without sentimentality.</content>
+  </branch>
+  <branch id="1.3.2.1.2.2">
+    <content>DJ Hype FabricLive 03 or DJ Marky FabricLive 55. Jump-up DnB and Brazilian liquid at their most unambiguously joyful. The highs of DnB require music built specifically to deliver them — this is that music. Loud. No apologising for it.</content>
+  </branch>
+  <branch id="1.3.2.1.2.3">
+    <content>LTJ Bukem — Logical Progression or FabricLive 46. Atmospheric DnB that opens space for thought rather than filling it. Creates a container rather than a content. Good for afternoons when you need to be with something without being asked to react to it.</content>
+  </branch>
+
+  <branch id="1.3.2.1.3">
+    <content>Deeper within what you know, or genuinely outside it?</content>
+    <fork target="1.3.2.1.3.1">Within what I know — deeper cuts, earlier records</fork>
+    <fork target="1.3.2.1.3.2">Something genuinely different</fork>
+  </branch>
+  <branch id="1.3.2.1.3.1">
+    <content>Which corner has the most unexplored depth?</content>
+    <fork target="1.3.2.1.3.1.1">DnB — I have not heard all of it</fork>
+    <fork target="1.3.2.1.3.1.2">Hip hop — golden era gaps I have not filled</fork>
+  </branch>
+  <branch id="1.3.2.1.3.1.1">
+    <content>Cujo — Adventures in Foam (1997 Shadow reissue) or Blunted on Shadow Records. Both are Shadow Records-era records from before the label defined its identity. Experimental, forward-looking, and largely unheard compared to the main catalogue. This is the DNA of a lot of what came after.</content>
+  </branch>
+  <branch id="1.3.2.1.3.1.2">
+    <content>Give Em Enough Dope Volume 1 or the ATM Magazine compilations. Deep cuts from the golden era that never got the attention they deserved. Rich territory if you know De La Soul and Beastie Boys but not what surrounded them in the same conversations.</content>
+  </branch>
+  <branch id="1.3.2.1.3.2">
+    <content>How far outside?</content>
+    <fork target="1.3.2.1.3.2.1">Adjacent — similar grammar, different accent</fork>
+    <fork target="1.3.2.1.3.2.2">Genuinely outside — I want to be challenged</fork>
+  </branch>
+  <branch id="1.3.2.1.3.2.1">
+    <content>Luomo — Vocalcity. Finnish minimal house that shares the rhythmic intelligence of DnB but sounds completely different. The same obsessive attention to groove and texture, an entirely different sonic world. What DnB producers listen to when they want perspective.</content>
+  </branch>
+  <branch id="1.3.2.1.3.2.2">
+    <content>The Bug — London Zoo. Industrial, dancehall, grime, and DnB in a sound that belongs to none of them. Abrasive, loud, confrontational. Give it two full listens before deciding — it takes that long to understand what it is actually doing.</content>
+  </branch>
+
+  <branch id="1.3.2.1.4">
+    <content>Which era?</content>
+    <fork target="1.3.2.1.4.1">Early to mid 90s — the formative years</fork>
+    <fork target="1.3.2.1.4.2">Late 90s to early 2000s — the golden era</fork>
+    <fork target="1.3.2.1.4.3">Mid 2000s — the FabricLive era</fork>
+  </branch>
+  <branch id="1.3.2.1.4.1">
+    <content>Blunted on Shadow Records or the 1997 Cujo Adventures In Foam reissue. Shadow Records before it was an institution — DnB and hip hop informing each other before either had fully defined itself. The energy of a scene that had not yet decided what it was.</content>
+  </branch>
+  <branch id="1.3.2.1.4.2">
+    <content>Beastie Boys — Paul's Boutique for hip hop, Ed Rush and Optical — Wormhole for DnB. Both from the point at which their genres were fully formed and at their most confident. Revisit them as the records they actually are rather than background.</content>
+  </branch>
+  <branch id="1.3.2.1.4.3">
+    <content>FabricLive 03, 35, 40, or 46. These mixes documented a period when DnB was being taken seriously as music rather than just as a club format. Revisiting them now has historical weight they did not carry at the time.</content>
   </branch>
 
   <branch id="1.3.2.2">
-    <content>Getting ready to go out, or happily settled in?</content>
-    <fork target="1.3.2.2.1">Getting ready to go out — build the energy up</fork>
-    <fork target="1.3.2.2.2">Settled in — enjoying the evening at home</fork>
+    <content>Energy or neutral?</content>
+    <fork target="1.3.2.2.1">Energy — keep the afternoon moving</fork>
+    <fork target="1.3.2.2.2">Neutral — fill the space without intruding</fork>
   </branch>
   <branch id="1.3.2.2.1">
-    <content>Build it in stages. Start with Aphrodite melodic or DJ Marky. Move to Deekline and Ed Solo or DJ Craze when you are nearly ready. By the time you leave you will already be in the right state.</content>
+    <content>DJ Aphrodite 2010 mix or DJ Marky FabricLive 55. Melodic DnB that provides energy without pulling focus. The kind of music you notice in a good way every few minutes, then forget again. Keeps the temperature right across a long afternoon session.</content>
   </branch>
   <branch id="1.3.2.2.2">
-    <content>Seba mixes or Autonomic era DnB — FabricLive 50. Half-step rhythm that is perfectly calibrated for an evening in. Engaging without being demanding. Exactly the right balance.</content>
+    <content>Luomo at low volume or Clams Casino instrumentals. Both function as ambient without losing identity. Make a room feel inhabited and considered without asking you to pay attention to them.</content>
   </branch>
 
   <branch id="1.3.3">
-    <content>Alone or still with people?</content>
-    <fork target="1.3.3.1">Alone — just me and the headphones</fork>
-    <fork target="1.3.3.2">Still with people but the evening is quieting down</fork>
+    <content>Winding down or still active?</content>
+    <fork target="1.3.3.1">Winding down — the day is finishing</fork>
+    <fork target="1.3.3.2">Still active — energy remaining</fork>
   </branch>
-
   <branch id="1.3.3.1">
-    <content>Introspective or floating — do you want to think, or disappear?</content>
-    <fork target="1.3.3.1.1">Introspective — I want music that matches where my head is</fork>
-    <fork target="1.3.3.1.2">Floating — I want to completely let go</fork>
+    <content>Decompress or close the day with something considered?</content>
+    <fork target="1.3.3.1.1">Decompress — shed the day</fork>
+    <fork target="1.3.3.1.2">Close well — mark the end deliberately</fork>
   </branch>
   <branch id="1.3.3.1.1">
-    <content>Clams Casino instrumentals or The Bug. Both sit in a dark, searching space without being oppressive. Clams Casino if you want something hazy and soft. The Bug if you want something with more weight and friction.</content>
+    <content>How much tension are you carrying?</content>
+    <fork target="1.3.3.1.1.1">A lot — match it first, then bring it down</fork>
+    <fork target="1.3.3.1.1.2">Some — gentle decompression is enough</fork>
+  </branch>
+  <branch id="1.3.3.1.1.1">
+    <content>Start with Ed Rush and Optical or Noisia and let it burn off what you are carrying. Then transition to Calibre or Seba as things settle. Match the tension first — do not start mellow when you are not mellow. The music cannot take you somewhere you have not left yet.</content>
+  </branch>
+  <branch id="1.3.3.1.1.2">
+    <content>Seba mixes or FabricLive 50 Autonomic. The half-step roll is decompression in rhythm form — still moving forward, but without urgency. Exactly the right pace for winding down without forcing it.</content>
   </branch>
   <branch id="1.3.3.1.2">
-    <content>LTJ Bukem — Logical Progression or FabricLive 46. Atmospheric DnB designed to dissolve the room around you. Or FabricLive 50 Autonomic if you want something with a bit more tension underneath the surface.</content>
+    <content>Something complete in itself or open-ended?</content>
+    <fork target="1.3.3.1.2.1">A proper record with a shape — beginning, middle, end</fork>
+    <fork target="1.3.3.1.2.2">A mix that can keep going as long as needed</fork>
   </branch>
-
+  <branch id="1.3.3.1.2.1">
+    <content>Amon Tobin — Out From Out Where or De La Soul — Stakes Is High. Both work as complete statements rather than background. Albums designed to be heard start to finish. A satisfying way to close a day when you want something with a sense of shape.</content>
+  </branch>
+  <branch id="1.3.3.1.2.2">
+    <content>Calibre FabricLive 68 or Marcus Intalex FabricLive 35. Mix format means no obligation to stop at a particular point. Let them run as long as the evening does. The quality holds regardless of where you come in or go out.</content>
+  </branch>
   <branch id="1.3.3.2">
-    <content>Still some energy in the room, or genuinely winding down?</content>
-    <fork target="1.3.3.2.1">Still energy — people might dance in the kitchen</fork>
-    <fork target="1.3.3.2.2">Genuinely winding down — the night is nearly done</fork>
+    <content>Getting ready to go out or in for the night with energy left?</content>
+    <fork target="1.3.3.2.1">Getting ready to go out</fork>
+    <fork target="1.3.3.2.2">In for the night but still buzzing</fork>
   </branch>
   <branch id="1.3.3.2.1">
-    <content>DJ Q FabricLive 99 or the Speed Garage mix. Late night UKG has exactly the right energy for this — groove-heavy, not aggressive, keeps things moving without forcing it.</content>
+    <content>How long until you leave?</content>
+    <fork target="1.3.3.2.1.1">An hour or more — time to build properly</fork>
+    <fork target="1.3.3.2.1.2">Nearly ready — need the energy now</fork>
+  </branch>
+  <branch id="1.3.3.2.1.1">
+    <content>Start with Aphrodite melodic or DJ Marky. After 30 minutes move to Deekline and Ed Solo or Freestylers. Final stretch: DJ Hype or DJ Craze. Arrive already in the room mentally. The build is as important as the destination.</content>
+  </branch>
+  <branch id="1.3.3.2.1.2">
+    <content>DJ Craze or Noisia straight in. No build needed — you want to arrive already at the level. Something that hits immediately and holds there for the 15 minutes you have left before the door.</content>
   </branch>
   <branch id="1.3.3.2.2">
-    <content>Amon Tobin or Four Tet FabricLive 59. Both fill a room beautifully at low volume. Complex enough to hold attention if anyone is still listening, easy enough to talk over if they are not.</content>
+    <content>Sustain the energy or let it settle naturally?</content>
+    <fork target="1.3.3.2.2.1">Sustain it — not ready to wind down</fork>
+    <fork target="1.3.3.2.2.2">Let it settle — riding the tail end</fork>
+  </branch>
+  <branch id="1.3.3.2.2.1">
+    <content>Breaks or DnB at full volume. Freestylers, DJ Craze, or Deekline — anything with consistent forward energy. Match the level you are at. Do not let the music pull you down before you are ready to go there.</content>
+  </branch>
+  <branch id="1.3.3.2.2.2">
+    <content>Seba or Marcus Intalex. Ride the energy down without cutting it. The half-step roll lets your tempo slow naturally alongside the music. You will not notice when you stopped moving with it.</content>
+  </branch>
+
+  <branch id="1.3.4">
+    <content>Alone or with someone?</content>
+    <fork target="1.3.4.1">Alone — completely</fork>
+    <fork target="1.3.4.2">With someone, but the night is quiet</fork>
+  </branch>
+  <branch id="1.3.4.1">
+    <content>What is the late-night headspace?</content>
+    <fork target="1.3.4.1.1">Introspective — things to sit with</fork>
+    <fork target="1.3.4.1.2">Restless — too much energy, need to spend it</fork>
+    <fork target="1.3.4.1.3">Floating — I want to disappear</fork>
+  </branch>
+  <branch id="1.3.4.1.1">
+    <content>Heavy or gentle?</content>
+    <fork target="1.3.4.1.1.1">Heavy — something with weight and friction</fork>
+    <fork target="1.3.4.1.1.2">Gentle — hold the space without pressure</fork>
+  </branch>
+  <branch id="1.3.4.1.1.1">
+    <content>The Bug — Fire. Low frequencies, slow tempo, physical weight. Does not try to fix anything — just sits in the dark with you. Loud headphones, lights off. One of the few records that genuinely feels like company in a difficult moment.</content>
+  </branch>
+  <branch id="1.3.4.1.1.2">
+    <content>Clams Casino instrumentals. The haze and warmth of the production is exactly right for late-night introspection that does not need to be heavy. Sits alongside thoughts without amplifying them. Oddly comforting in the small hours.</content>
+  </branch>
+  <branch id="1.3.4.1.2">
+    <content>Spend the energy or let it run?</content>
+    <fork target="1.3.4.1.2.1">Spend it — channel it somewhere</fork>
+    <fork target="1.3.4.1.2.2">Let it run — I do not mind being wired</fork>
+  </branch>
+  <branch id="1.3.4.1.2.1">
+    <content>Put on Amon Tobin or Noisia in headphones and let the mental energy go into the music. Redirect the restlessness into listening. By the time the record finishes you will be ready to sleep. Technical complexity absorbs restlessness more efficiently than anything else.</content>
+  </branch>
+  <branch id="1.3.4.1.2.2">
+    <content>DJ Hype or DJ Craze loud in headphones. If you are wired anyway, commit to it. Move around, let it go. Better than fighting the energy at midnight. You will crash more completely on the other side of it.</content>
+  </branch>
+  <branch id="1.3.4.1.3">
+    <content>LTJ Bukem — Logical Progression or FabricLive 50 Autonomic. Both built to dissolve the room around you. Atmospheric DnB at its most expansive. Eyes closed, headphones on. Let the space open up. The music will carry you if you let it.</content>
+  </branch>
+  <branch id="1.3.4.2">
+    <content>What does the space feel like?</content>
+    <fork target="1.3.4.2.1">Comfortable and close — good company, soft energy</fork>
+    <fork target="1.3.4.2.2">The night is nearly done</fork>
+  </branch>
+  <branch id="1.3.4.2.1">
+    <content>Four Tet FabricLive 59 or Seba mixes. Warm, considered electronic music that suits close company at low volume without demanding attention from either of you. Sounds like a good choice rather than a default.</content>
+  </branch>
+  <branch id="1.3.4.2.2">
+    <content>Luomo quietly or Clams Casino instrumentals barely audible. Music that will still be playing when the conversation has stopped. Something to fall asleep to without noticing the transition. Let it run — there is no wrong place to stop.</content>
   </branch>
 
   <!-- ============================================================ -->
-  <!-- 1.4 WORKING / FOCUSING -->
+  <!-- 1.4 WORKING -->
   <!-- ============================================================ -->
   <branch id="1.4">
     <content>What kind of work?</content>
-    <fork target="1.4.1">Creative work — writing, designing, making</fork>
-    <fork target="1.4.2">Analytical or logical — thinking, problem-solving</fork>
-    <fork target="1.4.3">Repetitive or mechanical — just need to get through it</fork>
+    <fork target="1.4.1">Creative — writing, designing, making something</fork>
+    <fork target="1.4.2">Analytical — thinking, problem-solving, reading</fork>
+    <fork target="1.4.3">Repetitive or mechanical — grinding through tasks</fork>
+    <fork target="1.4.4">Collaborative — calls or working near other people</fork>
   </branch>
 
   <branch id="1.4.1">
-    <content>Do lyrics pull your attention away from what you are doing?</content>
-    <fork target="1.4.1.1">Yes — lyrics always distract me</fork>
+    <content>Do lyrics pull you out of the work?</content>
+    <fork target="1.4.1.1">Yes — they compete with my own thinking</fork>
     <fork target="1.4.1.2">No — I can filter them out</fork>
   </branch>
-
   <branch id="1.4.1.1">
-    <content>Do you want texture and atmosphere, or steady rhythm?</content>
-    <fork target="1.4.1.1.1">Texture and atmosphere — music as environment</fork>
-    <fork target="1.4.1.1.2">Steady rhythm — something that keeps me in flow</fork>
+    <content>What does the work need from the music?</content>
+    <fork target="1.4.1.1.1">A sonic environment — music as atmosphere</fork>
+    <fork target="1.4.1.1.2">Rhythm and momentum — music as engine</fork>
+    <fork target="1.4.1.1.3">Separation from the world — music as barrier</fork>
   </branch>
   <branch id="1.4.1.1.1">
-    <content>Amon Tobin or Clams Casino instrumentals. Both create a sonic environment rather than a foreground. Your brain fills in the gaps creatively. Genuinely useful for creative work, not just pleasant background noise.</content>
+    <content>What kind of creative work?</content>
+    <fork target="1.4.1.1.1.1">Visual — design, illustration, art</fork>
+    <fork target="1.4.1.1.1.2">Written — copy, articles, longer prose</fork>
+    <fork target="1.4.1.1.1.3">Making music or audio</fork>
+  </branch>
+  <branch id="1.4.1.1.1.1">
+    <content>Amon Tobin — Out From Out Where. The abstraction suits visual thinking in a way more linear music does not. The sounds suggest spaces rather than narratives. Genuinely useful for visual work, not just pleasant — the brain processes it alongside rather than instead of the work.</content>
+  </branch>
+  <branch id="1.4.1.1.1.2">
+    <content>Clams Casino instrumentals. Vocal-textured without actual words — the brain hears something language-adjacent without processing language. Paradoxically useful for writing. Hazy, warm, and somehow unobtrusive for something so distinctive.</content>
+  </branch>
+  <branch id="1.4.1.1.1.3">
+    <content>LTJ Bukem FabricLive 46 or Logical Progression. Clear structural logic in the mix — the way Bukem builds and releases tension is a lesson in arrangement. Useful to have in your ears while making decisions about your own music. You absorb the structure without being consciously aware of it.</content>
   </branch>
   <branch id="1.4.1.1.2">
-    <content>Seba mixes or Marcus Intalex FabricLive 35. The half-step roll of this kind of DnB keeps you moving at exactly the right pace for sustained focus. Consistent enough to not interrupt, rhythmic enough to keep you from drifting.</content>
+    <content>Short session or long?</content>
+    <fork target="1.4.1.1.2.1">Short — under an hour</fork>
+    <fork target="1.4.1.1.2.2">Long — two hours or more</fork>
+  </branch>
+  <branch id="1.4.1.1.2.1">
+    <content>Seba 70 minute mix. Just long enough for a focused burst without needing to make another decision mid-session. Press play at the start, notice when it ends — the session lives inside the music rather than the other way around.</content>
+  </branch>
+  <branch id="1.4.1.1.2.2">
+    <content>Marcus Intalex FabricLive 35 and Calibre FabricLive 68 back to back. Similar energy, slightly different textures. The transition between the two refreshes without interrupting. About three hours of consistent, warm DnB — reliable across any long session without requiring you to make a decision mid-flow.</content>
+  </branch>
+  <branch id="1.4.1.1.3">
+    <content>Internal distraction or external noise?</content>
+    <fork target="1.4.1.1.3.1">Internal — I need to stop thinking about other things</fork>
+    <fork target="1.4.1.1.3.2">External — I need to block out my environment</fork>
+  </branch>
+  <branch id="1.4.1.1.3.1">
+    <content>Noisia FabricLive 40 at a level that demands some attention. The production is complex enough to occupy the background processing of your brain without pulling conscious focus from the work. Keeps the anxious part busy so the working part can function.</content>
+  </branch>
+  <branch id="1.4.1.1.3.2">
+    <content>Ed Rush and Optical — Virus Vaults Mix at volume. Dense, complex, and loud enough in headphones to completely eliminate environmental noise. The music fills every available cognitive space. Nothing gets through. The bluntness of the approach is the point.</content>
   </branch>
 
   <branch id="1.4.1.2">
-    <content>Do you want energy or something that just keeps you comfortable?</content>
-    <fork target="1.4.1.2.1">Energy — the work benefits from it</fork>
-    <fork target="1.4.1.2.2">Comfortable — I just need to stay in it</fork>
+    <content>Lift or sustain?</content>
+    <fork target="1.4.1.2.1">Lift — I need energy to get into it</fork>
+    <fork target="1.4.1.2.2">Sustain — I am in it, I just need to stay there</fork>
   </branch>
   <branch id="1.4.1.2.1">
-    <content>De La Soul. Energising without being aggressive, lyrical without being distracting once you know the tracks. Stakes Is High or Stakes Is High for sustained creative sessions.</content>
+    <content>De La Soul or Beastie Boys. Energising without aggression. The lyrical density gives something to half-process while the groove does the lifting. Good for work that needs a running start rather than a steady state.</content>
   </branch>
   <branch id="1.4.1.2.2">
-    <content>DJ Aphrodite melodic or the 2010 mix. Warm, flowing DnB that keeps the temperature right without ever demanding you pay attention to it. Steady company for a long work session.</content>
+    <content>DJ Aphrodite melodic or FabricLive 68 Calibre at comfortable volume. Familiar enough not to distract, present enough to prevent drifting. Sustains a working state without pulling you in or out of it. The difference between good company and demanding company.</content>
   </branch>
 
   <branch id="1.4.2">
-    <content>Do you need near silence around the music, or can it be more present?</content>
-    <fork target="1.4.2.1">Near silence — minimal, unobtrusive, almost ambient</fork>
-    <fork target="1.4.2.2">More present is fine — I work better with something to push against</fork>
+    <content>How much cognitive space does the work leave?</content>
+    <fork target="1.4.2.1">Not much — demanding, minimal distraction needed</fork>
+    <fork target="1.4.2.2">Some — music can be present without interfering</fork>
   </branch>
   <branch id="1.4.2.1">
-    <content>Luomo or FabricLive 50 Autonomic. Both are almost ambient in their restraint. Enough rhythm to keep you from feeling the silence, sparse enough to completely disappear behind whatever you are thinking about.</content>
+    <content>Near silence or just enough variation to stay out of the way?</content>
+    <fork target="1.4.2.1.1">As minimal as possible — close to silence</fork>
+    <fork target="1.4.2.1.2">Some variation, nothing that demands attention</fork>
+  </branch>
+  <branch id="1.4.2.1.1">
+    <content>Luomo — Vocalcity at low volume. Minimal house so restrained it functions almost as textured silence. Fills the cognitive gap without creating one of its own. The right choice when the work needs everything you have and music is just keeping the silence from being oppressive.</content>
+  </branch>
+  <branch id="1.4.2.1.2">
+    <content>FabricLive 50 Autonomic. Half-step DnB stripped to structural essentials. Enough variation to stay interesting if you notice it, controlled enough to disappear completely if you do not. The ideal balance for demanding analytical work.</content>
   </branch>
   <branch id="1.4.2.2">
-    <content>LTJ Bukem — FabricLive 46 or Logical Progression. Atmospheric DnB at a level where it fills the room without dominating it. Complex enough to feel like good company, controlled enough to never pull you out of your work.</content>
+    <content>Energy behind the thinking or space for the thinking?</content>
+    <fork target="1.4.2.2.1">Energy — propel the thinking forward</fork>
+    <fork target="1.4.2.2.2">Space — music that creates room rather than filling it</fork>
+  </branch>
+  <branch id="1.4.2.2.1">
+    <content>DJ Marky FabricLive 55 or Deekline and Ed Solo. Groove-forward music that keeps energy up without demanding mental engagement. The rhythm does the work so your thinking can.</content>
+  </branch>
+  <branch id="1.4.2.2.2">
+    <content>LTJ Bukem — Logical Progression. Atmospheric DnB that opens space rather than fills it. Some music is good to think in. This is that music. Nothing else in this collection does it quite as consistently.</content>
   </branch>
 
   <branch id="1.4.3">
-    <content>Do you want music to push you through it, or to make it actually enjoyable?</content>
-    <fork target="1.4.3.1">Push me through it — I need momentum</fork>
-    <fork target="1.4.3.2">Make it enjoyable — I want to look forward to the session</fork>
+    <content>How long is the session?</content>
+    <fork target="1.4.3.1">Short — under an hour, just push through</fork>
+    <fork target="1.4.3.2">Long — needs to actively help you sustain</fork>
   </branch>
   <branch id="1.4.3.1">
-    <content>DJ Aphrodite or the Freestylers. High energy, consistent pace, no slow moments. The kind of music that removes the option of slowing down. Put it on loud and just go.</content>
+    <content>Aggression or groove?</content>
+    <fork target="1.4.3.1.1">Aggression — make it feel urgent</fork>
+    <fork target="1.4.3.1.2">Groove — make it feel effortless</fork>
+  </branch>
+  <branch id="1.4.3.1.1">
+    <content>Freeparty Filth or Noisia. Put the clock away, put the music on, use the aggression as momentum. The work finishes when the track does — or at least that is the useful illusion.</content>
+  </branch>
+  <branch id="1.4.3.1.2">
+    <content>Deekline and Ed Solo or DJ Aphrodite. Groove-driven enough that you stop noticing what you are doing and start noticing the music instead. The work happens in the space between.</content>
   </branch>
   <branch id="1.4.3.2">
-    <content>Pick a FabricLive mix you have not heard yet and treat it as a reward for sitting down to do the work. Something new keeps you engaged without you having to think about it. FabricLive 44 Commix or FabricLive 55 DJ Marky are good starting points.</content>
+    <content>Variety or consistency?</content>
+    <fork target="1.4.3.2.1">Variety — I lose focus if nothing changes</fork>
+    <fork target="1.4.3.2.2">Consistency — same energy is an anchor</fork>
+  </branch>
+  <branch id="1.4.3.2.1">
+    <content>Stack mixes with different energies and change them every hour. DJ Marky for warmth, Freestylers for mid-session energy, something from the FabricLive series for the final stretch. The changes mark the time and reset focus without requiring you to stop.</content>
+  </branch>
+  <branch id="1.4.3.2.2">
+    <content>Aphrodite 1 Hour Mix or the Overdrive mix. Consistent pace across a long runtime. One decision made once, nothing required of you after that. The music is the constant while everything else is variable.</content>
+  </branch>
+
+  <branch id="1.4.4">
+    <content>Can others hear the music?</content>
+    <fork target="1.4.4.1">Yes — needs to work for the room</fork>
+    <fork target="1.4.4.2">No — headphones, only you hear it</fork>
+  </branch>
+  <branch id="1.4.4.1">
+    <content>Professional or relaxed environment?</content>
+    <fork target="1.4.4.1.1">Professional — needs to be inoffensive background</fork>
+    <fork target="1.4.4.1.2">Relaxed — people will notice and respond</fork>
+  </branch>
+  <branch id="1.4.4.1.1">
+    <content>Luomo or Clams Casino instrumentals at low volume. Both are interesting enough to elevate a space without being provocative. Nobody will object and at least one person will probably ask what it is by the end of the day.</content>
+  </branch>
+  <branch id="1.4.4.1.2">
+    <content>De La Soul or Beastie Boys. Familiar enough that people recognise it as music rather than noise, interesting enough to invite comment. Opens more conversations than it closes. Low-risk choice that still says something about taste.</content>
+  </branch>
+  <branch id="1.4.4.2">
+    <content>Use the isolation. Put on something you would not play out loud — Noisia FabricLive 40 or Ed Rush and Optical at a volume that would be antisocial in the room. Headphone volume is a private luxury. Make use of it.</content>
+  </branch>
+
+  <!-- ============================================================ -->
+  <!-- 1.5 DISCOVERY -->
+  <!-- ============================================================ -->
+  <branch id="1.5">
+    <content>What is your starting point?</content>
+    <fork target="1.5.1">A genre I know well — I want to go deeper into it</fork>
+    <fork target="1.5.2">Adjacent to what I know — similar thinking, different world</fork>
+    <fork target="1.5.3">Something completely outside my usual listening</fork>
+  </branch>
+
+  <branch id="1.5.1">
+    <content>Which corner has the most unexplored depth?</content>
+    <fork target="1.5.1.1">DnB — I know the surface, not the roots</fork>
+    <fork target="1.5.1.2">Breaks — I know the big names, not what surrounds them</fork>
+    <fork target="1.5.1.3">Hip hop — golden era gaps I have not filled</fork>
+  </branch>
+  <branch id="1.5.1.1">
+    <content>Which direction within DnB interests you?</content>
+    <fork target="1.5.1.1.1">The early roots — where did all this come from?</fork>
+    <fork target="1.5.1.1.2">The experimental edges — what happened at the margins?</fork>
+    <fork target="1.5.1.1.3">The musical end — DnB made by musicians for musicians</fork>
+  </branch>
+  <branch id="1.5.1.1.1">
+    <content>Blunted on Shadow Records and the 1997 Cujo Adventures In Foam. Shadow before it was an institution — experimental, boundary-free, equally informed by hip hop, ambient, and jazz. This is the DNA of much of what followed. Listen to it and then listen to Amon Tobin and hear where it led.</content>
+  </branch>
+  <branch id="1.5.1.1.2">
+    <content>FabricLive 50 Autonomic and kyo006 Futurism. Both represent DnB taking itself apart to ask what was actually necessary. Minimal, strange, and still not fully absorbed by the mainstream. Worth the time if you want something that has not yet been fully processed by the scene.</content>
+  </branch>
+  <branch id="1.5.1.1.3">
+    <content>Calibre FabricLive 68, then Marcus Intalex FabricLive 35, then Commix FabricLive 44. Three perspectives on liquid DnB from producers who approach it as composers. Start with Calibre — the most immediately musical. Give each a full uninterrupted listen before moving to the next.</content>
+  </branch>
+  <branch id="1.5.1.2">
+    <content>More groove-oriented or more technically driven?</content>
+    <fork target="1.5.1.2.1">Groove — the swing and feel draws me</fork>
+    <fork target="1.5.1.2.2">Technical — the craft and precision is what I respond to</fork>
+  </branch>
+  <branch id="1.5.1.2.1">
+    <content>Tittsworth or Y4K DJ Icey. American breaks with deep hip hop roots — different from the UK sound. More swagger, more funk in the groove. Expands what you think breaks can be without requiring you to leave familiar rhythmic territory.</content>
+  </branch>
+  <branch id="1.5.1.2.2">
+    <content>9B Deekline and Ed Solo or the ATM Magazine compilations. Technical breakbeat from the UK scene — precise, complex, and demanding enough to reward close listening. The kind of music that gives back more detail each time you return to it.</content>
+  </branch>
+  <branch id="1.5.1.3">
+    <content>Deeper into artists you know, or the context around them?</content>
+    <fork target="1.5.1.3.1">Deeper — back catalogues and B-sides</fork>
+    <fork target="1.5.1.3.2">Context — the scene and what surrounded them</fork>
+  </branch>
+  <branch id="1.5.1.3.1">
+    <content>De La Soul have a deeper catalogue than most people realise. Buhloone Mindstate and De La Soul Is Dead are both essential and both very different from 3 Feet High. Go in order and pay attention to the deliberate shifts in tone between each record. The changes are the story.</content>
+  </branch>
+  <branch id="1.5.1.3.2">
+    <content>Give Em Enough Dope Volume 1 and the ATM Magazine compilations. The context for golden era hip hop — records that were in the same conversations as De La Soul and the Beastie Boys but never crossed over as far. Rich, largely unheard territory with a clear connection to what you already know.</content>
+  </branch>
+
+  <branch id="1.5.2">
+    <content>What is your strongest reference point to start from?</content>
+    <fork target="1.5.2.1">DnB — what else thinks the same way?</fork>
+    <fork target="1.5.2.2">Breaks — what shares the groove but sounds different?</fork>
+    <fork target="1.5.2.3">Hip hop — what else has the same rhythm intelligence?</fork>
+  </branch>
+  <branch id="1.5.2.1">
+    <content>Which quality of DnB draws you most?</content>
+    <fork target="1.5.2.1.1">The rhythm — that bass and drum relationship</fork>
+    <fork target="1.5.2.1.2">The atmosphere — how it opens or closes space</fork>
+    <fork target="1.5.2.1.3">The production precision — the sound design craft</fork>
+  </branch>
+  <branch id="1.5.2.1.1">
+    <content>UK Garage and Speed Garage. The half-time relationship between bass and drums in UKG is the closest rhythmic relative to DnB outside the genre itself. DJ Q FabricLive 99 is the best single entry point. You will hear the connection immediately and it will change how you hear both.</content>
+  </branch>
+  <branch id="1.5.2.1.2">
+    <content>Four Tet FabricLive 59. Electronic music that uses space the way atmospheric DnB does, from a completely different starting point. The way he builds and holds tension is recognisably related even though the BPM and genre are entirely different.</content>
+  </branch>
+  <branch id="1.5.2.1.3">
+    <content>Luomo — Vocalcity. Finnish minimal house with the same obsessive attention to rhythmic detail that good DnB has. The production intelligence is closely related even though everything else is different. This is what DnB producers listen to when they need perspective on their own work.</content>
+  </branch>
+  <branch id="1.5.2.2">
+    <content>What aspect of breaks do you want to follow into new territory?</content>
+    <fork target="1.5.2.2.1">The physicality — something equally visceral</fork>
+    <fork target="1.5.2.2.2">The sample culture and playfulness</fork>
+  </branch>
+  <branch id="1.5.2.2.1">
+    <content>The Bug. If what you love about breaks is its physical directness and refusal to be polished, The Bug takes that quality somewhere else entirely. Heavy, confrontational, completely committed to its own logic. Not comfortable, not meant to be.</content>
+  </branch>
+  <branch id="1.5.2.2.2">
+    <content>De La Soul or the Beastie Boys from the hip hop side. Sample culture in hip hop is the root of what breaks built on. Going back to 3 Feet High and Rising is hearing the grammar being invented before it became conventional. It explains a lot about why breaks sounds the way it does.</content>
+  </branch>
+  <branch id="1.5.2.3">
+    <content>Which quality do you want to follow?</content>
+    <fork target="1.5.2.3.1">The verbal intelligence and lyricism</fork>
+    <fork target="1.5.2.3.2">The groove and musicality</fork>
+    <fork target="1.5.2.3.3">The production approach — sample construction and layering</fork>
+  </branch>
+  <branch id="1.5.2.3.1">
+    <content>The deeper De La Soul catalogue — De La Soul Is Dead and Buhloone Mindstate. Lyrically their most demanding work. Then into the compilations around them for the broader conversation the music was part of.</content>
+  </branch>
+  <branch id="1.5.2.3.2">
+    <content>DJ Marky FabricLive 55 or the Brazilian funk influence in melodic DnB. The groove in liquid DnB and the groove in hip hop share more than most people notice. Following Marky's Brazilian connection makes the link audible in a way that is hard to unhear.</content>
+  </branch>
+  <branch id="1.5.2.3.3">
+    <content>Amon Tobin. The relationship between his sample-based construction and hip hop sample culture is direct even though the output is unrecognisably different. Paul's Boutique into Supermodified in one sitting is hearing what happens when the same impulse goes in two completely different directions.</content>
+  </branch>
+
+  <branch id="1.5.3">
+    <content>How far outside do you want to go?</content>
+    <fork target="1.5.3.1">Significantly outside but still approachable</fork>
+    <fork target="1.5.3.2">As far as possible — I want to be genuinely unsettled</fork>
+  </branch>
+  <branch id="1.5.3.1">
+    <content>The Bug — London Zoo as a starting point. Connects to enough things you already know — the bass weight of DnB, the rhythmic sensibility of breaks, the vocal tradition of reggae and dancehall — that it is not incomprehensible. But it sounds like nothing else in your collection.</content>
+  </branch>
+  <branch id="1.5.3.2">
+    <content>The Bug — Fire. The most extreme and confrontational record in a related orbit. Industrial, dancehall, and DnB stripped of anything that might make it comfortable. Your complete attention, good headphones. It will either do nothing for you or change something permanently. There is no middle ground with this record.</content>
   </branch>
 
 </tree>
