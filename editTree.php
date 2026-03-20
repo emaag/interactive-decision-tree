@@ -1,5 +1,10 @@
 <?php
 include('inc.general.php');
+require_auth();
+
+if( $_SERVER['REQUEST_METHOD'] === 'POST' ){
+	csrf_verify();
+}
 
 $cmd = Util::makeVar( 'cmd' );
 $treeID = Util::makeVar( 'treeID' );
@@ -27,6 +32,15 @@ if( !empty( $revision ) ){
 
 <body>
 <h1>Interactive Decision Tree - Editor</h1>
+<?php if( EDITOR_PASSWORD_HASH === '' ): ?>
+<p style="background:#fff3cd;border:1px solid #ffc107;padding:.5em 1em;border-radius:4px">
+	<strong>Warning:</strong> No editor password is set. Anyone who can reach this page can edit your trees.
+	Set <code>EDITOR_PASSWORD_HASH</code> in <code>config.php</code> to enable authentication.
+</p>
+<?php endif; ?>
+<?php if( EDITOR_PASSWORD_HASH !== '' ): ?>
+<p style="text-align:right"><a href="logout.php">Log out</a></p>
+<?php endif; ?>
 <div id="debug"></div>
 <?php
 switch( $cmd ){
@@ -48,6 +62,10 @@ switch( $cmd ){
 		showTreeForm( $tree, $revision );
 		$tree->overview();
 		break;
+	case 'delete-tree':
+		$tree->deleteTree();
+		header( 'Location: ' . EDITOR_URL );
+		exit;
 	case 'edit-branch':
 	case 'new-branch':
 		showBranchForm( $tree, $branchID );
@@ -74,6 +92,7 @@ function showTreeForm( $tree, $selectedRevision ){
   <p><a href="<?php echo EDITOR_URL; ?>">&laquo; Return to list</a>&nbsp;&nbsp;&nbsp;
   	<a target="_blank" href="<?php echo VIEWER_URL; ?>?<?php echo $treeViewerID; ?>">View tree in new window &raquo;</a></p>
   <form id="tree-editor" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+  <?php csrf_input(); ?>
   <?php
 	if( !empty( $tree->revisions ) ){
 	?>
@@ -129,6 +148,7 @@ function showBranchForm( $tree, $branchID ){
 	}
 	?>
 	<form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="branch-editor">
+  <?php csrf_input(); ?>
   <p><label for="content">Question/Decision Text:</label><br />
   	<textarea id="content" name="branchContent"><?php echo htmlspecialchars($branch->content); ?></textarea>
 		<div class="note">Enter a URL above to route users there instead of displaying text (e.g. http://hungry-media.com)</div></p>

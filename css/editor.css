@@ -65,3 +65,12 @@ textarea{
 	color: #999;
 	font-style: italic;
 }
+button.btn-link{
+	background: none;
+	border: none;
+	padding: 0;
+	color: #008000;
+	font-size: inherit;
+	cursor: pointer;
+	text-decoration: underline;
+}

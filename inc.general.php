@@ -3,6 +3,39 @@
 define( 'XML_DIR_PATH', 'xml/' );
 define( 'EDITOR_URL', 'editTree.php' );
 define( 'VIEWER_URL', 'showTree.html' );
+define( 'INDEX_URL', 'index.php' );
+
+require_once 'config.php';
+
+if( session_status() === PHP_SESSION_NONE ){
+	session_start();
+}
+
+function csrf_token(){
+	if( empty( $_SESSION['csrf_token'] ) ){
+		$_SESSION['csrf_token'] = bin2hex( random_bytes( 32 ) );
+	}
+	return $_SESSION['csrf_token'];
+}
+
+function csrf_input(){
+	echo '<input type="hidden" name="csrf_token" value="' . htmlspecialchars( csrf_token() ) . '" />';
+}
+
+function csrf_verify(){
+	$token = $_POST['csrf_token'] ?? '';
+	if( !hash_equals( csrf_token(), $token ) ){
+		http_response_code( 403 );
+		die( 'Invalid request token.' );
+	}
+}
+
+function require_auth(){
+	if( EDITOR_PASSWORD_HASH !== '' && empty( $_SESSION['authenticated'] ) ){
+		header( 'Location: login.php' );
+		exit;
+	}
+}
 
 // load classes "on demand"
 spl_autoload_register(function($class_name) {

@@ -64,11 +64,13 @@ A web-based tool that guides users through decision-making processes using an in
    http://your-domain.com/interactive-decision-tree/editTree.php
    ```
 
-### Docker Installation (Optional)
+### Docker Installation
 
 ```bash
-# Coming soon - Docker support planned
+docker compose up --build
 ```
+
+Then open `http://localhost:8080` in your browser.
 
 ## 🚀 Usage
 
@@ -81,8 +83,22 @@ A web-based tool that guides users through decision-making processes using an in
 
 ### Viewing a Decision Tree
 
-1. Navigate to `showTree.html?<treeID>` in your browser, where `<treeID>` is the numeric ID of the tree (e.g. `showTree.html?0001`)
-2. Users can now interact with your decision tree by answering questions
+1. Navigate to `index.php` to see a list of all available trees
+2. Click **View** next to any tree to open it in the interactive viewer
+
+### Setting an Editor Password
+
+By default the editor is unprotected. To require a password:
+
+```bash
+php -r "echo password_hash('yourpassword', PASSWORD_BCRYPT);"
+```
+
+Paste the output into `config.php`:
+
+```php
+define( 'EDITOR_PASSWORD_HASH', '$2y$10$...' );
+```
 
 ### Example XML Structure
 
@@ -112,8 +128,16 @@ interactive-decision-tree/
 ├── xml/                  # Decision tree XML files (needs write permission)
 ├── css/                  # Stylesheets
 ├── js/                   # JavaScript files
-├── editTree.php          # Visual editor for creating/editing trees
-├── showTree.html         # Viewer for displaying decision trees
+├── index.php             # Public listing of all trees
+├── showTree.html         # Interactive viewer for a single tree
+├── editTree.php          # Editor for creating/editing trees (password-protected)
+├── login.php             # Editor login page
+├── logout.php            # Editor logout
+├── config.php            # App configuration (password hash)
+├── class.decisiontree.php  # DecisionTree and Branch classes
+├── inc.general.php       # Shared functions and session/auth helpers
+├── Dockerfile            # Docker image definition
+├── docker-compose.yml    # Docker Compose setup
 ├── LICENSE               # MIT License
 └── README.md             # This file
 ```

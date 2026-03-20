@@ -163,6 +163,18 @@ class DecisionTree{
 		}
 	}
 	
+	public function deleteTree(){
+		foreach( $this->revisions as $revision ){
+			if( !empty( $revision ) && file_exists( $revision ) ){
+				unlink( $revision );
+			}
+		}
+		$mainFile = $this->xmlDirPath . $this->treeID;
+		if( file_exists( $mainFile ) ){
+			unlink( $mainFile );
+		}
+	}
+
 	public function listAll(){
 		if( !is_dir( $this->xmlDirPath ) ){
 			die("Cannot access XML directory.");
@@ -177,8 +189,16 @@ class DecisionTree{
 						$treeID = str_replace( '.xml', '', substr( $file, 4 ) );
 						?>
 						<dt><?php echo htmlspecialchars((string)$xmlData->title); ?>
-            	<span class="action-links"><a target="_blank" href="<?php echo VIEWER_URL; ?>?<?php echo urlencode($treeID); ?>">View</a> |
-              	<a href="<?php echo EDITOR_URL . '?cmd=edit-tree&treeID=' . urlencode($file); ?>">Edit</a></span></dt>
+            	<span class="action-links">
+              		<a target="_blank" href="<?php echo VIEWER_URL; ?>?<?php echo urlencode($treeID); ?>">View</a> |
+              		<a href="<?php echo EDITOR_URL . '?cmd=edit-tree&treeID=' . urlencode($file); ?>">Edit</a> |
+              		<form method="post" action="<?php echo EDITOR_URL; ?>" style="display:inline" onsubmit="return confirm('Delete this tree? This cannot be undone.')">
+              			<?php echo '<input type="hidden" name="csrf_token" value="' . htmlspecialchars(csrf_token()) . '" />'; ?>
+              			<input type="hidden" name="cmd" value="delete-tree" />
+              			<input type="hidden" name="treeID" value="<?php echo htmlspecialchars($file); ?>" />
+              			<button type="submit" class="btn-link">Delete</button>
+              		</form>
+              	</span></dt>
 						<dd><?php echo htmlspecialchars((string)$xmlData->description); ?></dd>
 						<?php
 					}
